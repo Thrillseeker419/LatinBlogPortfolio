@@ -18,7 +18,7 @@ const Test = () => {
             Welcome to The Communal Latin Blog! The community gathers here to
             practice their latin. Share your latin thoughts with the world.
             Connect with others. Enjoy learning another language by sharing
-            stories with on another.
+            stories with one another.
           </p>
         </article>
       </div>

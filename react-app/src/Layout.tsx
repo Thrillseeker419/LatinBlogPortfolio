@@ -77,7 +77,7 @@ const Layout = () => {
                 and delete posts. You can view author information as well. It is
                 built using the latest React, React-Router, Redux, Axios, and
                 Fomantic UI and operates using a mock api. It was built with
-                accessibility, responsiveness, and aesthetic in mind. Enjoy!
+                accessibility, responsiveness, and aesthetics in mind. Enjoy!
               </p>
             </section>
 
