@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AuthorData } from "./PostData";
 const Test = () => {
   const { param1 } = useParams();
+  useEffect(() => {
+    document.title = 'The Communal Latin Blog';
+  }, []);
   return (
     <section>
       <h1 className="ui center aligned icon header">

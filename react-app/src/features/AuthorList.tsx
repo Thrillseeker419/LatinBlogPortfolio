@@ -1,4 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { selectAllPosts } from "../redux/postsSlice";
@@ -17,6 +18,10 @@ const AuthorList = () => {
   }
   let aggregate = groupBy(posts, "userId");
 
+  useEffect(() => {
+    document.title = 'View All Authors';
+  }, []);
+  
   return (
     <section>
       <div className="ui link cards author-list-container">

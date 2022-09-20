@@ -124,7 +124,9 @@ const PostsList = () => {
     pagedInfo.page = array.slice((page - 1) * size, page * size);
     return pagedInfo;
   }
-
+  useEffect(() => {
+    document.title = 'Search Posts';
+  }, []);
   useEffect(() => {
     if (postsStatus === "idle") {
       dispatch(fetchPosts());

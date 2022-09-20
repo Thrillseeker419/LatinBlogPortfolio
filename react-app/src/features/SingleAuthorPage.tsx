@@ -1,4 +1,5 @@
 import { BallTriangle, useLoading } from "@agney/react-loading";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectPostById } from "../redux/postsSlice";
@@ -15,7 +16,9 @@ const SinglePostPage = () => {
     loading: authorId === undefined,
     indicator: <BallTriangle />,
   });
-
+  useEffect(() => {
+    document.title = 'View An Author\'s Details';
+  }, []);
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>

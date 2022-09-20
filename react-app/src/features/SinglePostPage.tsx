@@ -1,4 +1,5 @@
 import { BallTriangle, useLoading } from "@agney/react-loading";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { selectPostById } from "../redux/postsSlice";
@@ -20,6 +21,10 @@ const SinglePostPage = () => {
 
   console.log("postsAndAuthors", postsAndAuthors);
   const singlePost = post && postsAndAuthors[0];
+
+  useEffect(() => {
+    document.title = 'View A Single Post';
+  }, []);
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>

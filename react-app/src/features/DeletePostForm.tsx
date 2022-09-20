@@ -1,4 +1,5 @@
 import { BallTriangle, useLoading } from "@agney/react-loading";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Link,
@@ -42,6 +43,9 @@ const DeletePostForm = () => {
       // setDeleteRequestStatus("idle");
     }
   };
+  useEffect(() => {
+    document.title = 'Delete Your Post';
+  }, []);
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>
