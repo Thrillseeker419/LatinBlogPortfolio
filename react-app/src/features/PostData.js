@@ -15,7 +15,7 @@ export const AuthorDataRaw = [
         lng: "81.1496",
       },
     },
-    avatar_url: "/avatars/person_ponytail_swirl.png?raw=true",
+    avatar_url: "avatars/person_ponytail_swirl.png?raw=true",
     phone: "1-770-736-8031 x56442",
     website: "hildegard.org",
     company: {
@@ -40,7 +40,7 @@ export const AuthorDataRaw = [
         lng: "-34.4618",
       },
     },
-    avatar_url: "/avatars/person_beard.png?raw=true",
+    avatar_url: "avatars/person_beard.png?raw=true",
     phone: "010-692-6593 x09125",
     website: "anastasia.net",
     company: {
@@ -52,7 +52,7 @@ export const AuthorDataRaw = [
   {
     id: 3,
     name: "Clementine Bauch",
-    avatar_url: "/avatars/person_glasses.png?raw=true",
+    avatar_url: "avatars/person_glasses.png?raw=true",
     username: "Samantha",
     email: "Nathan@yesenia.net",
     address: {
@@ -77,7 +77,7 @@ export const AuthorDataRaw = [
   {
     id: 4,
     name: "Patricia Lebsack",
-    avatar_url: "/avatars/person_colored.png?raw=true",
+    avatar_url: "avatars/person_colored.png?raw=true",
     username: "Karianne",
     email: "Julianne.OConner@kory.org",
     address: {
@@ -102,7 +102,7 @@ export const AuthorDataRaw = [
   {
     id: 5,
     name: "Chelsey Dietrich",
-    avatar_url: "/avatars/person_hair_down_headband.png?raw=true",
+    avatar_url: "avatars/person_hair_down_headband.png?raw=true",
     username: "Kamren",
     email: "Lucio_Hettinger@annie.ca",
     address: {
@@ -127,7 +127,7 @@ export const AuthorDataRaw = [
   {
     id: 6,
     name: "Mrs. Dennis Schulist",
-    avatar_url: "/avatars/person_pixie_cut_light_brown.png?raw=true",
+    avatar_url: "avatars/person_pixie_cut_light_brown.png?raw=true",
     username: "Leopoldo_Corkery",
     email: "Karley_Dach@jasper.info",
     address: {
@@ -152,7 +152,7 @@ export const AuthorDataRaw = [
   {
     id: 7,
     name: "Kurtis Weissnat",
-    avatar_url: "/avatars/person_spikey_pompadour.png?raw=true",
+    avatar_url: "avatars/person_spikey_pompadour.png?raw=true",
     username: "Elwyn.Skiles",
     email: "Telly.Hoeger@billy.biz",
     address: {
@@ -177,7 +177,7 @@ export const AuthorDataRaw = [
   {
     id: 8,
     name: "Nicholas Runolfsdottir V",
-    avatar_url: "/avatars/person_short_gray.png?raw=true",
+    avatar_url: "avatars/person_short_gray.png?raw=true",
     username: "Maxime_Nienow",
     email: "Sherwood@rosamond.me",
     address: {
@@ -202,7 +202,7 @@ export const AuthorDataRaw = [
   {
     id: 9,
     name: "Glenna Reichert",
-    avatar_url: "/avatars/person_ponytail.png?raw=true",
+    avatar_url: "avatars/person_ponytail.png?raw=true",
     username: "Delphine",
     email: "Chaim_McDermott@dana.io",
     address: {
@@ -227,7 +227,7 @@ export const AuthorDataRaw = [
   {
     id: 10,
     name: "Clementina DuBuque",
-    avatar_url: "/avatars/person_pixie_cut_red.png?raw=true",
+    avatar_url: "avatars/person_pixie_cut_red.png?raw=true",
     username: "Moriah.Stanton",
     email: "Rey.Padberg@karina.biz",
     address: {
