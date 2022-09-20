@@ -122,7 +122,7 @@ const Layout = () => {
               <h1>Helpful Links</h1>
               <ul className="footer-link">
                 <li>
-                  <a href="#">Code Repository</a>
+                  <a href="https://github.com/Thrillseeker419/LatinBlogPortfolio">Code Repository</a>
                 </li>
                 <li>
                   <a href="mailto:tommy.loalbo@gmail.com">Contact Me</a>
@@ -153,7 +153,7 @@ const Layout = () => {
                   </a>
                 </li>
                 <li>
-                  <a className="github" href="#">
+                  <a className="github" href="https://github.com/Thrillseeker419/LatinBlogPortfolio">
                     <i className="github icon"></i>
                   </a>
                 </li>
