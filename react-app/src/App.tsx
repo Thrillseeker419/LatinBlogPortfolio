@@ -16,6 +16,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route path="LatinBlogPortfolio" element={<Home />} />
         <Route path="*" element={<NotFound />} />
         <Route index element={<Home />} />
         <Route path="Posts">
