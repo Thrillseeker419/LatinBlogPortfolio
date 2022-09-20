@@ -7,7 +7,6 @@ import AddPostForm from "./features/AddPostForm";
 import Layout from "./Layout";
 import { Routes, Route } from "react-router-dom";
 import SinglePostPage from "./features/SinglePostPage";
-import AccountDashboard from "./features/AccountDashboard";
 import NotFound from "./features/NotFound";
 import Home from "./features/Home";
 import AuthorList from "./features/AuthorList";
@@ -19,9 +18,6 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="*" element={<NotFound />} />
         <Route index element={<Home />} />
-        <Route path="AccountDashboard">
-          <Route index element={<AccountDashboard />} />
-        </Route>
         <Route path="Posts">
           <Route index element={<PostList />} />
           <Route path="Create" element={<AddPostForm />} />
