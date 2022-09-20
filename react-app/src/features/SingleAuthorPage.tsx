@@ -28,7 +28,7 @@ const SinglePostPage = () => {
               <div className="item">
                 <div className="image">
                   <img
-                    src={author ? "." + author.avatar_url : AvatarFallbackUrl}
+                    src={author ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public" + author.avatar_url : AvatarFallbackUrl}
                     alt="Avatar"
                     className="single-post-avatar ui medium circular image"
                   />

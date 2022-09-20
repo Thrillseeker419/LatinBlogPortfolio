@@ -25,7 +25,7 @@ const AuthorList = () => {
             <Link className="card" key={nanoid()} to={`${author.id}`}>
               <div className="image">
                 <img
-                  src={author ? "." + author.avatar_url : AvatarFallbackUrl}
+                  src={author ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public" + author.avatar_url : AvatarFallbackUrl}
                   alt={"Avatar for " + author.name}
                 />
               </div>

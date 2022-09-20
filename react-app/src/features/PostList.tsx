@@ -185,7 +185,7 @@ const PostsList = () => {
                           <img
                             src={
                               post.authorInfo
-                                ? "." + post.authorInfo.avatar_url
+                                ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public" + post.authorInfo.avatar_url
                                 : AvatarFallbackUrl
                             }
                             alt="Avatar"

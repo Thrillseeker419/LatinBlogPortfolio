@@ -56,7 +56,7 @@ const DeletePostForm = () => {
                 <img
                   src={
                     singlePost.authorInfo
-                      ? "../." + singlePost.authorInfo.avatar_url
+                      ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public + singlePost.authorInfo.avatar_url
                       : AvatarFallbackUrl
                   }
                   alt="Avatar"
