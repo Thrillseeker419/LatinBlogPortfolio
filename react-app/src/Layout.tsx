@@ -55,9 +55,9 @@ const Layout = () => {
   </div> */}
         <div className="right menu">
           <div className="item" style={{marginRight:"40px"}}>
-            <button className=" ui button primary" onClick={onResetData}>
+            <button className=" ui button compact primary" onClick={onResetData}>
               {" "}
-              <i className="undo alternate icon"></i>Reset Data
+              <i className="undo alternate icon"></i>Reset
             </button>
           </div>
         </div>
