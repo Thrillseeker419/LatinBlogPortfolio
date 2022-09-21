@@ -212,7 +212,7 @@ html, body {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   bottom: -500px;
-  z-index:10;
+  width:100vw;
 
 }
 
@@ -234,7 +234,7 @@ html, body {
 }
 .nav-bar, .header-outlet-parent{
   max-width: 100vw;
-  width:210%;
+  width:100vw;
 }
 
 
