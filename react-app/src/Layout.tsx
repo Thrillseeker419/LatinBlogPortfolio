@@ -13,8 +13,8 @@ const Layout = () => {
     <div className="ultimate-parent">
       <div className="header-outlet-parent">
 
-      </div>
-      <nav className="ui secondary menu">
+      
+      <nav className="nav-bar ui secondary menu">
         <Link
           role="link"
           to="/LatinBlogPortfolio"
@@ -181,6 +181,7 @@ const Layout = () => {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 };

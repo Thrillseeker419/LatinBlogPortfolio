@@ -231,5 +231,8 @@ html, body {
 .home-section{
   margin-bottom:20px
 }
+.nav-bar, .header-outlet-parent{
+  max-width: 100vw;
+}
 
 
