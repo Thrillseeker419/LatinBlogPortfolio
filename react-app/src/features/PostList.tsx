@@ -67,7 +67,10 @@ const PostsList = () => {
           .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
         post.body
           .split(" ")
-          .some((r: string) => searchTermsArray.indexOf(r) >= 0)
+          .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
+          post.authorInfo.name
+            .split(" ")
+            .some((r: string) => searchTermsArray.indexOf(r) >= 0)
     );
   }
 
