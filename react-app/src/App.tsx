@@ -16,21 +16,21 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="LatinBlogPortfolio/" element={<Home />} >
-        <Route path="*" element={<NotFound />} />
-        <Route index element={<Home />} />
-        <Route path="Posts">
-          <Route index element={<PostList />} />
-          <Route path="Create" element={<AddPostForm />} />
-          <Route path="Delete">
-            <Route path=":postId" element={<DeletePostForm />} />
+        <Route path="LatinBlogPortfolio" element={<Home />}>
+          <Route path="*" element={<NotFound />} />
+          <Route index element={<Home />} />
+          <Route path="Posts">
+            <Route index element={<PostList />} />
+            <Route path="Create" element={<AddPostForm />} />
+            <Route path="Delete">
+              <Route path=":postId" element={<DeletePostForm />} />
+            </Route>
+            <Route path=":postId" element={<SinglePostPage />} />
           </Route>
-          <Route path=":postId" element={<SinglePostPage />} />
-        </Route>
-        <Route path="Authors">
-          <Route index element={<AuthorList />} />
-          <Route path=":authorId" element={<SingleAuthorPage />} />
-        </Route>
+          <Route path="Authors">
+            <Route index element={<AuthorList />} />
+            <Route path=":authorId" element={<SingleAuthorPage />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
         <Route index element={<Home />} />
