@@ -107,6 +107,7 @@ const postsSlice = createSlice({
         );
         let currentPost = action.payload;
         currentPost.id = maxId + 1;
+        currentPost.status = "created"
         state.posts.push(currentPost);
         console.log("state.posts", current(state.posts));
       })

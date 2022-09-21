@@ -55,7 +55,7 @@ const AddPostForm = () => {
           .then((x) => {
             navigate("/LatinBlogPortfolio/Posts");
           })
-          .catch((e) => console.log(e));
+          .catch((e) => console.log("post add error:",e));
         setTitle("");
         setContent("");
       } catch (err) {

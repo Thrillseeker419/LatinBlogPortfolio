@@ -64,7 +64,7 @@ const PostsList = () => {
           .some((r: string) => searchTermsArray.indexOf(r) >= 0)
     );
   }
-
+  
   let pagedInfo = paginate(postsAndAuthors, pageSize2, pageNumberNumber);
 
   let postsAndAuthorsPage = pagedInfo.page;
@@ -132,7 +132,7 @@ const PostsList = () => {
       dispatch(fetchPosts());
     }
   }, [postsStatus, dispatch]);
-
+  console.log("posts",posts)
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>
@@ -181,7 +181,7 @@ const PostsList = () => {
           {postsAndAuthorsPage.map(
             (post: any) =>
               post.status === "created" && (
-                <Link key={nanoid()} to={`/LatinBlogPortfolio/${post.id}`}>
+                <Link key={nanoid()} to={`/LatinBlogPortfolio/Posts/${post.id}`}>
                   <div>
                     <div className="ui items">
                       <div className="item">
