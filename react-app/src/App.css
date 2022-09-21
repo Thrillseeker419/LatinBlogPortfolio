@@ -211,6 +211,7 @@ html, body {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   bottom: -500px;
+  z-index:10;
 
 }
 
