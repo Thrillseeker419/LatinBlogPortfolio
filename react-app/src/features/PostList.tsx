@@ -222,7 +222,7 @@ const PostsList = () => {
                         </div>
                         <div className="content">
                           <h2 className="header">
-                            {post.status + MakeTitle(post.title)}
+                            {MakeTitle(post.title)}
                           </h2>
                           <div className="meta">
                             <span>
