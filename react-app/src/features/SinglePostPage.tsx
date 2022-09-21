@@ -55,7 +55,7 @@ const SinglePostPage = () => {
             <div className="delete-button-container">
               {singlePost.userId === 2 && (
                 <Link to={{
-                    pathname: "/Posts/Delete/"+postId,
+                    pathname: "/LatinBlogPortfolio/Posts/Delete/"+postId,
                     search: "?userId=2",
                   }} className=" ui red button">
                   <i className="trash icon"></i>Delete Post

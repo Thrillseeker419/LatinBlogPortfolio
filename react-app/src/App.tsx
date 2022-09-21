@@ -15,8 +15,8 @@ import DeletePostForm from "./features/DeletePostForm";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="LatinBlogPortfolio" element={<Home />}>
+      <Route path="/LatinBlogPortfolio" element={<Layout />}>
+        {/* <Route path="LatinBlogPortfolio" element={<Home />}>
           <Route path="*" element={<NotFound />} />
           <Route index element={<Home />} />
           <Route path="Posts">
@@ -31,7 +31,7 @@ function App() {
             <Route index element={<AuthorList />} />
             <Route path=":authorId" element={<SingleAuthorPage />} />
           </Route>
-        </Route>
+        </Route> */}
         <Route path="*" element={<NotFound />} />
         <Route index element={<Home />} />
         <Route path="Posts">

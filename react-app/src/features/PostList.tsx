@@ -146,7 +146,7 @@ const PostsList = () => {
               <Link
                 className="create-post-link ui compact icon button"
                 to={{
-                  pathname: "/Posts/Create",
+                  pathname: "/LatinBlogPortfolio/Posts/Create",
                   search: "?userId=" + 2,
                 }}
               >
@@ -163,7 +163,7 @@ const PostsList = () => {
               <Link
                 className="post-search-button"
                 to={{
-                  pathname: "/Posts",
+                  pathname: "/LatinBlogPortfolio/Posts",
                   search:
                     "?pageNumber=" +
                     1 +
@@ -181,7 +181,7 @@ const PostsList = () => {
           {postsAndAuthorsPage.map(
             (post: any) =>
               post.status === "created" && (
-                <Link key={nanoid()} to={`${post.id}`}>
+                <Link key={nanoid()} to={`/LatinBlogPortfolio/${post.id}`}>
                   <div>
                     <div className="ui items">
                       <div className="item">
@@ -225,7 +225,7 @@ const PostsList = () => {
             <div className="ui small basic icon buttons">
               <Link
                 to={{
-                  pathname: "/Posts",
+                  pathname: "/LatinBlogPortfolio/Posts",
                   search:
                     "?pageNumber=" +
                     Math.max(1, pageNumberNumber - 1) +
@@ -243,7 +243,7 @@ const PostsList = () => {
                   <Link
                     key={nanoid()}
                     to={{
-                      pathname: "/Posts",
+                      pathname: "/LatinBlogPortfolio/Posts",
                       search:
                         "?pageNumber=" +
                         entry +
@@ -261,7 +261,7 @@ const PostsList = () => {
 
               <Link
                 to={{
-                  pathname: "/Posts",
+                  pathname: "/LatinBlogPortfolio/Posts",
                   search:
                     "?pageNumber=" +
                     Math.min(pagedInfo.totalPages, pageNumberNumber + 1) +

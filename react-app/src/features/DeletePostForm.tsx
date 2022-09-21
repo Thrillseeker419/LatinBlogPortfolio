@@ -35,7 +35,7 @@ const DeletePostForm = () => {
     try {
       let res = dispatch(postDeleted(singlePost.id.toString() as string));
       //todo handle different delete responses
-      navigate("/Posts");
+      navigate("/LatinBlogPortfolio/Posts");
     } catch (err) {
       console.log("delete failed", err);
     } finally {

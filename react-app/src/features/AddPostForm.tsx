@@ -53,7 +53,7 @@ const AddPostForm = () => {
         ).unwrap();
         res
           .then((x) => {
-            navigate("/Posts");
+            navigate("/LatinBlogPortfolio/Posts");
           })
           .catch((e) => console.log(e));
         setTitle("");

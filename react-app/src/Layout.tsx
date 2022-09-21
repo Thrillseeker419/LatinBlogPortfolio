@@ -5,7 +5,7 @@ const Layout = () => {
 
   const onResetData = (e: any) => {
     localStorage.removeItem("applicationState");
-    window.location.pathname = "/";
+    window.location.pathname = "/LatinBlogPortfolio";
     alert("All data has been reset to its original state");
   };
 
@@ -14,28 +14,28 @@ const Layout = () => {
       <nav className="ui secondary menu">
         <Link
           role="link"
-          to="/"
+          to="/LatinBlogPortfolio"
           className={location.pathname === "/" ? "active item" : "item"}
         >
           Home
         </Link>
         <Link
           role="link"
-          to={"/Posts"}
+          to={"/LatinBlogPortfolio/Posts"}
           className={location.pathname === "/Posts" ? "active item" : "item"}
         >
           Posts
         </Link>
         <Link
           role="link"
-          to="/Authors"
+          to="/LatinBlogPortfolio/Authors"
           className={location.pathname === "/Authors" ? "active item" : "item"}
         >
           Authors
         </Link>
         <Link
           role="link"
-          to={"/Posts/Create?userId=2"}
+          to={"/LatinBlogPortfolio/Posts/Create?userId=2"}
           className={
             location.pathname === "/Posts/Create" ? "active item" : "item"
           }
