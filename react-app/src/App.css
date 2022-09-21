@@ -9,10 +9,7 @@
 
 
 
-.search-bar-container {
-  display: flex;
-  justify-content: center;
-}
+
 .loader-wrapper {
   display: flex;
   justify-content: center;
@@ -58,19 +55,30 @@
 .author-info-list > li {
 }
 
+/*search bar styling */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+
+}
 .create-post-link {
-  transform: translate(0px, 0);
+  /* transform: translate(50%, 0); */
+  /* position: absolute !important;
+  left:0px; */
 }
 .search-bar-input {
   width: 78vw;
   transform: translate(20px, 0);
 }
 .post-search-button{
-  transform: translate(-20px, 0);
+  transform: translate(-20px, 4px);
 }
 @media screen and (max-width: 992px) {
   .create-post-link {
-    transform: translate(20px, 0);
+    transform: translate(22px, 0);
+  }
+  .post-search-button{
+    transform: translate(-29px,  4px);
   }
 }
 .add-post-body {
