@@ -71,7 +71,7 @@
   transform: translate(20px, 0);
 }
 .post-search-button{
-  transform: translate(-20px, 4px);
+  transform: translate(-20px, 5px);
 }
 @media screen and (max-width: 992px) {
   .create-post-link {
