@@ -7,7 +7,7 @@ const Test = () => {
     document.title = 'The Communal Latin Blog';
   }, []);
   return (
-    <section>
+    <section className="home-section">
       <h1 className="ui center aligned icon header">
         <i className="circular book open icon"></i>
         The Communal Latin Blog

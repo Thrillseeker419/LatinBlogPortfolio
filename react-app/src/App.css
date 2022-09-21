@@ -210,7 +210,8 @@ html, body {
 .website-footer {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  bottom: 0;
+  bottom: -500px;
+
 }
 
 .container {
@@ -226,5 +227,8 @@ html, body {
   margin:15px;
 }
 
+.home-section{
+  margin-bottom:20px
+}
 
 
