@@ -76,6 +76,9 @@
 .add-post-body {
   font-size: 1.2rem;
 }
+.reset-data{
+  margin: 20px;
+}
 
 /*Footer Styling */
 .website-footer {
@@ -186,6 +189,20 @@
     font-weight: 600;
   }
 }
+html, body {
+  height: 100%;
+}
+.ultimate-parent {
+  display: flex;
+  flex-direction: column;
+}
+.header-outlet-parent {
+  flex: 1 0 auto;
+}
+.website-footer {
+  flex-shrink: 0;
+}
+
 .container {
   margin-left: 20px;
   margin-right: 20px;
@@ -199,6 +216,5 @@
   margin:15px;
 }
 
-.reset-data{
-  margin: 20px;
-}
+
+

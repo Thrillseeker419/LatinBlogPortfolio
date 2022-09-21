@@ -8,7 +8,12 @@ import {
   fetchPosts,
 } from "./../redux/postsSlice";
 import { nanoid } from "@reduxjs/toolkit";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import { AuthorData, AvatarFallbackUrl } from "./PostData";
 import { BallTriangle, useLoading } from "@agney/react-loading";
 import { AuthorJoin } from "../utils/authorJoin";
@@ -16,6 +21,7 @@ import { CapitalizeFirstLetter, MakeTitle } from "../utils/stringFormatters";
 
 const PostsList = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const [searchParams, setSearchParams] = useSearchParams();
   let pageNumber = searchParams.get("pageNumber");
@@ -64,7 +70,7 @@ const PostsList = () => {
           .some((r: string) => searchTermsArray.indexOf(r) >= 0)
     );
   }
-  
+
   let pagedInfo = paginate(postsAndAuthors, pageSize2, pageNumberNumber);
 
   let postsAndAuthorsPage = pagedInfo.page;
@@ -124,15 +130,29 @@ const PostsList = () => {
     pagedInfo.page = array.slice((page - 1) * size, page * size);
     return pagedInfo;
   }
+  const handleKeyDown = (event: any) => {
+    if (event.key === "Enter") {
+      navigate(
+        "/LatinBlogPortfolio/Posts" +
+          "?pageNumber=" +
+          1 +
+          "&pageSize=" +
+          pageSize2 +
+          "&searchTerms=" +
+          searchTermsInput
+      );
+    }
+  };
+
   useEffect(() => {
-    document.title = 'Search Posts';
+    document.title = "Search Posts";
   }, []);
   useEffect(() => {
     if (postsStatus === "idle") {
       dispatch(fetchPosts());
     }
   }, [postsStatus, dispatch]);
-  console.log("posts",posts)
+  console.log("posts", posts);
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>
@@ -155,10 +175,11 @@ const PostsList = () => {
               <input
                 value={searchTermsInput}
                 onChange={(e) => setSearchTermsInput(e.target.value)}
+                onKeyDown={handleKeyDown}
                 className="search-bar-input"
                 type="text"
                 placeholder="Search posts..."
-                style={{marginRight:"20px"}}
+                style={{ marginRight: "20px" }}
               />
               <Link
                 className="post-search-button"
@@ -181,7 +202,10 @@ const PostsList = () => {
           {postsAndAuthorsPage.map(
             (post: any) =>
               post.status === "created" && (
-                <Link key={nanoid()} to={`/LatinBlogPortfolio/Posts/${post.id}`}>
+                <Link
+                  key={nanoid()}
+                  to={`/LatinBlogPortfolio/Posts/${post.id}`}
+                >
                   <div>
                     <div className="ui items">
                       <div className="item">
@@ -189,7 +213,8 @@ const PostsList = () => {
                           <img
                             src={
                               post.authorInfo
-                                ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/" + post.authorInfo.avatar_url
+                                ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/" +
+                                  post.authorInfo.avatar_url
                                 : AvatarFallbackUrl
                             }
                             alt="Avatar"
