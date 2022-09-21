@@ -158,8 +158,10 @@ const PostsList = () => {
                 className="search-bar-input"
                 type="text"
                 placeholder="Search posts..."
+                style={{marginRight:"20px"}}
               />
               <Link
+                className="post-search-button"
                 to={{
                   pathname: "/Posts",
                   search:
