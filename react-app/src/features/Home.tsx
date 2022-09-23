@@ -15,7 +15,7 @@ const Test = () => {
       <div className="single-post-container">
         <article className="single-post ui piled segment ">
           <p className="single-post-body">
-            Welcome to The Communal Latin Blog! The community gathers here to
+            Ervin, we welcome you to The Communal Latin Blog! The community gathers here to
             practice their latin. Share your latin thoughts with the world.
             Connect with others. Enjoy learning another language by sharing
             stories with one another.

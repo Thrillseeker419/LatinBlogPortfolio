@@ -167,13 +167,13 @@ const PostsList = () => {
           <div className="ui search-bar-container segment">
             <div className="ui  transparent icon input">
               <Link
-                className="create-post-link ui compact icon button"
+                className="create-post-link ui compact icon green button"
                 to={{
                   pathname: "/LatinBlogPortfolio/Posts/Create",
                   search: "?userId=" + 2,
                 }}
               >
-                <i className="plus icon"></i>
+                <i className="plus icon" style={{width:"100%"}}> New</i>
               </Link>
               <input
                 value={searchTermsInput}
