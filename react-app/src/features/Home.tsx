@@ -10,7 +10,7 @@ const Test = () => {
     <section className="home-section">
       <h1 className="ui center aligned icon header">
         <i className="circular book open icon"></i>
-        The Communal Latin Blog!
+        The Communal Latin Blog
       </h1>
       <div className="single-post-container">
         <article className="single-post ui piled segment ">

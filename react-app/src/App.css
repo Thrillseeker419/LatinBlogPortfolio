@@ -259,5 +259,6 @@ html, body {
   min-height: 417px; 
 }
 .App{
-  min-height: 300px;
+
+  margin-bottom:200px;
 }
