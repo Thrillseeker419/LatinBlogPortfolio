@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/LatinBlogPortfolio/static/css/main.ad83bc4c.chunk.css",
-    "main.js": "/LatinBlogPortfolio/static/js/main.070579ff.chunk.js",
-    "main.js.map": "/LatinBlogPortfolio/static/js/main.070579ff.chunk.js.map",
-    "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.92265725.js",
-    "runtime-main.js.map": "/LatinBlogPortfolio/static/js/runtime-main.92265725.js.map",
+    "main.css": "/LatinBlogPortfolio/static/css/main.43dcee68.chunk.css",
+    "main.js": "/LatinBlogPortfolio/static/js/main.98a13ded.chunk.js",
+    "main.js.map": "/LatinBlogPortfolio/static/js/main.98a13ded.chunk.js.map",
+    "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.ab6b32be.js",
+    "runtime-main.js.map": "/LatinBlogPortfolio/static/js/runtime-main.ab6b32be.js.map",
     "static/css/2.3912c282.chunk.css": "/LatinBlogPortfolio/static/css/2.3912c282.chunk.css",
-    "static/js/2.36e73da2.chunk.js": "/LatinBlogPortfolio/static/js/2.36e73da2.chunk.js",
-    "static/js/2.36e73da2.chunk.js.map": "/LatinBlogPortfolio/static/js/2.36e73da2.chunk.js.map",
-    "static/js/3.fe0005e9.chunk.js": "/LatinBlogPortfolio/static/js/3.fe0005e9.chunk.js",
-    "static/js/3.fe0005e9.chunk.js.map": "/LatinBlogPortfolio/static/js/3.fe0005e9.chunk.js.map",
+    "static/js/2.02242c00.chunk.js": "/LatinBlogPortfolio/static/js/2.02242c00.chunk.js",
+    "static/js/2.02242c00.chunk.js.map": "/LatinBlogPortfolio/static/js/2.02242c00.chunk.js.map",
+    "static/js/3.7d375991.chunk.js": "/LatinBlogPortfolio/static/js/3.7d375991.chunk.js",
+    "static/js/3.7d375991.chunk.js.map": "/LatinBlogPortfolio/static/js/3.7d375991.chunk.js.map",
     "index.html": "/LatinBlogPortfolio/index.html",
     "static/css/2.3912c282.chunk.css.map": "/LatinBlogPortfolio/static/css/2.3912c282.chunk.css.map",
-    "static/css/main.ad83bc4c.chunk.css.map": "/LatinBlogPortfolio/static/css/main.ad83bc4c.chunk.css.map",
-    "static/js/2.36e73da2.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.36e73da2.chunk.js.LICENSE.txt",
+    "static/css/main.43dcee68.chunk.css.map": "/LatinBlogPortfolio/static/css/main.43dcee68.chunk.css.map",
+    "static/js/2.02242c00.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.02242c00.chunk.js.LICENSE.txt",
     "static/media/semantic.css": "/LatinBlogPortfolio/static/media/outline-icons.c5240512.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.92265725.js",
+    "static/js/runtime-main.ab6b32be.js",
     "static/css/2.3912c282.chunk.css",
-    "static/js/2.36e73da2.chunk.js",
-    "static/css/main.ad83bc4c.chunk.css",
-    "static/js/main.070579ff.chunk.js"
+    "static/js/2.02242c00.chunk.js",
+    "static/css/main.43dcee68.chunk.css",
+    "static/js/main.98a13ded.chunk.js"
   ]
 }
