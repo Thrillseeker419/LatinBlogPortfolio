@@ -36,7 +36,6 @@ const postsSlice = createSlice({
     postAdded: {
       reducer(state: any, action: any) {
         state.posts.push(action.payload);
-        debugger;
       },
       prepare(title: string, content: string) {
         return {
@@ -58,7 +57,6 @@ const postsSlice = createSlice({
         let postsUpdated = current(state.posts).filter(
           (post: any) => post.id.toString() !== action.payload?.id
         );
-        debugger;
         if (post !== undefined) {
           let newPost = { ...post, status: "deleted" };
           state.posts = [...postsUpdated, newPost];
@@ -85,7 +83,7 @@ const postsSlice = createSlice({
           post.status = "created";
           return post;
         });
-        debugger;
+  
         state.posts = [...loadedPosts];
       })
       .addCase(fetchPosts.rejected, (state, action) => {
