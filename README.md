@@ -4,9 +4,7 @@ A demo site of a latin blog where users can create, delete, and search for posts
 To download and run the project on your local, do the following:
 ```
 git clone https://github.com/Thrillseeker419/LatinBlogPortfolio.git
-```
-change to react-app directory
-```
+cd LatinBlogPortfolio/react-app
 npm i
 npm start
 ```
