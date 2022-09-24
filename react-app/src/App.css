@@ -258,6 +258,8 @@ html, body {
   width: 100%;
   min-height: 417px; 
 }
-.App{
-  margin-bottom:417px;
+@media (max-width: 767px) {
+  .App{
+    margin-bottom:417px;
+  }
 }
