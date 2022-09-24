@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/LatinBlogPortfolio/static/css/main.43dcee68.chunk.css",
+    "main.css": "/LatinBlogPortfolio/static/css/main.398fab2c.chunk.css",
     "main.js": "/LatinBlogPortfolio/static/js/main.98a13ded.chunk.js",
     "main.js.map": "/LatinBlogPortfolio/static/js/main.98a13ded.chunk.js.map",
     "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.ab6b32be.js",
@@ -12,7 +12,7 @@
     "static/js/3.7d375991.chunk.js.map": "/LatinBlogPortfolio/static/js/3.7d375991.chunk.js.map",
     "index.html": "/LatinBlogPortfolio/index.html",
     "static/css/2.3912c282.chunk.css.map": "/LatinBlogPortfolio/static/css/2.3912c282.chunk.css.map",
-    "static/css/main.43dcee68.chunk.css.map": "/LatinBlogPortfolio/static/css/main.43dcee68.chunk.css.map",
+    "static/css/main.398fab2c.chunk.css.map": "/LatinBlogPortfolio/static/css/main.398fab2c.chunk.css.map",
     "static/js/2.02242c00.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.02242c00.chunk.js.LICENSE.txt",
     "static/media/semantic.css": "/LatinBlogPortfolio/static/media/outline-icons.c5240512.woff2"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.ab6b32be.js",
     "static/css/2.3912c282.chunk.css",
     "static/js/2.02242c00.chunk.js",
-    "static/css/main.43dcee68.chunk.css",
+    "static/css/main.398fab2c.chunk.css",
     "static/js/main.98a13ded.chunk.js"
   ]
 }
