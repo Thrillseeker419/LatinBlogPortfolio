@@ -258,3 +258,6 @@ html, body {
   width: 100%;
   min-height: 417px; 
 }
+.App{
+  min-height: 300px;
+}
