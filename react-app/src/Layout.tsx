@@ -73,7 +73,7 @@ const Layout = () => {
                 onClick={onResetData}
               >
                 {" "}
-                <i className="undo alternate icon"></i>Reset
+                <i className="undo alternate icon reset-icon"></i>Reset
               </button>
             </div>
           </div>
@@ -217,7 +217,7 @@ const Layout = () => {
                       Contact Me
                     </a>
                   </li>
-                  <li  className="footer-link-li">
+                  <li className="footer-link-li">
                     <a
                       className="footer-link-anchor"
                       title="Link to Thomas's LinkedIn"
