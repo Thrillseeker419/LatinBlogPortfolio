@@ -274,7 +274,9 @@ html, body {
   margin-top:12px ;
   margin-bottom:12px;
 }
-
+body {
+  font-display: swap;
+}
 /* .reset-icon{
   color: rgba(0, 0, 0, 1) !important;
 } */
