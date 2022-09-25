@@ -262,4 +262,7 @@ html, body {
   .App{
     margin-bottom:417px;
   }
+  .nav-bar{
+    width:380px;
+  }
 }
