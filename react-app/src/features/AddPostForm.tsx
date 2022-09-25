@@ -83,6 +83,7 @@ const AddPostForm = () => {
               type="text"
               id="postTitle"
               name="postTitle"
+              aria-label="Post title"
               value={title}
               onChange={onTitleChanged}
             />
@@ -92,6 +93,7 @@ const AddPostForm = () => {
             <textarea
               id="postContent"
               name="postContent"
+              aria-label="Post content"
               value={content}
               onChange={onContentChanged}
             ></textarea>

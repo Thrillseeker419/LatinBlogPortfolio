@@ -186,6 +186,7 @@ const PostsList = () => {
                 onKeyDown={handleKeyDown}
                 className="search-bar-input"
                 type="text"
+                aria-label="Search text"
                 placeholder="Search posts..."
                 style={{ marginRight: "20px" }}
               />
@@ -229,7 +230,7 @@ const PostsList = () => {
                                   post.authorInfo.avatar_url
                                 : AvatarFallbackUrl
                             }
-                            alt="Avatar"
+                            alt="Avatar for the author of this post"
                           />
                         </div>
                         <div className="content">
