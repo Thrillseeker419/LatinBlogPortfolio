@@ -55,7 +55,7 @@ const AddPostForm = () => {
           .then((x) => {
             navigate("/LatinBlogPortfolio/Posts");
           })
-          .catch((e) => console.log("post add error:",e));
+          .catch((e) => console.log("post add error:", e));
         setTitle("");
         setContent("");
       } catch (err) {
@@ -68,7 +68,7 @@ const AddPostForm = () => {
     }
   };
   useEffect(() => {
-    document.title = 'Create A New Post';
+    document.title = "Create A New Post";
   }, []);
 
   return (
@@ -104,6 +104,8 @@ const AddPostForm = () => {
                 : "ui primary button"
             }
             type="button"
+            title="Save post"
+            aria-label="Save post"
             onClick={onSavePostClicked}
           >
             Save Post

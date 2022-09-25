@@ -83,6 +83,8 @@ const DeletePostForm = () => {
               <div className="delete-button-container">
                 {singlePost.userId === 2 && (
                   <button
+                    title="Confirm delete post"
+                    aria-label="Confirm delete post"
                     onClick={onDeletePostClicked}
                     className=" ui red button"
                   >

@@ -68,9 +68,9 @@ const PostsList = () => {
         post.body
           .split(" ")
           .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
-          post.authorInfo.name
-            .split(" ")
-            .some((r: string) => searchTermsArray.indexOf(r) >= 0)
+        post.authorInfo.name
+          .split(" ")
+          .some((r: string) => searchTermsArray.indexOf(r) >= 0)
     );
   }
 
@@ -168,12 +168,17 @@ const PostsList = () => {
             <div className="ui  transparent icon input">
               <Link
                 className="create-post-link ui compact icon green button"
+                title="Create new post"
+                aria-label="Create new post"
                 to={{
                   pathname: "/LatinBlogPortfolio/Posts/Create",
                   search: "?userId=" + 2,
                 }}
               >
-                <i className="plus icon" style={{width:"100%"}}> New</i>
+                <i className="plus icon" style={{ width: "100%" }}>
+                  {" "}
+                  New
+                </i>
               </Link>
               <input
                 value={searchTermsInput}
@@ -186,6 +191,8 @@ const PostsList = () => {
               />
               <Link
                 className="post-search-button"
+                title="Search"
+                aria-label="Search"
                 to={{
                   pathname: "/LatinBlogPortfolio/Posts",
                   search:
@@ -208,6 +215,8 @@ const PostsList = () => {
                 <Link
                   key={nanoid()}
                   to={`/LatinBlogPortfolio/Posts/${post.id}`}
+                  title="View post"
+                  aria-label="View post"
                 >
                   <div>
                     <div className="ui items">
@@ -224,9 +233,7 @@ const PostsList = () => {
                           />
                         </div>
                         <div className="content">
-                          <h2 className="header">
-                            {MakeTitle(post.title)}
-                          </h2>
+                          <h2 className="header">{MakeTitle(post.title)}</h2>
                           <div className="meta">
                             <span>
                               {post.authorInfo

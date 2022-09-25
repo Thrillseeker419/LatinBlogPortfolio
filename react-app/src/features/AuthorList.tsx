@@ -19,18 +19,29 @@ const AuthorList = () => {
   let aggregate = groupBy(posts, "userId");
 
   useEffect(() => {
-    document.title = 'View All Authors';
+    document.title = "View All Authors";
   }, []);
-  
+
   return (
     <section>
       <div className="ui link cards author-list-container">
         {AuthorDataRaw &&
           AuthorDataRaw.map((author: any) => (
-            <Link className="card" key={nanoid()} to={`${author.id}`}>
+            <Link
+              title={"View " + author.name + " details"}
+              aria-label={"View " + author.name + " details"}
+              className="card"
+              key={nanoid()}
+              to={`${author.id}`}
+            >
               <div className="image">
                 <img
-                  src={author ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/" + author.avatar_url : AvatarFallbackUrl}
+                  src={
+                    author
+                      ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/" +
+                        author.avatar_url
+                      : AvatarFallbackUrl
+                  }
                   alt={"Avatar for " + author.name}
                 />
               </div>
