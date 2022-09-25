@@ -101,8 +101,9 @@ const Layout = () => {
               <section className="column">
                 <h1>Technologies</h1>
                 <ul className="footer-link">
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Javascript docs"
                       aria-label="Link to Javascript docs"
                       href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -110,8 +111,9 @@ const Layout = () => {
                       Javascript
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to React docs"
                       aria-label="Link to React docs"
                       href="https://reactjs.org/"
@@ -119,8 +121,9 @@ const Layout = () => {
                       React
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Redux docs"
                       aria-label="Link to Redux docs"
                       href="https://redux.js.org/"
@@ -128,8 +131,9 @@ const Layout = () => {
                       Redux
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Redux Toolkit docs"
                       aria-label="Link to Redux Toolkit docs"
                       href="https://redux-toolkit.js.org/"
@@ -137,8 +141,9 @@ const Layout = () => {
                       Redux Toolkit
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Redux Thunk docs"
                       aria-label="Link to Redux Thunk docs"
                       href="https://github.com/reduxjs/redux-thunk"
@@ -146,8 +151,9 @@ const Layout = () => {
                       Redux-Thunk
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Typescript docs"
                       aria-label="Link to Typescript docs"
                       href="https://www.typescriptlang.org/"
@@ -155,8 +161,9 @@ const Layout = () => {
                       Typescript
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Fomantic UI docs"
                       aria-label="Link to Fomantic UI docs"
                       href="https://fomantic-ui.com/"
@@ -164,8 +171,9 @@ const Layout = () => {
                       Fomantic UI
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to React Router docs"
                       aria-label="Link to React Router docs"
                       href="https://reactrouter.com/en/main"
@@ -173,8 +181,9 @@ const Layout = () => {
                       React Router
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Axios docs"
                       aria-label="Link to Axios docs"
                       href="https://www.npmjs.com/package/axios"
@@ -188,8 +197,9 @@ const Layout = () => {
               <section className="column">
                 <h1>Helpful Links</h1>
                 <ul className="footer-link">
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to the code base"
                       aria-label="Link to the code base"
                       href="https://github.com/Thrillseeker419/LatinBlogPortfolio"
@@ -197,8 +207,9 @@ const Layout = () => {
                       Code Repository
                     </a>
                   </li>
-                  <li>
+                  <li className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Email Thomas"
                       aria-label="Email Thomas"
                       href="mailto:tommy.loalbo@gmail.com"
@@ -206,8 +217,9 @@ const Layout = () => {
                       Contact Me
                     </a>
                   </li>
-                  <li>
+                  <li  className="footer-link-li">
                     <a
+                      className="footer-link-anchor"
                       title="Link to Thomas's LinkedIn"
                       aria-label="Link to Thomas's LinkedIn"
                       href="https://www.linkedin.com/in/thomas-loalbo-230054b9/"
