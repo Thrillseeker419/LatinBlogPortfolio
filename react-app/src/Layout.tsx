@@ -69,7 +69,7 @@ const Layout = () => {
               <button
                 title="Reset all data"
                 aria-label="Reset all data"
-                className=" ui button compact primary"
+                className=" ui basic button compact primary"
                 onClick={onResetData}
               >
                 {" "}
