@@ -106,7 +106,7 @@
 .website-footer h1 {
   letter-spacing: 2px;
   color: rgb(255, 255, 255);
-  font-size: 16px;
+  font-size: 22px;
   text-transform: uppercase;
 }
 .footer-link {
@@ -268,7 +268,7 @@ html, body {
 }
 
 .footer-link-anchor{
-  font-size:20px;
+  font-size:18px;
 }
 .footer-link-li{
   margin-top:12px ;
