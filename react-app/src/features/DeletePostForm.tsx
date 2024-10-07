@@ -31,6 +31,7 @@ const DeletePostForm = () => {
   });
 
   const singlePost = post && postsAndAuthors[0];
+  console.log("singlePost", singlePost)
   const onDeletePostClicked = () => {
     try {
       let res = dispatch(postDeleted(singlePost.id.toString() as string));
@@ -60,7 +61,7 @@ const DeletePostForm = () => {
                 <img
                   src={
                     singlePost.authorInfo
-                      ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public" + singlePost.authorInfo.avatar_url
+                      ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/avatars/person_beard.png?raw=true" + singlePost.authorInfo.avatar_url
                       : AvatarFallbackUrl
                   }
                   alt="Avatar"
