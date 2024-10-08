@@ -346,11 +346,11 @@ body {
 /* On mobile, bring them even closer */
 @media (max-width: 768px) {
   .custom-carousel .carousel-control-prev {
-    left: -34px; /* Adjust for mobile screens */
+    left: -30px; /* Adjust for mobile screens */
   }
 
   .custom-carousel .carousel-control-next {
-    right: -34px; /* Adjust for mobile screens */
+    right: -30px; /* Adjust for mobile screens */
   }
 }
 
