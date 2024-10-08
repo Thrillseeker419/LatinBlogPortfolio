@@ -336,11 +336,11 @@ body {
 }
 
 .custom-carousel .carousel-control-prev {
-  left: -40px;
+  left: -45px;
 }
 
 .custom-carousel .carousel-control-next {
-  right: -40px;
+  right: -45px;
 }
 
 /* On mobile, bring them even closer */
