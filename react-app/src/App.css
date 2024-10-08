@@ -66,22 +66,60 @@
 /* Search Bar Styling */
 .search-bar-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center the entire search bar container */
+  align-items: center;
+  width: 100%;
+}
+
+.ui.transparent.icon.input {
+  display: flex;
+  justify-content: space-between; /* Ensure elements inside are spaced out */
+  width: 100%;
 }
 
 .search-bar-input {
-  width: 78vw;
-  transform: translate(20px, 0);
+  flex-grow: 1;
+  padding: 8px; /* Add some padding for better visual appearance */
+  min-width: 0; /* Ensure input doesn't overflow in small screens */
+  position: relative;
 }
+
+.create-post-link {
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 10px; /* Space between the button and input */
+}
+
+@media (max-width: 600px) {
+  .search-bar-container {
+    flex-direction: row;
+    justify-content: flex-start; /* Align content to the start */
+  }
+
+  .create-post-link {
+    width: auto; /* Keep it small on mobile */
+    margin-right: 10px; /* Keep some space between input and button */
+  }
+
+  .search-bar-input {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+}
+
 
 .post-search-button {
-  transform: translate(-20px, 5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 992px) {
-  .post-search-button {
-    transform: translate(-29px, 4px);
-  }
+.post-search-button i {
+  font-size: 1.2em; /* Adjust size of the icon */
 }
 
 /* Reset Button Styling */
