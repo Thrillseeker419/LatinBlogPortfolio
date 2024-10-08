@@ -1,26 +1,29 @@
 {
   "files": {
-    "main.css": "/LatinBlogPortfolio/static/css/main.084d68b7.chunk.css",
-    "main.js": "/LatinBlogPortfolio/static/js/main.39d47444.chunk.js",
-    "main.js.map": "/LatinBlogPortfolio/static/js/main.39d47444.chunk.js.map",
-    "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.ab6b32be.js",
-    "runtime-main.js.map": "/LatinBlogPortfolio/static/js/runtime-main.ab6b32be.js.map",
-    "static/css/2.3912c282.chunk.css": "/LatinBlogPortfolio/static/css/2.3912c282.chunk.css",
-    "static/js/2.02242c00.chunk.js": "/LatinBlogPortfolio/static/js/2.02242c00.chunk.js",
-    "static/js/2.02242c00.chunk.js.map": "/LatinBlogPortfolio/static/js/2.02242c00.chunk.js.map",
-    "static/js/3.7d375991.chunk.js": "/LatinBlogPortfolio/static/js/3.7d375991.chunk.js",
-    "static/js/3.7d375991.chunk.js.map": "/LatinBlogPortfolio/static/js/3.7d375991.chunk.js.map",
+    "main.css": "/LatinBlogPortfolio/static/css/main.2ad25537.chunk.css",
+    "main.js": "/LatinBlogPortfolio/static/js/main.617bdc66.chunk.js",
+    "main.js.map": "/LatinBlogPortfolio/static/js/main.617bdc66.chunk.js.map",
+    "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.992a7328.js",
+    "runtime-main.js.map": "/LatinBlogPortfolio/static/js/runtime-main.992a7328.js.map",
+    "static/css/2.ae80649a.chunk.css": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css",
+    "static/js/2.5b1b3053.chunk.js": "/LatinBlogPortfolio/static/js/2.5b1b3053.chunk.js",
+    "static/js/2.5b1b3053.chunk.js.map": "/LatinBlogPortfolio/static/js/2.5b1b3053.chunk.js.map",
+    "static/js/3.bb07ca30.chunk.js": "/LatinBlogPortfolio/static/js/3.bb07ca30.chunk.js",
+    "static/js/3.bb07ca30.chunk.js.map": "/LatinBlogPortfolio/static/js/3.bb07ca30.chunk.js.map",
     "index.html": "/LatinBlogPortfolio/index.html",
-    "static/css/2.3912c282.chunk.css.map": "/LatinBlogPortfolio/static/css/2.3912c282.chunk.css.map",
-    "static/css/main.084d68b7.chunk.css.map": "/LatinBlogPortfolio/static/css/main.084d68b7.chunk.css.map",
-    "static/js/2.02242c00.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.02242c00.chunk.js.LICENSE.txt",
-    "static/media/semantic.css": "/LatinBlogPortfolio/static/media/outline-icons.c5240512.woff2"
+    "static/css/2.ae80649a.chunk.css.map": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css.map",
+    "static/css/main.2ad25537.chunk.css.map": "/LatinBlogPortfolio/static/css/main.2ad25537.chunk.css.map",
+    "static/js/2.5b1b3053.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.5b1b3053.chunk.js.LICENSE.txt",
+    "static/media/semantic.css": "/LatinBlogPortfolio/static/media/outline-icons.c5240512.woff2",
+    "static/media/latinWriting.57d301cf.png": "/LatinBlogPortfolio/static/media/latinWriting.57d301cf.png",
+    "static/media/latinWriting3.d1954b9b.png": "/LatinBlogPortfolio/static/media/latinWriting3.d1954b9b.png",
+    "static/media/latinWriting4.f3697f24.png": "/LatinBlogPortfolio/static/media/latinWriting4.f3697f24.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ab6b32be.js",
-    "static/css/2.3912c282.chunk.css",
-    "static/js/2.02242c00.chunk.js",
-    "static/css/main.084d68b7.chunk.css",
-    "static/js/main.39d47444.chunk.js"
+    "static/js/runtime-main.992a7328.js",
+    "static/css/2.ae80649a.chunk.css",
+    "static/js/2.5b1b3053.chunk.js",
+    "static/css/main.2ad25537.chunk.css",
+    "static/js/main.617bdc66.chunk.js"
   ]
 }
