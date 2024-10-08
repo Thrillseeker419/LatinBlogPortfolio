@@ -12,6 +12,10 @@
   text-decoration: none;
 }
 
+.author-list-container a {
+  text-decoration: none;
+}
+
 /* Loader Styling */
 .loader-wrapper {
   display: flex;
