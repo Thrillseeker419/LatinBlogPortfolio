@@ -58,17 +58,24 @@ const PostsList = () => {
   postsAndAuthors = postsAndAuthors.sort(function (a: any, b: any) {
     return a.title.localeCompare(b.title);
   });
-
+console.log("postsAndAuthors", postsAndAuthors)
   if (searchTermsArray.length > 0 && postsAndAuthors.length > 0) {
     postsAndAuthors = postsAndAuthors.filter(
       (post: any) =>
         post.title
+          .toLowerCase()
           .split(" ")
           .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
         post.body
+          .toLowerCase()
           .split(" ")
           .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
         post.authorInfo.name
+          .toLowerCase()
+          .split(" ")
+          .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
+        post.authorInfo.company.name
+          .toLowerCase()
           .split(" ")
           .some((r: string) => searchTermsArray.indexOf(r) >= 0)
     );
@@ -234,7 +241,7 @@ const PostsList = () => {
                           />
                         </div>
                         <div className="content">
-                          <h2 className="header">{MakeTitle(post.title)}</h2>
+                          <h2 className="header header-content">{MakeTitle(post.title)}</h2>
                           <div className="meta">
                             <span>
                               {post.authorInfo
@@ -243,7 +250,7 @@ const PostsList = () => {
                             </span>
                           </div>
                           <div className="description">
-                            <p>{CapitalizeFirstLetter(post.body)}</p>
+                            <p className="posts-list-item-content">{CapitalizeFirstLetter(post.body)}</p>
                           </div>
                           <div className="extra">
                             Authored by:{" "}

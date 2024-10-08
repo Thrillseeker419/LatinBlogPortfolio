@@ -94,7 +94,7 @@ const Layout = () => {
                   is built using the latest React, React-Router, Redux, Axios,
                   and Fomantic UI and operates using a mock api. It was built
                   with accessibility, responsiveness, and aesthetics in mind.
-                  Enjoy!
+                  Enjoy! Find the code base <a href="https://github.com/Thrillseeker419/LatinBlogPortfolio">here</a>.
                 </p>
               </section>
 

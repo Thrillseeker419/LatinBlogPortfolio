@@ -277,6 +277,13 @@ html, body {
 body {
   font-display: swap;
 }
+
+.posts-list-item-content:hover {
+  cursor: pointer;
+}
+.header-content:hover {
+  cursor: pointer;
+}
 /* .reset-icon{
   color: rgba(0, 0, 0, 1) !important;
 } */
