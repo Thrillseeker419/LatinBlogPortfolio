@@ -336,11 +336,22 @@ body {
 }
 
 .custom-carousel .carousel-control-prev {
-  left: -60px;
+  left: -30px;
 }
 
 .custom-carousel .carousel-control-next {
-  right: -60px;
+  right: -30px;
+}
+
+/* On mobile, bring them even closer */
+@media (max-width: 768px) {
+  .custom-carousel .carousel-control-prev {
+    left: 10px; /* Adjust for mobile screens */
+  }
+
+  .custom-carousel .carousel-control-next {
+    right: 10px; /* Adjust for mobile screens */
+  }
 }
 
 .custom-carousel .carousel-control-prev-icon,
