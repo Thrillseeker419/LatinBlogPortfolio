@@ -184,7 +184,7 @@ console.log("postsAndAuthors", postsAndAuthors)
               >
                 <i className="plus icon" style={{ width: "100%" }}>
                   {" "}
-                  New
+                  Create
                 </i>
               </Link>
               <input
