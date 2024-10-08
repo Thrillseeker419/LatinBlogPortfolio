@@ -237,7 +237,7 @@ console.log("postsAndAuthors", postsAndAuthors)
                                   post.authorInfo.avatar_url
                                 : AvatarFallbackUrl
                             }
-                            alt="Avatar for the author of this post"
+                            alt={`Avatar for ${post.authorInfo ? post.authorInfo.name : 'the author'}`}
                           />
                         </div>
                         <div className="content">
@@ -277,6 +277,7 @@ console.log("postsAndAuthors", postsAndAuthors)
                     "&searchTerms=" +
                     searchTermsInput,
                 }}
+                aria-label="Go to previous results page"
                 className="ui button"
               >
                 <i className="angle left icon"></i>
@@ -295,6 +296,7 @@ console.log("postsAndAuthors", postsAndAuthors)
                         "&searchTerms=" +
                         searchTermsInput,
                     }}
+                    aria-label={`Go to page ${entry}`}
                     className="ui button"
                   >
                     {entry}
@@ -313,6 +315,7 @@ console.log("postsAndAuthors", postsAndAuthors)
                     "&searchTerms=" +
                     searchTermsInput,
                 }}
+                aria-label="Go to next results page"
                 className="ui button"
               >
                 <i className="angle right icon"></i>

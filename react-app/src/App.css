@@ -8,6 +8,9 @@
   margin-left: 5%;
   margin-right: 5%;
 }
+.center-it a {
+  text-decoration: none;
+}
 
 /* Loader Styling */
 .loader-wrapper {
