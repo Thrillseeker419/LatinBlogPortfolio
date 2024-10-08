@@ -313,7 +313,7 @@ html, body {
   padding-bottom: 523px;
 }
 .website-footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   min-height: 523px; 
