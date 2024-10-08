@@ -207,14 +207,12 @@
 }
 html, body {
   height: 100%;
-}
-.ultimate-parent {
+  margin: 0; /* Remove default margin */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack the content and footer */
 }
-.outlet-parent {
-  flex: 1 0 auto;
-}
+
+
 
 
 .container {
@@ -295,30 +293,61 @@ html, body {
 .App{
   margin-bottom:30px;
 }
-.ultimate-parent{
-  max-width:100vw;
-  min-width: 100vw;
-}
+
 
 
 #root {
   min-height: 100vh;
   position: relative;
 }
+
 .ultimate-parent {
-  min-height: 100vh;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the parent container takes full viewport height */
+  max-width: 100vw;
+  min-width: 100vw;
 }
+
 .outlet-parent {
-  padding-bottom: 523px;
+  flex-grow: 1; /* Allow the outlet-parent to expand and fill available space */
+  padding-bottom: 0; /* Remove padding that adds extra white space */
 }
 .website-footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  min-height: 523px; 
+  padding: 45px 0 20px;
+  background-color: #26272b;
+  color: #e1e1e1;
+  line-height: 24px;
+  box-shadow: 2000px 2000px #26272b;
+  min-height: auto; /* Avoid setting a fixed height to prevent white space */
+}
+.container {
+  margin: 0 20px;
 }
 
+/* General Content Styling */
+.App {
+  margin-bottom: 0; /* Remove unnecessary margin */
+  flex-grow: 1; /* Let it take up the available space */
+}
+
+/* Footer should stay at the bottom and not push extra space */
+.website-footer {
+  padding: 45px 0 20px;
+  background-color: #26272b;
+  width: 100%;
+}
+
+/* Flexbox ensures footer stays at the bottom */
+#root {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
 .footer-link-anchor{
   font-size:18px;
