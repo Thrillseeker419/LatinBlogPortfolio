@@ -29,9 +29,15 @@
   width: 90%;
   
 }
-.single-post-container {
+/* .single-post-container {
   display: flex;
   justify-content: center;
+} */
+.single-post-container {
+  display: flex;
+  flex-direction: column;      /* Stack children vertically */
+  align-items: center;         /* Center horizontally */
+  gap: 2rem;                   /* Space between items */
 }
 .single-post-avatar {
   margin: 5px;
@@ -224,9 +230,9 @@ html, body {
   margin:15px;
 }
 
-.home-section{
+/* .home-section{
   margin-bottom:20px
-}
+} */
 .nav-bar, .header-outlet-parent{
 }
 .nav-bar{
@@ -287,3 +293,154 @@ body {
 /* .reset-icon{
   color: rgba(0, 0, 0, 1) !important;
 } */
+
+/* Carousel */
+
+/* Section Padding */
+.home-section {
+  padding: 2rem;
+}
+
+/* Container for the Post and Carousel */
+/* Carousel Overrides (ensure these are defined once) */
+.custom-carousel .carousel-caption {
+  position: static;
+  z-index: 10;
+  background: none;
+  color: black;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  text-align: center;
+}
+
+.custom-carousel .carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;     
+}
+
+.custom-carousel .carousel-caption h3,
+.custom-carousel .carousel-caption p {
+  color: black;                   /* Ensure text is readable */
+  font-weight: bold;              /* Bold the headings */
+  margin: 0;                      /* Ensure no unexpected margins */
+  padding: 0.5rem 0;              /* Add padding around the caption text */
+}
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5%;
+}
+
+.custom-carousel .carousel-control-prev {
+  left: -60px;
+}
+
+.custom-carousel .carousel-control-next {
+  right: -60px;
+}
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  background-size: 100%, 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Move the carousel indicators down */
+.custom-carousel .carousel-indicators {
+  bottom: -40px; /* Move the indicators 30px below the default position */
+  position: absolute;
+  z-index: 1; 
+  margin-top: 10px;
+}
+/* Darker border color for carousel indicators */
+.custom-carousel .carousel-indicators button {
+  border: 2px solid #000000; /* Darker border color */
+  border-radius: 50%;      /* Make the indicators circular */
+  width: 14px;             /* Adjust width to make it more visible */
+  height: 14px;            /* Adjust height to make it more visible */
+  background-color: transparent; /* Ensure the background is transparent */
+  margin: 7.5px;              /* Add spacing between the dots */
+}
+
+/* Active indicator styling (optional) */
+.custom-carousel .carousel-indicators .active {
+  background-color: #3a3636; /* Darker color when active */
+  border: 2px solid #333; /* Ensure the active indicator has a matching border */
+}
+
+/* Focused indicator styling */
+.custom-carousel .carousel-indicators button:focus {
+  outline: none;               /* Remove default outline */
+  box-shadow: 0 0 5px 3px rgba(47, 44, 44, 0.6); /* Highlight with a shadow */
+  background-color: #f0f0f0;   /* Lighten the background on focus */
+}
+
+/* Focused AND active indicator styling */
+.custom-carousel .carousel-indicators .active:focus {
+  background-color: #3a3636; /* Darker color when active */
+  border: 2px solid #333; /* Ensure the active indicator has a matching border */
+}
+
+/* Increase the caption font size */
+.custom-carousel .carousel-caption h3 {
+  font-size: 1.75rem;          /* Increase the size of the caption header */
+  font-weight: bold;
+}
+
+.custom-carousel .carousel-caption p {
+  font-size: 1.25rem;          /* Increase the size of the caption text */
+  color: black;
+}
+
+.carousel-article {
+  width: 80%;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (max-width: 768px) {
+  .carousel-article {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.custom-carousel .carousel-caption h3 {
+  color: black;
+  font-weight: bold;
+}
+
+.custom-carousel .carousel-caption p {
+  color: black;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.carousel-controls button {
+  background-color: #1f252b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.carousel-controls button:hover {
+  background-color: #4c5a67;
+}
+
+/* Focused pause/play button styling */
+.carousel-controls button:focus {
+  background-color: #4c5a67;
+}
