@@ -1,8 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { AuthorData } from "./PostData";
-const Test = () => {
-  const { param1 } = useParams();
+const HomePage = () => {
   useEffect(() => {
     document.title = 'The Communal Latin Blog';
   }, []);
@@ -26,4 +23,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default HomePage;
