@@ -31,14 +31,19 @@ const AddPostForm = () => {
 
   const canSave =
     [title, content].every(validateField) && addRequestStatus === "idle";
+
+    const resetForm = () => {
+      setTitle("");
+      setContent("");
+    };
+
   const onSavePostClicked = async () => {
     if (canSave) {
       try {
         setAddRequestStatus("pending");
         await dispatch(addNewPost({ title, body: content, userId: 2 })).unwrap();
         navigate("/LatinBlogPortfolio/Posts");
-        setTitle("");
-        setContent("");
+        resetForm();
       } catch (err) {
         console.log("post failed");
       } finally {
@@ -46,8 +51,8 @@ const AddPostForm = () => {
       }
     } else {
       //todo add validation message
-      setValidTitle(canSave);
-      setValidContent(canSave);
+      setValidTitle(validateField(title));
+      setValidContent(validateField(content));
     }
   };
   useEffect(() => {
@@ -83,21 +88,18 @@ const AddPostForm = () => {
           </div>
 
           <button
-            className={
-              !validTitle || !validContent
-                ? "ui primary button disabled"
-                : "ui primary button"
-            }
+            className="ui primary button"
             type="button"
             title="Save post"
             aria-label="Save post"
             onClick={onSavePostClicked}
+            disabled={ addRequestStatus === "pending" || !validTitle || !validContent}
           >
-            Save Post
+            {addRequestStatus === "pending" ? "Saving..." : "Save Post"}
           </button>
         </form>
         {(!validTitle || !validContent) && (
-          <div className="ui error message">
+          <div className="ui error message" aria-live="polite">
             <ul className="list">
               {!validTitle && <li>Please enter a title for the post.</li>}
               {!validContent && (

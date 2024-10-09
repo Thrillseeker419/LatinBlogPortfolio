@@ -35,6 +35,14 @@
   align-items: center;
 }
 
+.ui.error.message {
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
 /* Single Post Page Styling */
 .single-post {
   width: 90%;
