@@ -58,7 +58,7 @@ const PostsList = () => {
   postsAndAuthors = postsAndAuthors.sort(function (a: any, b: any) {
     return a.title.localeCompare(b.title);
   });
-console.log("postsAndAuthors", postsAndAuthors)
+
   if (searchTermsArray.length > 0 && postsAndAuthors.length > 0) {
     postsAndAuthors = postsAndAuthors.filter(
       (post: any) =>
@@ -162,7 +162,7 @@ console.log("postsAndAuthors", postsAndAuthors)
       dispatch(fetchPosts());
     }
   }, [postsStatus, dispatch]);
-  console.log("posts", posts);
+
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>
@@ -217,7 +217,9 @@ console.log("postsAndAuthors", postsAndAuthors)
             </div>
           </div>
 
-          {postsAndAuthorsPage.map(
+          {postsAndAuthorsPage.length === 0 ? (
+            <div className="no-posts-found">No posts found.</div>
+          ) : postsAndAuthorsPage.map(
             (post: any) =>
               post.status === "created" && (
                 <Link

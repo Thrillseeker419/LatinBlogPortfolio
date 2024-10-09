@@ -33,7 +33,7 @@ const DeletePostForm = () => {
   });
 
   const singlePost = post && postsAndAuthors[0];
-  console.log("singlePost", singlePost)
+
   const onDeletePostClicked = async () => {
     try {
       setDeleteRequestStatus("pending");

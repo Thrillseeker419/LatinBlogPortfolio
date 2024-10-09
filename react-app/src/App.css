@@ -137,6 +137,20 @@
   font-size: 1.2em; /* Adjust size of the icon */
 }
 
+/* Post List Styling */
+.no-posts-found {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #333;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Reset Button Styling */
 .reset-data {
   margin: 20px;
