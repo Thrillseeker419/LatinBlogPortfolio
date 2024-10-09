@@ -1,5 +1,5 @@
 import { BallTriangle, useLoading } from "@agney/react-loading";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Link,
@@ -12,10 +12,12 @@ import { AppDispatch } from "../redux/store";
 import { AuthorJoin } from "../utils/authorJoin";
 import { CapitalizeFirstLetter, MakeTitle } from "../utils/stringFormatters";
 import { AuthorData, AvatarFallbackUrl } from "./PostData";
+import NotFound from "./NotFound";
 
 const DeletePostForm = () => {
   const { postId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [deleteRequestStatus, setDeleteRequestStatus] = useState("idle");
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
@@ -32,21 +34,30 @@ const DeletePostForm = () => {
 
   const singlePost = post && postsAndAuthors[0];
   console.log("singlePost", singlePost)
-  const onDeletePostClicked = () => {
+  const onDeletePostClicked = async () => {
     try {
-      let res = dispatch(postDeleted(singlePost.id.toString() as string));
-      //todo handle different delete responses
+      setDeleteRequestStatus("pending");
+      await dispatch(postDeleted(singlePost.id.toString() as string))
       navigate("/LatinBlogPortfolio/Posts");
     } catch (err) {
       console.log("delete failed", err);
+      alert("Failed to delete the post. Please try again.");
     } finally {
-      //todo add status tracking for deletes like was done for create requests
-      // setDeleteRequestStatus("idle");
+      setDeleteRequestStatus("idle");
     }
   };
   useEffect(() => {
     document.title = 'Delete Your Post';
   }, []);
+
+  if (!post) {
+    return <NotFound />;
+  }
+  
+  if (userId !== "2") {
+    return <NotFound />;;
+  }
+
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>
@@ -88,8 +99,17 @@ const DeletePostForm = () => {
                     aria-label="Confirm delete post"
                     onClick={onDeletePostClicked}
                     className=" ui red button"
+                    disabled={deleteRequestStatus === "pending"}
                   >
-                    <i className="trash icon"></i>Delete Post
+                    {deleteRequestStatus === "pending" ? (
+    <>
+                        <i className="spinner loading icon"></i> Deleting...
+                      </>
+                    ) : (
+                      <>
+                        <i className="trash icon"></i> Delete Post
+                      </>
+                    )}
                   </button>
                 )}
               </div>

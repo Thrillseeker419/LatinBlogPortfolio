@@ -46,6 +46,7 @@ const AddPostForm = () => {
         resetForm();
       } catch (err) {
         console.log("post failed");
+        alert("Failed to save the post. Please try again.");
       } finally {
         setAddRequestStatus("idle");
       }
@@ -95,7 +96,17 @@ const AddPostForm = () => {
             onClick={onSavePostClicked}
             disabled={ addRequestStatus === "pending" || !validTitle || !validContent}
           >
-            {addRequestStatus === "pending" ? "Saving..." : "Save Post"}
+            {addRequestStatus === "pending" ? (
+    <>
+                <i className="spinner loading icon"></i>
+                <span>Saving...</span>
+              </>
+            ) : (
+              <>
+                <i className="save icon"></i>
+                <span>Save Post</span>
+              </>
+            )}
           </button>
         </form>
         {(!validTitle || !validContent) && (

@@ -7,7 +7,7 @@ import { AuthorJoin } from "../utils/authorJoin";
 import { CapitalizeFirstLetter, MakeTitle } from "../utils/stringFormatters";
 import { AuthorDataRaw, AvatarFallbackUrl } from "./PostData";
 
-const SinglePostPage = () => {
+const SingleAuthorPage = () => {
   const { authorId } = useParams();
 
   const author = AuthorDataRaw.find((x) => x.id.toString() === authorId);
@@ -88,4 +88,4 @@ const SinglePostPage = () => {
   );
 };
 
-export default SinglePostPage;
+export default SingleAuthorPage;
