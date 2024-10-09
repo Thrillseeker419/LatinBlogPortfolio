@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/LatinBlogPortfolio/static/css/main.1c14b6d8.chunk.css",
-    "main.js": "/LatinBlogPortfolio/static/js/main.ca3bc1ee.chunk.js",
-    "main.js.map": "/LatinBlogPortfolio/static/js/main.ca3bc1ee.chunk.js.map",
+    "main.js": "/LatinBlogPortfolio/static/js/main.f44c9012.chunk.js",
+    "main.js.map": "/LatinBlogPortfolio/static/js/main.f44c9012.chunk.js.map",
     "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.992a7328.js",
     "runtime-main.js.map": "/LatinBlogPortfolio/static/js/runtime-main.992a7328.js.map",
     "static/css/2.ae80649a.chunk.css": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css",
-    "static/js/2.f52ac304.chunk.js": "/LatinBlogPortfolio/static/js/2.f52ac304.chunk.js",
-    "static/js/2.f52ac304.chunk.js.map": "/LatinBlogPortfolio/static/js/2.f52ac304.chunk.js.map",
+    "static/js/2.8a95d995.chunk.js": "/LatinBlogPortfolio/static/js/2.8a95d995.chunk.js",
+    "static/js/2.8a95d995.chunk.js.map": "/LatinBlogPortfolio/static/js/2.8a95d995.chunk.js.map",
     "static/js/3.bb07ca30.chunk.js": "/LatinBlogPortfolio/static/js/3.bb07ca30.chunk.js",
     "static/js/3.bb07ca30.chunk.js.map": "/LatinBlogPortfolio/static/js/3.bb07ca30.chunk.js.map",
     "index.html": "/LatinBlogPortfolio/index.html",
     "static/css/2.ae80649a.chunk.css.map": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css.map",
     "static/css/main.1c14b6d8.chunk.css.map": "/LatinBlogPortfolio/static/css/main.1c14b6d8.chunk.css.map",
-    "static/js/2.f52ac304.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.f52ac304.chunk.js.LICENSE.txt",
+    "static/js/2.8a95d995.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.8a95d995.chunk.js.LICENSE.txt",
     "static/media/semantic.css": "/LatinBlogPortfolio/static/media/outline-icons.c5240512.woff2",
     "static/media/latinWriting.57d301cf.png": "/LatinBlogPortfolio/static/media/latinWriting.57d301cf.png",
     "static/media/latinWriting3.d1954b9b.png": "/LatinBlogPortfolio/static/media/latinWriting3.d1954b9b.png",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.992a7328.js",
     "static/css/2.ae80649a.chunk.css",
-    "static/js/2.f52ac304.chunk.js",
+    "static/js/2.8a95d995.chunk.js",
     "static/css/main.1c14b6d8.chunk.css",
-    "static/js/main.ca3bc1ee.chunk.js"
+    "static/js/main.f44c9012.chunk.js"
   ]
 }
