@@ -29,9 +29,8 @@ const AddPostForm = () => {
     setValidContent(validateField(value));
   };
 
-  const isValid = (val: any) => val !== "";
   const canSave =
-    [title, content].every(isValid) && addRequestStatus === "idle";
+    [title, content].every(validateField) && addRequestStatus === "idle";
   const onSavePostClicked = async () => {
     if (canSave) {
       try {
@@ -47,6 +46,8 @@ const AddPostForm = () => {
       }
     } else {
       //todo add validation message
+      setValidTitle(canSave);
+      setValidContent(canSave);
     }
   };
   useEffect(() => {
