@@ -9,53 +9,35 @@ const AddPostForm = () => {
   const [title, setTitle] = useState("");
   const [validTitle, setValidTitle] = useState(true);
   const [content, setContent] = useState("");
-  const [validContent, setValdContent] = useState(true);
+  const [validContent, setValidContent] = useState(true);
   const [addRequestStatus, setAddRequestStatus] = useState("idle");
   const navigate = useNavigate();
 
   const dispatch = useDispatch<AppDispatch>();
   const posts = useSelector(selectAllPosts);
+  const validateField = (value: string) => value.trim() !== "";
 
-  const onTitleChanged = (e: any) => {
-    if (
-      e.target.value === "" ||
-      e.target.value === null ||
-      e.target.value === undefined
-    ) {
-      setValidTitle(false);
-    } else {
-      setValidTitle(true);
-    }
-    setTitle(e.target.value);
+  const onTitleChanged = (e: { target: { value: string; }; }) => {
+    const value = e.target.value;
+    setTitle(value);
+    setValidTitle(validateField(value));
   };
-  const onContentChanged = (e: any) => {
-    if (
-      e.target.value === "" ||
-      e.target.value === null ||
-      e.target.value === undefined
-    ) {
-      setValdContent(false);
-    } else {
-      setValdContent(true);
-    }
-    setContent(e.target.value);
+  
+  const onContentChanged = (e: { target: { value: string; }; }) => {
+    const value = e.target.value;
+    setContent(value);
+    setValidContent(validateField(value));
   };
 
   const isValid = (val: any) => val !== "";
   const canSave =
     [title, content].every(isValid) && addRequestStatus === "idle";
-  const onSavePostClicked = () => {
+  const onSavePostClicked = async () => {
     if (canSave) {
       try {
         setAddRequestStatus("pending");
-        let res = dispatch(
-          addNewPost({ title: title, body: content, userId: 2 })
-        ).unwrap();
-        res
-          .then((x) => {
-            navigate("/LatinBlogPortfolio/Posts");
-          })
-          .catch((e) => console.log("post add error:", e));
+        await dispatch(addNewPost({ title, body: content, userId: 2 })).unwrap();
+        navigate("/LatinBlogPortfolio/Posts");
         setTitle("");
         setContent("");
       } catch (err) {

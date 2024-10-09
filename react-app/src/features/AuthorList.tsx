@@ -1,5 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { selectAllPosts } from "../redux/postsSlice";
@@ -10,17 +10,23 @@ const AuthorList = () => {
 
   const posts = useSelector(selectAllPosts);
 
+  
+
   function groupBy(xs: any, key: any) {
     return xs.reduce(function (rv: any, x: any) {
       (rv[x[key]] = rv[x[key]] || []).push(x);
       return rv;
     }, {});
   }
-  let aggregate = groupBy(posts, "userId");
+  let aggregate = useMemo(()=>groupBy(posts, "userId"), [posts]);
 
   useEffect(() => {
-    document.title = "View All Authors";
+    document.title = `View ${AuthorDataRaw.length} Authors`;
   }, []);
+
+  if (!posts || !AuthorDataRaw) {
+    return <div>Loading authors...</div>;
+  }
 
   return (
     <section>
@@ -31,7 +37,7 @@ const AuthorList = () => {
               title={"View " + author.name + " details"}
               aria-label={"View " + author.name + " details"}
               className="card"
-              key={nanoid()}
+              key={author.id}
               to={`${author.id}`}
             >
               <div className="image">
@@ -46,9 +52,9 @@ const AuthorList = () => {
                 />
               </div>
               <div className="content">
-                <div className="header">{author.name}</div>
+                <h2 className="header">{author.name}</h2>
                 <div className="meta">
-                  <a>{author.email}</a>
+                  <span>{author.email}</span>
                 </div>
                 <div className="description">
                   {author.company.name} - {author.company.bs}
@@ -58,7 +64,7 @@ const AuthorList = () => {
                 <span className="right floated">{author.website}</span>
                 <span>
                   <i className="comment icon"></i>
-                  {(aggregate[author.id] && aggregate[author.id].length) ||
+                  {aggregate[author.id]?.length ||
                     0}{" "}
                   Posts
                 </span>
