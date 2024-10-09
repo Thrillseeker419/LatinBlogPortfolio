@@ -6,6 +6,7 @@ import { selectPostById } from "../redux/postsSlice";
 import { AuthorJoin } from "../utils/authorJoin";
 import { CapitalizeFirstLetter, MakeTitle } from "../utils/stringFormatters";
 import { AuthorDataRaw, AvatarFallbackUrl } from "./PostData";
+import NotFound from "./NotFound";
 
 const SingleAuthorPage = () => {
   const { authorId } = useParams();
@@ -13,12 +14,18 @@ const SingleAuthorPage = () => {
   const author = AuthorDataRaw.find((x) => x.id.toString() === authorId);
 
   const { containerProps, indicatorEl } = useLoading({
-    loading: authorId === undefined,
+    loading: !author,
     indicator: <BallTriangle />,
   });
+  
   useEffect(() => {
     document.title = 'View An Author\'s Details';
   }, []);
+
+  if(!author){
+    return <NotFound />
+  }
+
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>
@@ -32,12 +39,12 @@ const SingleAuthorPage = () => {
                 <div className="image">
                   <img
                     src={author ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/" + author.avatar_url : AvatarFallbackUrl}
-                    alt="Avatar"
+                    alt={`Avatar of ${author.name}`}
                     className="single-post-avatar ui medium circular image"
                   />
                 </div>
                 <div className="content">
-                  <a className="header">{author.name}</a>
+                  <h2 className="header">{author.name}</h2>
                   <div className="meta">
                     <p>
                       {author.company.name} -{" "}
@@ -53,14 +60,14 @@ const SingleAuthorPage = () => {
                       <i className="marker icon"></i>
                       <div className="content">
                         {author.address.street}, {author.address.suite},{" "}
-                        {author.address.city}, {author.address.stateAbbr}{" "}
+                        {author.address.city}, {author.address.stateAbbr && `${author.address.stateAbbr} `}{" "}
                         {author.address.zipcode}
                       </div>
                     </div>
                     <div className="item">
                       <i className="mail icon"></i>
                       <div className="content">
-                        <a href="mailto:jack@semantic-ui.com">{author.email}</a>
+                      <a href={`mailto:${author.email}`}>{author.email}</a>
                       </div>
                     </div>
                     <div className="item">
