@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const Layout = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const onResetData = (e: any) => {
     localStorage.removeItem("applicationState");
-    window.location.pathname = "/LatinBlogPortfolio";
+    navigate("/LatinBlogPortfolio"); // This handles navigation smoothly
     alert("All data has been reset to its original state");
   };
 
