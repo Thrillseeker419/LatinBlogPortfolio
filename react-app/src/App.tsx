@@ -16,7 +16,6 @@ function App() {
   return (
     <Routes>
       <Route path="/LatinBlogPortfolio" element={<Layout />}>
-        <Route path="*" element={<NotFound />} />
         <Route index element={<Home />} />
         <Route path="Posts">
           <Route index element={<PostList />} />
@@ -31,6 +30,7 @@ function App() {
           <Route path=":authorId" element={<SingleAuthorPage />} />
         </Route>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

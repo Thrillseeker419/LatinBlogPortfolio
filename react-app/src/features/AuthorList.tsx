@@ -13,6 +13,11 @@ const AuthorList = () => {
   
 
   function groupBy(xs: any, key: any) {
+    if (!Array.isArray(xs) || xs.length === 0) {
+      // If xs is not an array or is empty, return an empty object
+      return {};
+    }
+  
     return xs.reduce(function (rv: any, x: any) {
       (rv[x[key]] = rv[x[key]] || []).push(x);
       return rv;
