@@ -15,7 +15,7 @@ describe('App Routing', () => {
       </Provider>
     );
 
-    expect(screen.getByText(/Connect with others. Enjoy learning another/i)).toBeInTheDocument();
+    expect(screen.getByText(/Hello! We welcome you to The Communal Latin Blog/i)).toBeInTheDocument();
   });
 
   test('renders AuthorList page when navigating to "/LatinBlogPortfolio/Authors"', () => {
@@ -42,4 +42,29 @@ describe('App Routing', () => {
     expect(screen.getByText(/Page not found/i)).toBeInTheDocument();
   });
 
+  test('renders PostList page when navigating to "/LatinBlogPortfolio/Posts"', () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/LatinBlogPortfolio/Posts']}>
+          <App />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    // Replace with actual content in your PostList component
+    expect(screen.getByText(/Explore the Posts/i)).toBeInTheDocument();
+  });
+
+  test('renders AddPostForm page when navigating to "/LatinBlogPortfolio/Posts/Create"', () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/LatinBlogPortfolio/Posts/Create']}>
+          <App />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    // Replace with actual content in your AddPostForm component
+    expect(screen.getByText(/Add a New Post/i)).toBeInTheDocument();
+  });
 });

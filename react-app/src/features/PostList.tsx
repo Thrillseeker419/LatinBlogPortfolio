@@ -169,6 +169,13 @@ const PostsList = () => {
 
   return (
     <section>
+      <div className="page-header">
+        <h1 className="page-title">Explore the Posts</h1>
+        <p className="page-description">
+          Browse through the posts and discover content from different authors.
+        </p>
+      </div>
+
       <div className="loader-wrapper" {...containerProps}>
         {indicatorEl}
       </div>

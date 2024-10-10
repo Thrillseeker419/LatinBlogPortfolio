@@ -73,6 +73,41 @@
   transform: translate(5%, 0);
 }
 
+/* Author List Page - Title and Description */
+.author-list-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px; /* Space between the description and the author cards */
+}
+
+/* Post List Page - Title and Description */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px; /* Space between the description and the posts */
+}
+
+/* Title Styling */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px; /* Space between title and description */
+}
+
+/* Description Styling */
+.page-description {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px; /* Restrict width for readability */
+  margin-bottom: 30px; /* Space between description and author list */
+  text-align: center;
+}
+
 .profile-wrapper {
   display: flex;
   justify-content: center;

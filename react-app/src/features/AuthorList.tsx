@@ -35,6 +35,13 @@ const AuthorList = () => {
 
   return (
     <section>
+      <div className="author-list-page"> {/* Change class from 'page-header' to 'author-list-page' */}
+        <h1 className="page-title">Meet the Authors</h1>
+        <p className="page-description">
+          Explore the authors who contribute to this platform and discover their posts.
+        </p>
+      </div>
+  
       <div className="ui link cards author-list-container">
         {AuthorDataRaw &&
           AuthorDataRaw.map((author: any) => (
@@ -69,9 +76,7 @@ const AuthorList = () => {
                 <span className="right floated">{author.website}</span>
                 <span>
                   <i className="comment icon"></i>
-                  {aggregate[author.id]?.length ||
-                    0}{" "}
-                  Posts
+                  {aggregate[author.id]?.length || 0} Posts
                 </span>
               </div>
             </Link>
@@ -79,6 +84,7 @@ const AuthorList = () => {
       </div>
     </section>
   );
+  
 };
 
 export default AuthorList;
