@@ -28,10 +28,10 @@ const HomePage = () => {
       <div className="single-post-container">
         <article className="single-post ui piled segment">
           <p className="single-post-body">
-            Ervin! We welcome you to The Communal Latin Blog! The community gathers here to
+            Hello Ervin! We welcome you to The Communal Latin Blog! The community gathers here to
             practice their latin. Share your latin thoughts with the world.
             Connect with others. Enjoy learning another language by sharing
-            stories with one another.
+            stories with one another. You can click posts to view posts.
           </p>
         </article>
 
