@@ -26,14 +26,26 @@ const HomePage = () => {
         The Communal Latin Blog
       </h1>
       <div className="single-post-container">
-        <article className="single-post ui piled segment">
-          <p className="single-post-body">
-            Hello Ervin! We welcome you to The Communal Latin Blog! The community gathers here to
-            practice their latin. Share your latin thoughts with the world.
-            Connect with others. Enjoy learning another language by sharing
-            stories with one another. You can click posts to view posts.
-          </p>
-        </article>
+      <article className="single-post ui piled segment">
+        <p className="single-post-body">
+          <strong>Ervin! We welcome you to The Communal Latin Blog!</strong> The community gathers here to
+          practice their Latin. Share your Latin thoughts with the world. Connect with others. 
+          Enjoy learning another language by sharing stories with one another.
+        </p>
+        <p className="single-post-body">
+          <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, this is a space for everyone 
+          to contribute and grow together. Post your own writings, comment on others’ work, and exchange ideas 
+          in an open and supportive environment. You can expect feedback from fellow enthusiasts, a rich variety 
+          of posts to explore, and opportunities to engage in meaningful discussions about culture, history, and 
+          language—all through the lens of Latin!
+        </p>
+        <p className="single-post-body">
+          <strong>How to use the site:</strong> At the top, you’ll find controls to navigate through posts, create new ones, and view different authors.
+          You can use the navigation links to quickly move between sections of the blog. If you’d like to take a break from viewing the carousel, 
+          you can pause the carousel and come back to it later using the <strong>Pause</strong> button. Press <strong>Play</strong> to resume the slideshow!
+        </p>
+      </article>
+
 
         <article className="carousel-article" role="region" aria-label="Latin Writing Carousel" aria-roledescription="carousel">
           <Carousel
