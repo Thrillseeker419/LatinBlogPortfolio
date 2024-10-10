@@ -1,3 +1,4 @@
+// This is the mock data used for the website
 export const AuthorDataRaw = [
   {
     id: 1,

@@ -22,8 +22,6 @@ const Layout = () => {
     <div className="ultimate-parent">
       <div className="outlet-parent">
         <header className="header-outlet-parent">
-        <meta name="description" content="A blog website for Latin writing. Create and explore Latin blog posts."/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
           <nav className="nav-bar ui secondary menu" role="navigation">
             <Link
               role="link"

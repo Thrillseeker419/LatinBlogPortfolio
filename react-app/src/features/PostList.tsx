@@ -87,7 +87,7 @@ const PostsList = () => {
 
   function buildPageNumberRange(
     pageNumber: number,
-    pageSize: number,
+    pageSize: number, //TODO: implement this functionality in future
     totalPages: number
   ) {
     let res = [] as Array<number>;
@@ -163,6 +163,10 @@ const PostsList = () => {
     }
   }, [postsStatus, dispatch]);
 
+  const areAllPostsDeleted = (posts: any[]): boolean => {
+    return posts.length === 0 || posts.every((post) => post.status === "deleted");
+  };
+
   return (
     <section>
       <div className="loader-wrapper" {...containerProps}>
@@ -217,7 +221,7 @@ const PostsList = () => {
             </div>
           </div>
 
-          {postsAndAuthorsPage.length === 0 ? (
+          {areAllPostsDeleted(postsAndAuthorsPage) ? (
             <div className="no-posts-found">No posts found.</div>
           ) : postsAndAuthorsPage.map(
             (post: any) =>
