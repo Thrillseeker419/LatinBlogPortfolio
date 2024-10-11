@@ -11,7 +11,6 @@ import { nanoid } from "@reduxjs/toolkit";
 import {
   Link,
   useNavigate,
-  useParams,
   useSearchParams,
 } from "react-router-dom";
 import { AuthorData, AvatarFallbackUrl } from "./PostData";
@@ -32,11 +31,9 @@ const PostsList = () => {
     ? searchTerms
         .split(" ")
         .filter(function (entry) {
-          return entry.trim() != "";
+          return entry.trim() !== "";
         })
-        .map((element) => {
-          return element.trim();
-        })
+        .map((element) => element.trim())
     : [];
 
   const [searchTermsInput, setSearchTermsInput] = useState(
@@ -53,41 +50,39 @@ const PostsList = () => {
 
   let postsAndAuthors = (posts && AuthorJoin(posts, AuthorData)) || [];
 
-  let pageNumberNumber = pageNumber ? (Number(pageNumber) as number) : 1;
-  let pageSize2 = pageSize ? (Number(pageSize) as number) : 10;
-  postsAndAuthors = postsAndAuthors.sort(function (a: any, b: any) {
-    return a.title.localeCompare(b.title);
-  });
+  let pageNumberNumber = pageNumber ? Number(pageNumber) : 1;
+  let pageSize2 = pageSize ? Number(pageSize) : 10;
+
+  postsAndAuthors = postsAndAuthors.sort((a: { title: string; }, b: { title: any; }) => a.title.localeCompare(b.title));
 
   if (searchTermsArray.length > 0 && postsAndAuthors.length > 0) {
     postsAndAuthors = postsAndAuthors.filter(
-      (post: any) =>
+      (post: { title: string; body: string; authorInfo: { name: string; company: { name: string; }; }; }) =>
         post.title
           .toLowerCase()
           .split(" ")
-          .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
+          .some((r) => searchTermsArray.indexOf(r) >= 0) ||
         post.body
           .toLowerCase()
           .split(" ")
-          .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
-        post.authorInfo.name
+          .some((r) => searchTermsArray.indexOf(r) >= 0) ||
+        post.authorInfo?.name
           .toLowerCase()
           .split(" ")
-          .some((r: string) => searchTermsArray.indexOf(r) >= 0) ||
-        post.authorInfo.company.name
+          .some((r) => searchTermsArray.indexOf(r) >= 0) ||
+        post.authorInfo?.company.name
           .toLowerCase()
           .split(" ")
-          .some((r: string) => searchTermsArray.indexOf(r) >= 0)
+          .some((r) => searchTermsArray.indexOf(r) >= 0)
     );
   }
 
   let pagedInfo = paginate(postsAndAuthors, pageSize2, pageNumberNumber);
-
   let postsAndAuthorsPage = pagedInfo.page;
 
   function buildPageNumberRange(
     pageNumber: number,
-    pageSize: number, //TODO: implement this functionality in future
+    pageSize: number,
     totalPages: number
   ) {
     let res = [] as Array<number>;
@@ -108,48 +103,28 @@ const PostsList = () => {
       pn2++;
       pageScope--;
     }
-    return res.sort(function (a: number, b: number) {
-      return a - b;
-    });
+    return res.sort((a, b) => a - b);
   }
-  function paginate(
-    array: Array<any>,
-    page_size: number,
-    page_number: number
-  ): any {
-    //input cleaning
+
+  function paginate(array: Array<any>, page_size: number, page_number: number): any {
     let len = array.length;
-    let size = 10;
+    let size = page_size < 1 ? 1 : page_size;
+    let page = page_number < 1 ? 1 : page_number;
     let pageCount = Math.ceil(len / size);
-    let page = 1;
-    size = parseInt(page_size.toString());
-    page = parseInt(page_number.toString());
-    if (size < 1) {
-      size = 1;
-    }
-    if (page < 1) {
-      page = 1;
-    }
-    let pagedInfo = {
-      page: [] as Array<any>,
+
+    return {
+      page: array.slice((page - 1) * size, page * size),
       pageNumber: page,
       pageSize: size,
       totalPages: pageCount,
       visiblePages: buildPageNumberRange(page, size, pageCount),
     };
-    pagedInfo.page = array.slice((page - 1) * size, page * size);
-    return pagedInfo;
   }
+
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
       navigate(
-        "/LatinBlogPortfolio/Posts" +
-          "?pageNumber=" +
-          1 +
-          "&pageSize=" +
-          pageSize2 +
-          "&searchTerms=" +
-          searchTermsInput
+        `/LatinBlogPortfolio/Posts?pageNumber=1&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`
       );
     }
   };
@@ -157,15 +132,15 @@ const PostsList = () => {
   useEffect(() => {
     document.title = "Search Posts";
   }, []);
+
   useEffect(() => {
     if (postsStatus === "idle") {
       dispatch(fetchPosts());
     }
   }, [postsStatus, dispatch]);
 
-  const areAllPostsDeleted = (posts: any[]): boolean => {
-    return posts.length === 0 || posts.every((post) => post.status === "deleted");
-  };
+  const areAllPostsDeleted = (posts: any[]): boolean =>
+    posts.length === 0 || posts.every((post) => post.status === "deleted");
 
   return (
     <section>
@@ -182,6 +157,7 @@ const PostsList = () => {
 
       {postsStatus === "succeeded" ? (
         <div className="center-it">
+          {/* Search bar */}
           <div className="ui search-bar-container segment">
             <div className="ui  transparent icon input">
               <Link
@@ -190,7 +166,7 @@ const PostsList = () => {
                 aria-label="Create new post"
                 to={{
                   pathname: "/LatinBlogPortfolio/Posts/Create",
-                  search: "?userId=" + 2,
+                  search: "?userId=2",
                 }}
               >
                 <i className="plus icon" style={{ width: "100%" }}>
@@ -212,122 +188,96 @@ const PostsList = () => {
                 className="post-search-button"
                 title="Search"
                 aria-label="Search"
-                to={{
-                  pathname: "/LatinBlogPortfolio/Posts",
-                  search:
-                    "?pageNumber=" +
-                    1 +
-                    "&pageSize=" +
-                    pageSize2 +
-                    "&searchTerms=" +
-                    searchTermsInput,
-                }}
+                to={`/LatinBlogPortfolio/Posts?pageNumber=1&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
               >
                 <i className="search link icon"></i>
               </Link>
             </div>
           </div>
 
+          {/* Posts List */}
           {areAllPostsDeleted(postsAndAuthorsPage) ? (
             <div className="no-posts-found">No posts found.</div>
-          ) : postsAndAuthorsPage.map(
-            (post: any) =>
-              post.status === "created" && (
-                <Link
-                  key={nanoid()}
-                  to={`/LatinBlogPortfolio/Posts/${post.id}`}
-                  title="View post"
-                  aria-label="View post"
-                >
-                  <div>
-                    <div className="ui items">
-                      <div className="item">
-                        <div className="image">
-                          <img
-                            src={
-                              post.authorInfo
-                                ? "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/" +
-                                  post.authorInfo.avatar_url
-                                : AvatarFallbackUrl
-                            }
-                            alt={`Avatar for ${post.authorInfo ? post.authorInfo.name : 'the author'}`}
-                          />
-                        </div>
-                        <div className="content">
-                          <h2 className="header header-content">{MakeTitle(post.title)}</h2>
-                          <div className="meta">
-                            <span>
-                              {post.authorInfo
-                                ? post.authorInfo.company.name
-                                : "Company Unknown"}
-                            </span>
+          ) : (
+            postsAndAuthorsPage.map(
+              (post: any) =>
+                post.status === "created" && (
+                  <Link
+                    key={nanoid()}
+                    to={`/LatinBlogPortfolio/Posts/${post.id}`}
+                    title="View post"
+                    aria-label="View post"
+                  >
+                    <div>
+                      <div className="ui items">
+                        <div className="item">
+                          <div className="image">
+                            <img
+                              src={
+                                post.authorInfo
+                                  ? `https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/${post.authorInfo.avatar_url}`
+                                  : AvatarFallbackUrl
+                              }
+                              alt={`Avatar for ${post.authorInfo ? post.authorInfo.name : 'the author'}`}
+                            />
                           </div>
-                          <div className="description">
-                            <p className="posts-list-item-content">{CapitalizeFirstLetter(post.body)}</p>
-                          </div>
-                          <div className="extra">
-                            Authored by:{" "}
-                            {post.authorInfo ? post.authorInfo.name : "Unknown"}
+                          <div className="content">
+                            <h2 className="header header-content">
+                              {MakeTitle(post.title)}
+                            </h2>
+                            <div className="meta">
+                              <span>
+                                {post.authorInfo
+                                  ? post.authorInfo.company.name
+                                  : "Company Unknown"}
+                              </span>
+                            </div>
+                            <div className="description">
+                              <p className="posts-list-item-content">
+                                {CapitalizeFirstLetter(post.body)}
+                              </p>
+                            </div>
+                            <div className="extra">
+                              Authored by:{" "}
+                              {post.authorInfo ? post.authorInfo.name : "Unknown"}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              )
+                  </Link>
+                )
+            )
           )}
 
+          {/* Pagination Controls */}
           <div className="center-align-flex">
             <div className="ui small basic icon buttons">
               <Link
-                to={{
-                  pathname: "/LatinBlogPortfolio/Posts",
-                  search:
-                    "?pageNumber=" +
-                    Math.max(1, pageNumberNumber - 1) +
-                    "&pageSize=" +
-                    pageSize2 +
-                    "&searchTerms=" +
-                    searchTermsInput,
-                }}
+                to={`/LatinBlogPortfolio/Posts?pageNumber=${Math.max(
+                  1,
+                  pageNumberNumber - 1
+                )}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
                 aria-label="Go to previous results page"
                 className="ui button"
               >
                 <i className="angle left icon"></i>
               </Link>
-              {pagedInfo.visiblePages.map((entry: number) => {
-                return (
-                  <Link
-                    key={nanoid()}
-                    to={{
-                      pathname: "/LatinBlogPortfolio/Posts",
-                      search:
-                        "?pageNumber=" +
-                        entry +
-                        "&pageSize=" +
-                        pageSize2 +
-                        "&searchTerms=" +
-                        searchTermsInput,
-                    }}
-                    aria-label={`Go to page ${entry}`}
-                    className="ui button"
-                  >
-                    {entry}
-                  </Link>
-                );
-              })}
-
+              {pagedInfo.visiblePages.map((entry: number) => (
+                <Link
+                  key={nanoid()}
+                  to={`/LatinBlogPortfolio/Posts?pageNumber=${entry}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
+                  aria-label={`Go to page ${entry}`}
+                  className="ui button"
+                >
+                  {entry}
+                </Link>
+              ))}
               <Link
-                to={{
-                  pathname: "/LatinBlogPortfolio/Posts",
-                  search:
-                    "?pageNumber=" +
-                    Math.min(pagedInfo.totalPages, pageNumberNumber + 1) +
-                    "&pageSize=" +
-                    pageSize2 +
-                    "&searchTerms=" +
-                    searchTermsInput,
-                }}
+                to={`/LatinBlogPortfolio/Posts?pageNumber=${Math.min(
+                  pagedInfo.totalPages,
+                  pageNumberNumber + 1
+                )}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
                 aria-label="Go to next results page"
                 className="ui button"
               >
@@ -336,18 +286,17 @@ const PostsList = () => {
             </div>
           </div>
         </div>
-      ) : (
-        postsStatus === "error" && (
-          <div className="Error">
-            <h1>
-              <i className="exclamation triangle icon"></i> An unexpected error
-              has occured while making your request.
-            </h1>
-            <br />
-            <p>Please try again or contact your administrator.</p>
-          </div>
-        )
-      )}
+      ) : postsStatus === "error" ? (
+        // Error message when posts fail to load
+        <div className="Error">
+          <h1>
+            <i className="exclamation triangle icon"></i> An unexpected error has
+            occurred while making your request.
+          </h1>
+          <br />
+          <p>Please try again or contact your administrator.</p>
+        </div>
+      ) : null}
     </section>
   );
 };

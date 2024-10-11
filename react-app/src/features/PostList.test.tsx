@@ -89,6 +89,24 @@ describe('PostsList Component', () => {
   });
   
 
+  test('displays error message when posts fail to load', () => {
+    const { selectAllPosts, selectPostsStatus, selectPostsError } = require('../redux/postsSlice');
+  
+    selectAllPosts.mockImplementation(() => []);
+    selectPostsStatus.mockImplementation(() => 'error');
+    selectPostsError.mockImplementation(() => 'Failed to load posts');
+  
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <PostsList />
+        </MemoryRouter>
+      </Provider>
+    );
+  
+    // Expect error message to be in the document
+    expect(screen.getByText(/An unexpected error has occurred while making your request./i)).toBeInTheDocument();
+  });
   
 
   test('shows no posts found message if no posts are available', () => {
