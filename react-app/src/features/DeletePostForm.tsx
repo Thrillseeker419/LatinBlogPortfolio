@@ -26,6 +26,7 @@ const DeletePostForm = () => {
   const post = useSelector((state: any) =>
     selectPostById(state, Number(postId))
   );
+
   let postsAndAuthors = post && AuthorJoin([post], AuthorData);
   const { containerProps, indicatorEl } = useLoading({
     loading: post === undefined,
