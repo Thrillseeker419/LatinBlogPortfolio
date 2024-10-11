@@ -1,5 +1,30 @@
-// This is the mock data used for the website
-export const AuthorDataRaw = [
+export interface Author {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  avatar_url: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    stateAbbr: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
+}
+
+export const AuthorDataRaw: Author[] = [
   {
     id: 1,
     name: "Leanne Graham",
@@ -252,8 +277,13 @@ export const AuthorDataRaw = [
   },
 ];
 
-export const AuthorData = AuthorDataRaw.reduce((acc, val, index) => {
-  return { ...acc, [val.id]: val };
-}, {});
+export const AuthorData: Record<number, Author> = AuthorDataRaw.reduce(
+  (acc, val) => {
+    acc[val.id] = val; // Use author id as key, map to author object
+    return acc;
+  },
+  {} as Record<number, Author> 
+);
 
-export const AvatarFallbackUrl = "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/avatars/person_anonymous.png?raw=true";
+export const AvatarFallbackUrl =
+  "https://raw.githubusercontent.com/Thrillseeker419/LatinBlogPortfolio/main/react-app/public/avatars/person_anonymous.png?raw=true";

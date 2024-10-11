@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import NotFound from './NotFound'; // Adjust the path as per your file structure
+import NotFound from './NotFound';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('NotFound Component', () => {

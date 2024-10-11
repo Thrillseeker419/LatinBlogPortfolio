@@ -1,29 +1,4 @@
-// Define the structure for Author and Post types
-interface Author {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  avatar_url: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    stateAbbr: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-}
+import { Author } from '../features/PostData';
 
 interface Post {
   id: number;
@@ -41,13 +16,12 @@ export function AuthorJoin(posts: Post[], AuthorData: Record<number, Author>): P
   if (!posts || posts.length === 0) {
     return [];
   }
-
-  // Using map instead of reduce for cleaner logic
+  
   return posts.map((post) => {
-    const authorInfo = AuthorData[post.userId];
+    const authorInfo = AuthorData[post.userId]; 
     return {
       ...post,
-      authorInfo,
+      authorInfo, // Attaches the matching author to the post
     };
   });
 }
