@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import  Home   from './Home';
 import '@testing-library/jest-dom/extend-expect';

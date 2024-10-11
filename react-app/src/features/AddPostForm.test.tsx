@@ -1,13 +1,12 @@
-import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'; // For better assertions
+import '@testing-library/jest-dom/extend-expect'; 
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import thunk, { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import AddPostForm from './AddPostForm';
 import { MemoryRouter } from 'react-router-dom';
-import { addNewPost } from '../redux/postsSlice'; // Import the action
+import { addNewPost } from '../redux/postsSlice'; 
 
 // Mock the postsSlice module
 jest.mock('../redux/postsSlice', () => ({
@@ -22,9 +21,6 @@ const mockStoreInstance = configureMockStore<{}, DispatchExts>([thunk]);
 // Cast the mocked addNewPost to a jest.Mock with appropriate types
 const mockedAddNewPost = addNewPost as unknown as jest.Mock;
 
-// Alternatively, if you want better type safety, you can use:
-// import type { AsyncThunk } from '@reduxjs/toolkit';
-// const mockedAddNewPost = addNewPost as jest.MockedFunction<AsyncThunk<any, any, {}>>;
 
 // If the above still causes issues, use `as any` as a last resort:
 const mockedAddNewPostAny = addNewPost as any;
