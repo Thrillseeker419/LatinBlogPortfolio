@@ -4,7 +4,7 @@ import latin1 from '../assets/images/latinWriting.png';
 import latin3 from '../assets/images/latinWriting3.png'; 
 import latin4 from '../assets/images/latinWriting4.png'; 
 
-const HomePage = () => {
+const Home = () => {
   const [paused, setPaused] = useState(false); // Add state to track whether the carousel is paused
   const [index, setIndex] = useState<number>(0); // Track the current slide index
 
@@ -57,6 +57,7 @@ const HomePage = () => {
             indicators={true}
             activeIndex={index}
             onSelect={handleSelect}
+            data-testid="carousel-home"
           >
             <Carousel.Item>
               <img
@@ -108,4 +109,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;
