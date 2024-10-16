@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { fetchPosts } from "./redux/postsSlice";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";  // <-- Use HashRouter
 import "fomantic-ui-css/semantic.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <Router> {/* Use HashRouter to handle routing */}
         <Routes>
           <Route path="*" element={<App />} />
         </Routes>
