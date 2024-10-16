@@ -1,15 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { MemoryRouter, useParams } from 'react-router-dom';
 import SinglePostPage from './SinglePostPage';
 import { AuthorData } from './PostData';
 import { AuthorJoin } from '../utils/authorJoin';
 
-// Mock `useSelector` from Redux
+// Mock `useDispatch` and `useSelector` from Redux
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
+  useDispatch: jest.fn(), // Add useDispatch mocking
 }));
 
 // Mock `useParams` from React Router
@@ -18,13 +19,15 @@ jest.mock('react-router-dom', () => ({
   useParams: jest.fn(),
 }));
 
-
 describe('SinglePostPage', () => {
+  const mockDispatch = jest.fn();
+
   beforeEach(() => {
+    // Mock the useDispatch function to return the mockDispatch
+    (useDispatch as jest.Mock).mockReturnValue(mockDispatch);
     // Clear mock calls before each test
     jest.clearAllMocks();
   });
-
 
   it('renders "NotFound" component when post is not found', () => {
     (useParams as jest.Mock).mockReturnValue({ postId: '999' });
@@ -38,7 +41,6 @@ describe('SinglePostPage', () => {
 
     // Ensure that the NotFound component renders
     expect(screen.getByText('Page not found.')).toBeInTheDocument();
-
   });
 
   it('renders a post when found and shows the Delete button for post owner', () => {
