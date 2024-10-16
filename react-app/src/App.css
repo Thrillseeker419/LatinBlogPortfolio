@@ -866,7 +866,16 @@ html, body {
   top: 15px;
   right: 15px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 15px;
+}
+
+/* Adjust the button size on mobile screens */
+@media (max-width: 768px) {
+  .modal-close-button {
+    padding: 10px 18px; /* Reduce padding to make the button smaller */
+    font-size: 0.9rem;  /* Reduce font size slightly */
+    top: 10px;
+    right: 10px;
+  }
 }
 
 /* Hover and Focus States */
