@@ -518,3 +518,364 @@ html, body {
   font-size: 16px;
  
 }
+
+/* Timeline Styling */
+.timeline-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.timeline-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.2); /* Left-side shadow for bevel */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.timeline-item:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02);
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.timeline-date {
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.timeline-description {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.expanded {
+  background-color: #e0f7fa;
+  border-left: 4px solid #00796b; /* Subtle border on expansion */
+}
+
+
+/*Timeline Page Styling*/
+.parallax-container {
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url('./assets/images/parallax-bg.png') no-repeat center center scroll;
+  background-size: cover;
+  perspective: 1px;
+}
+
+.component-switcher {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.component-switcher button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.component-display {
+  position: relative;
+  z-index: 1;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.timeline-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.achievements-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(240, 240, 240, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.achievements-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+
+/* General button styling for both buttons */
+.timeline-button,
+.achievements-button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient for a modern look */
+  color: white;
+  font-size: 1rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px; /* Smoothly rounded edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transitions for hover and focus */
+  margin: 10px 5px;
+}
+
+/* Hover effect for buttons */
+.timeline-button:hover,
+.achievements-button:hover {
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%); /* Reverse gradient on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More depth on hover */
+}
+
+/* Focus effect for accessibility */
+.timeline-button:focus,
+.achievements-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.2); /* Glow outline on focus */
+}
+
+/* Active/Pressed state for buttons */
+.timeline-button:active,
+.achievements-button:active {
+  transform: translateY(2px); /* Button presses down slightly */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Less shadow when pressed */
+}
+
+/* Specific color for Achievements button */
+.achievements-button {
+  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%); /* Warm gradient for achievements */
+}
+
+/* Hover effect for Achievements button */
+.achievements-button:hover {
+  background: linear-gradient(135deg, #feb47b 0%, #ff7e5f 100%); /* Reverse warm gradient */
+}
+
+/*Achievements Styling*/
+.achievements-header {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #ff5722;
+  display: inline-block;
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.achievements-header:hover {
+  color: #ff5722;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #333;
+}
+
+.achievement-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.achievement-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px;
+  text-align: center;
+  cursor: pointer; /* Make it clear the card is clickable */
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-details {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #777;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-icon {
+  font-size: 3rem;
+  color: #ff5722;
+  margin-bottom: 15px;
+}
+
+.achievement-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.achievement-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.achievement-card-button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.achievement-card-button:hover {
+  background-color: #333;
+}
+
+.achievement-card:focus {
+  outline: 2px solid #00796b; /* Customize the focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.5); /* Additional shadow for focus */
+}
+
+/* Main Modal Content Styling */
+.achievement-modal {
+  background-color: #fff;
+  padding: 20px 30px;
+  max-width: 600px;
+  width: 90%; /* Make it a bit more responsive */
+  margin: auto;
+  border-radius: 12px; /* Slightly smoother edges */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  position: relative;
+  animation: modal-appear 0.3s ease-out; /* Add a smooth appearance animation */
+}
+
+/* Modal Appearance Animation */
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Overlay Styling */
+.achievement-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 0.3s ease-in; /* Smooth fade-in effect */
+}
+
+/* Overlay Fade-in Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Header Styling */
+.modal-content h2 {
+  font-size: 2rem; /* Larger for better visual hierarchy */
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Paragraph Styling */
+.modal-content p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6; /* Better readability */
+  margin-bottom: 10px;
+}
+
+/* Close Button Styling */
+.modal-close-button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 12px 20px; /* Make it feel more "clickable" */
+  border-radius: 8px; /* Smooth rounded edges */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and Focus States */
+.modal-close-button:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.modal-close-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.3); /* Focus ring for accessibility */
+}
+
+/* Extra Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .achievement-modal {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .modal-close-button {
+    padding: 10px;
+    top: 10px;
+    right: 10px;
+  }
+}

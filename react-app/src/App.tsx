@@ -12,6 +12,7 @@ import Home from "./features/Home";
 import AuthorList from "./features/AuthorList";
 import SingleAuthorPage from "./features/SingleAuthorPage";
 import DeletePostForm from "./features/DeletePostForm";
+import TimelinePage from "./features/TimelinePage";
 function App() {
   return (
     <Routes>
@@ -29,6 +30,7 @@ function App() {
           <Route index element={<AuthorList />} />
           <Route path=":authorId" element={<SingleAuthorPage />} />
         </Route>
+        <Route path="Timeline" element={<TimelinePage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

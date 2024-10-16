@@ -68,7 +68,16 @@ const Layout = () => {
             >
               Create
             </Link>
-
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Timeline"
+              title="View the timeline"
+              aria-label="View the timeline"
+              aria-current={location.pathname === "/Timeline" ? "page" : undefined}
+              className={location.pathname === "/Timeline" ? "active item" : "item"}
+            >
+              Timeline
+            </Link>
             {/* Future feature <div className="ui dropdown item">
       <i className="dropdown icon"></i>
       Display Options
