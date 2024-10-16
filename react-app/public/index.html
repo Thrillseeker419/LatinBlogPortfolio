@@ -39,3 +39,20 @@
     -->
   </body>
 </html>
+<script type="text/javascript">
+  // Function to get query parameters
+  function getQueryParam(param) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // Check if there's a redirect URL
+  var redirectTo = getQueryParam('redirectTo');
+  
+  if (redirectTo) {
+    // Remove the query string to avoid loop and redirect to the original route
+    window.history.replaceState({}, document.title, window.location.pathname);
+    // Use pushState to go to the correct route handled by React Router
+    window.history.pushState({}, '', redirectTo);
+  }
+</script>

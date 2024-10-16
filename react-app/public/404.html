@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; url=./index.html" />
   </head>
   <body>
@@ -8,7 +9,15 @@
   </body>
 </html>
 <script type="text/javascript">
-  // Redirect all URLs to index.html for GitHub Pages
-  var redirectTo = window.location.pathname.replace(/\/LatinBlogPortfolio\/.*/, '/LatinBlogPortfolio/index.html');
-  window.location.href = redirectTo;
+  // Get the original URL
+  var redirectTo = window.location.pathname;
+  // If not already on the root, keep the rest of the path
+  if (redirectTo !== '/LatinBlogPortfolio/' && redirectTo !== '/LatinBlogPortfolio') {
+    // Remove the "/LatinBlogPortfolio/" base path and pass it as a query parameter
+    var newUrl = '/LatinBlogPortfolio/index.html?redirectTo=' + redirectTo;
+    window.location.href = newUrl;
+  } else {
+    // Just load index.html for the base path
+    window.location.href = '/LatinBlogPortfolio/index.html';
+  }
 </script>
