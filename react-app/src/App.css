@@ -588,12 +588,25 @@ html, body {
   perspective: 1px;
 }
 
+/* Component Switcher Styling */
 .component-switcher {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add some space between the buttons */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .component-switcher {
+    flex-wrap: nowrap; /* Prevent the buttons from wrapping onto the next line */
+    justify-content: space-between; /* Distribute the buttons across the width */
+    padding: 0 20px; /* Add some padding on smaller screens */
+  }
+
+  .component-switcher button {
+    flex-grow: 1; /* Ensure the buttons take up equal width */
+    white-space: nowrap; /* Prevent text from wrapping within the buttons */
+  }
 }
 
 .component-switcher button {
