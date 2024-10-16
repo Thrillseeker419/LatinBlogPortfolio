@@ -30,7 +30,9 @@ function App() {
           <Route index element={<AuthorList />} />
           <Route path=":authorId" element={<SingleAuthorPage />} />
         </Route>
-        <Route path="Timeline" element={<TimelinePage />} />
+        <Route path="Timeline">
+          <Route index element={<TimelinePage />} />
+        </Route>
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
