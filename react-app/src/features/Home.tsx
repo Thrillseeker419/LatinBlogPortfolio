@@ -28,7 +28,11 @@ const Home = () => {
       <div className="single-post-container">
         <article className="single-post ui piled segment">
           <p className="single-post-body">
-            <strong>Welcome to The Communal Latin Blog!</strong> This is not just a platform to practice Latin writing—it's also a showcase of modern web technologies and design aesthetics. Built with React, Redux, Bootstrap, and Fomantic UI, this blog demonstrates my ability to craft responsive, accessible, and visually engaging web experiences.
+            <strong>Welcome to The Communal Latin Blog!</strong> This is not just a 
+            platform to practice Latin writing—it's also a showcase of modern web technologies and design aesthetics. This is a demo website where 
+            you are already signed in as the character Ervin, one of our fictional authors.
+            Built with React, Redux, Bootstrap, and Fomantic UI, this blog demonstrates my ability to craft responsive, accessible, 
+            and visually engaging web experiences.
           </p>
           <p className="single-post-body">
             <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, this is a space for everyone to contribute and grow together. Post your own writings, comment on others’ work, and exchange ideas in an open and supportive environment. Expect feedback from fellow enthusiasts, a variety of posts to explore, and discussions on culture, history, and language—all through the lens of Latin.
