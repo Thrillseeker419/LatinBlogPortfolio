@@ -15,7 +15,7 @@ describe('App Routing', () => {
       </Provider>
     );
 
-    expect(screen.getByText(/Hello! We welcome you to The Communal Latin Blog/i)).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to The Communal Latin Blog!/i)).toBeInTheDocument();
   });
 
   test('renders AuthorList page when navigating to "/LatinBlogPortfolio/Authors"', () => {

@@ -24,10 +24,10 @@ describe('Homepage Tests', () => {
     });
   
     it('should pause and play the carousel when the button is clicked', () => {
-      cy.get('button[aria-label="Pause the carousel"]').click();
+      cy.get('button[aria-label="Pause the slideshow"]').click();
       cy.get('button').should('contain', 'Play');
   
-      cy.get('button[aria-label="Play the carousel"]').click();
+      cy.get('button[aria-label="Play the slideshow"]').click();
       cy.get('button').should('contain', 'Pause');
     });
   
