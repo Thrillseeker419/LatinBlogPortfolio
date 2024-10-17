@@ -1,89 +1,113 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const Layout = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const onResetData = (e: any) => {
     localStorage.removeItem("applicationState");
-    window.location.pathname = "/LatinBlogPortfolio";
+    navigate("/LatinBlogPortfolio"); // This handles navigation smoothly
     alert("All data has been reset to its original state");
   };
 
+  //help screen readers stay oriented on redirects
+  useEffect(() => {
+    const mainHeading = document.querySelector('h1');
+    if (mainHeading) {
+      mainHeading.focus();
+    }
+  }, [location]);
+  
   return (
     <div className="ultimate-parent">
-      <div className="header-outlet-parent">
-        <nav className="nav-bar ui secondary menu">
-          <Link
-            role="link"
-            to="/LatinBlogPortfolio"
-            title="Home page"
-            aria-label="Home page"
-            className={location.pathname === "/" ? "active item" : "item"}
-          >
-            Home
-          </Link>
-          <Link
-            role="link"
-            to={"/LatinBlogPortfolio/Posts"}
-            title="Search all posts"
-            aria-label="Search all posts"
-            className={location.pathname === "/Posts" ? "active item" : "item"}
-          >
-            Posts
-          </Link>
-          <Link
-            role="link"
-            to="/LatinBlogPortfolio/Authors"
-            title="View all authors"
-            aria-label="View all authors"
-            className={
-              location.pathname === "/Authors" ? "active item" : "item"
-            }
-          >
-            Authors
-          </Link>
-          <Link
-            role="link"
-            to={"/LatinBlogPortfolio/Posts/Create?userId=2"}
-            title="Create a new post"
-            aria-label="Create new post"
-            className={
-              location.pathname === "/Posts/Create" ? "active item" : "item"
-            }
-          >
-            Create
-          </Link>
-
-          {/* Future feature <div className="ui dropdown item">
-    <i className="dropdown icon"></i>
-    Display Options
-    <div className="menu">
-      <div className="header">Text Size</div>
-      <a className="item">Small</a>
-      <a className="item">Medium</a>
-      <a className="item">Large</a>
-    </div>
-  </div> */}
-          <div className="right menu">
-            <div className="item" style={{ marginRight: "40px" }}>
-              <button
-                title="Reset all data"
-                aria-label="Reset all data"
-                className=" ui basic button compact primary"
-                onClick={onResetData}
-              >
-                {" "}
-                <i className="undo alternate icon reset-icon"></i>Reset
-              </button>
+      <div className="outlet-parent">
+        <header className="header-outlet-parent">
+          <nav className="nav-bar ui secondary menu" role="navigation">
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio"
+              title="Home page"
+              aria-label="Home page"
+              aria-current={location.pathname === "/" ? "page" : undefined}
+              className={location.pathname === "/" ? "active item" : "item"}
+            >
+              Home
+            </Link>
+            <Link
+              role="link"
+              to={"/LatinBlogPortfolio/Posts"}
+              title="Search all posts"
+              aria-label="Search all posts"
+              aria-current={location.pathname === "/Posts" ? "page" : undefined}
+              className={location.pathname === "/Posts" ? "active item" : "item"}
+            >
+              Posts
+            </Link>
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Authors"
+              title="View all authors"
+              aria-label="View all authors"
+              aria-current={location.pathname === "/Authors" ? "page" : undefined}
+              className={
+                location.pathname === "/Authors" ? "active item" : "item"
+              }
+            >
+              Authors
+            </Link>
+            <Link
+              role="link"
+              to={"/LatinBlogPortfolio/Posts/Create?userId=2"}
+              title="Create a new post"
+              aria-label="Create new post"
+              aria-current={location.pathname === "/Posts/Create" ? "page" : undefined}
+              className={
+                location.pathname === "/Posts/Create" ? "active item" : "item"
+              }
+            >
+              Create
+            </Link>
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Timeline"
+              title="View the timeline"
+              aria-label="View the timeline"
+              aria-current={location.pathname === "/Timeline" ? "page" : undefined}
+              className={location.pathname === "/Timeline" ? "active item" : "item"}
+            >
+              Timeline
+            </Link>
+            {/* Future feature <div className="ui dropdown item">
+      <i className="dropdown icon"></i>
+      Display Options
+      <div className="menu">
+        <div className="header">Text Size</div>
+        <a className="item">Small</a>
+        <a className="item">Medium</a>
+        <a className="item">Large</a>
+      </div>
+    </div> */}
+            <div className="right menu">
+              <div className="item" style={{ marginRight: "40px" }}>
+                <button
+                  title="Reset all data"
+                  aria-label="Reset all data and return to the original state"
+                  className=" ui basic button compact primary"
+                  onClick={onResetData}
+                >
+                  {" "}
+                  <i className="undo alternate icon reset-icon"></i>Reset Data
+                </button>
+              </div>
             </div>
-          </div>
-        </nav>
-
-        <main className="App">
+          </nav>
+        </header>
+        <main className="App" role="main">
           <Outlet />
         </main>
 
-        <footer className="website-footer">
+        <footer className="website-footer" role="contentinfo">
           <div className="container">
             <div className="ui stackable three column grid">
               <section className="column">
@@ -94,7 +118,7 @@ const Layout = () => {
                   is built using the latest React, React-Router, Redux, Axios,
                   and Fomantic UI and operates using a mock api. It was built
                   with accessibility, responsiveness, and aesthetics in mind.
-                  Enjoy!
+                  Enjoy! Find the code base <a href="https://github.com/Thrillseeker419/LatinBlogPortfolio">here</a>.
                 </p>
               </section>
 
@@ -221,7 +245,7 @@ const Layout = () => {
                     <a
                       className="footer-link-anchor"
                       title="Link to Thomas's LinkedIn"
-                      aria-label="Link to Thomas's LinkedIn"
+                      aria-label="Link to Thomas Loalbo's LinkedIn profile"
                       href="https://www.linkedin.com/in/thomas-loalbo-230054b9/"
                     >
                       LinkedIn
@@ -266,7 +290,7 @@ const Layout = () => {
                     <a
                       className="stackoverflow"
                       title="Link to Thomas's StackOverflow"
-                      aria-label="Link to Thomas's stack overflow"
+                      aria-label="Link to Thomas Loalbo's StackOverflow profile"
                       href="https://stackoverflow.com/users/4526910/thrillseeker419"
                     >
                       <i className="stack overflow icon"></i>

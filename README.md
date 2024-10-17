@@ -1,6 +1,6 @@
 # LatinBlogPortfolio
 
-A demo site of a Latin blog where users can create, delete, and search for posts. This site uses a mock API, so some functionality has been emulated. If any irrecoverable errors occur, please clear your cookies. Built with React, this portfolio emphasizes accessibility, responsiveness, minimalism, and aesthetics.
+A demo site of a Latin blog where users can create, delete, and search for posts. This site uses a mock API, so some functionality has been emulated. This website uses mock data that utilizes your cookies to function. If any irrecoverable errors occur, please clear your cookies and make sure cookies are enabled. Built with React, this portfolio emphasizes accessibility, responsiveness, minimalism, and aesthetics.
 
 ## Table of Contents
 
@@ -11,6 +11,9 @@ A demo site of a Latin blog where users can create, delete, and search for posts
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+- [Testing](#testing)
+  - [Unit Testing](#unit-testing)
+  - [Cypress Testing](#cypress-testing)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -97,9 +100,68 @@ Once the application is running, you can:
 
 ![Creating a Post](./screenshots/create-post.gif)
 
+## Testing
+
+### Unit Testing
+
+The project includes unit tests for React components using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+
+To run the unit tests, use the following command:
+
+```bash
+npm test
+```
+
+Tests include:
+
+- **Component rendering** – Ensures that components like `Achievements` and `Timeline` are correctly rendered.
+- **Event handling** – Tests actions such as button clicks and form submissions.
+- **Keyboard accessibility** – Ensures components respond to keyboard events like `Enter` and `Space` key presses.
+
+### Cypress Testing
+
+End-to-end testing is handled using [Cypress](https://www.cypress.io/), allowing simulation of real user interactions like navigating through the app, clicking buttons, and keyboard accessibility.
+
+To run Cypress tests, first install Cypress:
+
+```bash
+npm install cypress --save-dev
+```
+
+Then, open Cypress with the following command:
+
+```bash
+npx cypress open
+```
+
+This will launch the Cypress test runner where you can run the suite of tests for features such as:
+
+- **Component switching** – Ensures that clicking or using the keyboard to switch between components (like `Timeline` and `Achievements`) works correctly.
+- **Keyboard Accessibility** – Verifies that keyboard interaction (like using `Enter`) switches between components and navigates through the UI.
+
+Example Cypress Test:
+
+```javascript
+describe('TimelinePage Component', () => {
+  beforeEach(() => {
+    cy.visit('/Timeline');
+  });
+
+  it('switches to Achievements component when Achievements button is clicked', () => {
+    cy.get('.achievements-button').click();
+    cy.get('.achievements-header').should('contain.text', 'Achievements');
+  });
+
+  it('keyboard accessibility works for switching to Achievements component using Space', () => {
+    cy.get('.achievements-button').focus().realPress('Space');
+    cy.get('.achievements-header').should('contain.text', 'Achievements');
+  });
+});
+```
+
 ## Contributing
 
-Contributions are not currently welcome! 
+Contributions are not currently welcome!
 
 ## License
 
