@@ -31,11 +31,15 @@ const Home = () => {
             <strong>Welcome to The Communal Latin Blog!</strong> The purpose of this portfolio website is to
             showcase modern web technologies 
             and design aesthetics. It is just a small taste test of what I can offer. Each page offers different design concepts,
-            but they all are part of this imaginary latin blog community's website
-            In this demo website, 
-            you are already signed in as the character Ervin, one of our fictional authors.
+            but they all are part of this imaginary Latin blogger community's website.
             Built with React, Redux, Bootstrap, and Fomantic UI, this blog demonstrates my ability to craft responsive, accessible, 
             and visually engaging web experiences.
+            In this demo website, 
+            you are already signed in as the character Ervin, one of our fictional authors. You can 
+            view posts written in Latin and try to create your own. You can see the authors and see
+            an imaginary timeline of things that have happened in this community's past. Read on to
+            immerse yourself in the experience.
+            
           </p>
           <p className="single-post-body">
             <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, 
