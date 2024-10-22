@@ -130,8 +130,8 @@ const PostsList = () => {
   };
 
   useEffect(() => {
-    document.title = "Search Posts";
-  }, []);
+    document.title = "Explore Posts";
+  }, []); 
 
   useEffect(() => {
     if (postsStatus === "idle") {
@@ -162,7 +162,7 @@ const PostsList = () => {
             <div className="ui  transparent icon input">
               <Link
               id="create-post-link"
-                className="ui compact icon green button"
+                className="create-post-link ui compact icon green button"
                 title="Create new post"
                 aria-label="Create new post"
                 to={{
