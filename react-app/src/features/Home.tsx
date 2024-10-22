@@ -22,8 +22,7 @@ const Home = () => {
 
   return (
     <section className="home-section">
-      <h1 className="ui center aligned icon header">
-        {/* Video replacing the circular book icon */}
+      <div className="home-header-wrapper"> {/* Wrap the video and title */}
         <div className="home-video-wrapper">
           <video 
             className="circular-video" 
@@ -36,8 +35,10 @@ const Home = () => {
             role="img"
           ></video>
         </div>
-        The Communal Latin Blog
-      </h1>
+        <h1 id="home-title" className="ui center aligned icon header">
+          The Communal Latin Blog
+        </h1>
+      </div>
 
       <div className="single-post-container">
         <article className="single-post ui piled segment">

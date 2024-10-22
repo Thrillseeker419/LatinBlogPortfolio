@@ -376,6 +376,27 @@ body {
   }
 }
 
+/* Button Styling for Top Navigation */
+.top-nav-button {
+  display: block;
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 42px;
+  color: rgb(51, 51, 51); /* Adjust this color to match the 'Achievements' font color */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional: If you want to add specific hover effects */
+.top-nav-button:hover {
+  color: #ff5722; /* You can adjust this color as per your design */
+  text-decoration: underline; /* Optional to add an underline on hover */
+}
+
+
 /* Layout Flexbox and Parent Container */
 .ultimate-parent {
   display: flex;
@@ -396,12 +417,35 @@ body {
   flex-grow: 1;
 }
 
-/*mp4 styling*/
-/* Styling for the circular video replacing the icon */
+/*Home Page Styling */
+.home-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the entire video and title horizontally */
+  text-align: center; /* Center the text */
+  margin-bottom: 1.5rem; /* Adjust margin if necessary */
+}
+
+#home-title {
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #ff5722;
+  display: inline-block;
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
+  text-align: center; /* Center the text itself */
+  margin: 0 auto; /* Center the element horizontally */
+}
+
 .home-video-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers the video */
   align-items: center;
+  margin-bottom: 1rem; /* Add some spacing below the video */
 }
 
 .circular-video {

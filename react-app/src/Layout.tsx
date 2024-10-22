@@ -44,68 +44,67 @@ const Layout = () => {
       <div className="outlet-parent">
         <header className="header-outlet-parent">
           <nav className="nav-bar ui secondary menu" role="navigation">
-          <Link
-            role="link"
-            to="/LatinBlogPortfolio"
-            title="Home page"
-            aria-label="Home page"
-            aria-current={location.pathname.replace(/\/$/, "") === "/LatinBlogPortfolio" ? "page" : undefined}
-            className={location.pathname.replace(/\/$/, "") === "/LatinBlogPortfolio" ? "active item" : "item"}
-          >
-            Home
-          </Link>
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio"
+              title="Home page"
+              aria-label="Home page"
+              aria-current={location.pathname.replace(/\/$/, "") === "/LatinBlogPortfolio" ? "page" : undefined}
+              className={location.pathname.replace(/\/$/, "") === "/LatinBlogPortfolio" ? "active item top-nav-button" : "item top-nav-button"}
+            >
+              Home
+            </Link>
 
-          <Link
-            role="link"
-            to="/LatinBlogPortfolio/Posts"
-            title="Search all posts"
-            aria-label="Search all posts"
-            aria-current={location.pathname.startsWith("/LatinBlogPortfolio/Posts") && !location.pathname.includes("Create") ? "page" : undefined}
-            className={location.pathname.startsWith("/LatinBlogPortfolio/Posts") && !location.pathname.includes("Create") ? "active item" : "item"}
-          >
-            Posts
-          </Link>
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Posts"
+              title="Search all posts"
+              aria-label="Search all posts"
+              aria-current={location.pathname.startsWith("/LatinBlogPortfolio/Posts") && !location.pathname.includes("Create") ? "page" : undefined}
+              className={location.pathname.startsWith("/LatinBlogPortfolio/Posts") && !location.pathname.includes("Create") ? "active item top-nav-button" : "item top-nav-button"}
+            >
+              Posts
+            </Link>
 
-          <Link
-            role="link"
-            to="/LatinBlogPortfolio/Posts/Create?userId=2"
-            title="Create a new post"
-            aria-label="Create new post"
-            aria-current={location.pathname.includes("/Posts/Create") ? "page" : undefined}
-            className={location.pathname.includes("/Posts/Create") ? "active item" : "item"}
-          >
-            Create
-          </Link>
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Posts/Create?userId=2"
+              title="Create a new post"
+              aria-label="Create new post"
+              aria-current={location.pathname.includes("/Posts/Create") ? "page" : undefined}
+              className={location.pathname.includes("/Posts/Create") ? "active item top-nav-button" : "item top-nav-button"}
+            >
+              Create
+            </Link>
 
-          <Link
-            role="link"
-            to="/LatinBlogPortfolio/Authors"
-            title="View all authors"
-            aria-label="View all authors"
-            aria-current={location.pathname.startsWith("/LatinBlogPortfolio/Authors") ? "page" : undefined}
-            className={location.pathname.startsWith("/LatinBlogPortfolio/Authors") ? "active item" : "item"}
-          >
-            Authors
-          </Link>
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Authors"
+              title="View all authors"
+              aria-label="View all authors"
+              aria-current={location.pathname.startsWith("/LatinBlogPortfolio/Authors") ? "page" : undefined}
+              className={location.pathname.startsWith("/LatinBlogPortfolio/Authors") ? "active item top-nav-button" : "item top-nav-button"}
+            >
+              Authors
+            </Link>
 
-          <Link
-            role="link"
-            to="/LatinBlogPortfolio/Timeline"
-            title="View the timeline"
-            aria-label="View the timeline"
-            aria-current={location.pathname.startsWith("/LatinBlogPortfolio/Timeline") ? "page" : undefined}
-            className={location.pathname.startsWith("/LatinBlogPortfolio/Timeline") ? "active item" : "item"}
-          >
-            Timeline
-          </Link>
-
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Timeline"
+              title="View the timeline"
+              aria-label="View the timeline"
+              aria-current={location.pathname.startsWith("/LatinBlogPortfolio/Timeline") ? "page" : undefined}
+              className={location.pathname.startsWith("/LatinBlogPortfolio/Timeline") ? "active item top-nav-button" : "item top-nav-button"}
+            >
+              Timeline
+            </Link>
 
             <div className="right menu">
               <div className="item" style={{ marginRight: "40px" }}>
                 <button
                   title="Reset all data, undoing all changes, and returning the website's data to the original state"
                   aria-label="Reset all data, undoing all changes, and returning the website's data to the original state"
-                  className="ui basic button compact primary"
+                  className="ui basic button compact primary top-nav-button"
                   onClick={onResetData}
                 >
                   <i className="undo alternate icon reset-icon"></i> Reset Data
