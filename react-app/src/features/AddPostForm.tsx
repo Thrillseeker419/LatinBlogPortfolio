@@ -63,7 +63,7 @@ const AddPostForm = () => {
   return (
     <section className="single-post-container">
       <div className="single-post ui piled segment">
-        <h1>Add a New Post</h1>
+        <h1>Create a New Post</h1>
 
         <form className="ui form add-post-body">
           <div className={validTitle ? "field" : "field error"}>
@@ -91,8 +91,8 @@ const AddPostForm = () => {
           <button
             className="ui primary button"
             type="button"
-            title="Save post"
-            aria-label="Save post"
+            title="Post the post"
+            aria-label="Post the post"
             onClick={onSavePostClicked}
             disabled={ addRequestStatus === "pending" || !validTitle || !validContent}
           >
@@ -104,7 +104,7 @@ const AddPostForm = () => {
             ) : (
               <>
                 <i className="save icon"></i>
-                <span>Save Post</span>
+                <span>Post</span>
               </>
             )}
           </button>

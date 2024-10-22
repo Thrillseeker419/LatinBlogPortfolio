@@ -4,11 +4,11 @@ describe('Add Post Form Tests', () => {
     });
   
     it('should display the correct page title', () => {
-      cy.contains('Add a New Post').should('be.visible');
+      cy.contains('Create a New Post').should('be.visible');
     });
   
     it('should show validation errors for empty fields', () => {
-      cy.get('button[aria-label="Save post"]').click();
+      cy.get('button[aria-label="Post the post"]').click();
       cy.contains('Please enter a title for the post.').should('be.visible');
       cy.contains('Please enter content for the body of the post.').should('be.visible');
     });
@@ -26,7 +26,7 @@ describe('Add Post Form Tests', () => {
   
       cy.intercept('POST', '**/posts').as('savePost'); // Mock the API call
   
-      cy.get('button[aria-label="Save post"]').click();
+      cy.get('button[aria-label="Post the post"]').click();
   
       cy.wait('@savePost').its('response.statusCode').should('eq', 201); // Ensure the post request was successful
       cy.url().should('include', '/LatinBlogPortfolio/Posts'); // Check if navigation occurred

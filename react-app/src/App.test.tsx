@@ -65,6 +65,6 @@ describe('App Routing', () => {
     );
 
     // Replace with actual content in your AddPostForm component
-    expect(screen.getByText(/Add a New Post/i)).toBeInTheDocument();
+    expect(screen.getByText(/Create a New Post/i)).toBeInTheDocument();
   });
 });

@@ -61,7 +61,7 @@ describe('AddPostForm', () => {
 
     expect(screen.getByLabelText(/Post title/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Post content/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Save post/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Post the post/i })).toBeInTheDocument();
   });
 
   it('allows typing into the form inputs', () => {
@@ -94,7 +94,7 @@ describe('AddPostForm', () => {
 
     // Initially, both inputs are empty but we don't want to show and error yet,
     // so the button should not be disabled
-    const saveButton = screen.getByRole('button', { name: /Save post/i });
+    const saveButton = screen.getByRole('button', { name: /Post the post/i });
     expect(saveButton).not.toBeDisabled(); // Should be enabled initially
 
     // Entering bad title should disable the save button
@@ -137,7 +137,7 @@ describe('AddPostForm', () => {
 
     const titleInput = screen.getByLabelText(/Post title/i);
     const contentInput = screen.getByLabelText(/Post content/i);
-    const saveButton = screen.getByRole('button', { name: /Save post/i });
+    const saveButton = screen.getByRole('button', { name: /Post the post/i });
 
     fireEvent.change(titleInput, { target: { value: 'Valid Title' } });
     fireEvent.change(contentInput, { target: { value: 'Valid Content' } });
