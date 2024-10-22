@@ -3,6 +3,7 @@ import { Carousel } from "react-bootstrap";
 import latin1 from '../assets/images/latinWriting.png'; 
 import latin3 from '../assets/images/latinWriting3.png'; 
 import latin4 from '../assets/images/latinWriting4.png'; 
+import bookVideo from '../assets/videos/book.mp4'; // Import the MP4 video
 
 const Home = () => {
   const [paused, setPaused] = useState(false); // Add state to track whether the slideshow is paused
@@ -22,9 +23,21 @@ const Home = () => {
   return (
     <section className="home-section">
       <h1 className="ui center aligned icon header">
-        <i className="circular book open icon"></i>
+        {/* Video replacing the circular book icon */}
+        <div className="home-video-wrapper">
+          <video 
+            className="circular-video" 
+            src={bookVideo} 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            aria-label="Book flipping video"
+          ></video>
+        </div>
         The Communal Latin Blog
       </h1>
+
       <div className="single-post-container">
         <article className="single-post ui piled segment">
           <p className="single-post-body">
@@ -39,7 +52,6 @@ const Home = () => {
             view posts written in Latin and try to create your own. You can see the authors and see
             an imaginary timeline of things that have happened in this community's past. Read on to
             immerse yourself in the experience.
-            
           </p>
           <p className="single-post-body">
             <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, 
