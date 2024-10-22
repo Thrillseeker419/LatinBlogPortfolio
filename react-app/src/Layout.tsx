@@ -11,14 +11,34 @@ const Layout = () => {
     alert("All data has been reset to its original state");
   };
 
-  //help screen readers stay oriented on redirects
+  // Help screen readers stay oriented on redirects
   useEffect(() => {
     const mainHeading = document.querySelector('h1');
     if (mainHeading) {
       mainHeading.focus();
     }
   }, [location]);
+
+  // Function to determine the current page for visual indicator
+  const getCurrentPage = () => {
+    const matchCreate = location.pathname === "/LatinBlogPortfolio/Posts/Create";
+    const matchPosts = location.pathname === "/LatinBlogPortfolio/Posts";
+    const matchAuthors = location.pathname.startsWith("/LatinBlogPortfolio/Authors");
+    const matchTimeline = location.pathname.startsWith("/LatinBlogPortfolio/Timeline");
   
+    if (matchCreate) {
+      return "Create a Post";
+    } else if (matchPosts) {
+      return "Posts";
+    } else if (matchAuthors) {
+      return "Authors";
+    } else if (matchTimeline) {
+      return "Timeline";
+    } else {
+      return "Home";
+    }
+  };
+
   return (
     <div className="ultimate-parent">
       <div className="outlet-parent">
@@ -29,80 +49,77 @@ const Layout = () => {
               to="/LatinBlogPortfolio"
               title="Home page"
               aria-label="Home page"
-              aria-current={location.pathname === "/" ? "page" : undefined}
-              className={location.pathname === "/" ? "active item" : "item"}
+              aria-current={location.pathname === "/LatinBlogPortfolio" ? "page" : undefined}
+              className={location.pathname === "/LatinBlogPortfolio" ? "active item" : "item"}
             >
               Home
             </Link>
             <Link
               role="link"
-              to={"/LatinBlogPortfolio/Posts"}
+              to="/LatinBlogPortfolio/Posts"
               title="Search all posts"
               aria-label="Search all posts"
-              aria-current={location.pathname === "/Posts" ? "page" : undefined}
-              className={location.pathname === "/Posts" ? "active item" : "item"}
+              aria-current={
+                location.pathname === "/LatinBlogPortfolio/Posts" ||
+                (location.pathname.includes("/Posts") && !location.pathname.includes("/Posts/Create"))
+                  ? "page"
+                  : undefined
+              }
+              className={
+                location.pathname === "/LatinBlogPortfolio/Posts" ||
+                (location.pathname.includes("/Posts") && !location.pathname.includes("/Posts/Create"))
+                  ? "active item"
+                  : "item"
+              }
             >
               Posts
+            </Link>
+            <Link
+              role="link"
+              to="/LatinBlogPortfolio/Posts/Create?userId=2"
+              title="Create a new post"
+              aria-label="Create new post"
+              aria-current={location.pathname.includes("/Posts/Create") ? "page" : undefined}
+              className={location.pathname.includes("/Posts/Create") ? "active item" : "item"}
+            >
+              Create
             </Link>
             <Link
               role="link"
               to="/LatinBlogPortfolio/Authors"
               title="View all authors"
               aria-label="View all authors"
-              aria-current={location.pathname === "/Authors" ? "page" : undefined}
-              className={
-                location.pathname === "/Authors" ? "active item" : "item"
-              }
+              aria-current={location.pathname.includes("/Authors") ? "page" : undefined}
+              className={location.pathname.includes("/Authors") ? "active item" : "item"}
             >
               Authors
-            </Link>
-            <Link
-              role="link"
-              to={"/LatinBlogPortfolio/Posts/Create?userId=2"}
-              title="Create a new post"
-              aria-label="Create new post"
-              aria-current={location.pathname === "/Posts/Create" ? "page" : undefined}
-              className={
-                location.pathname === "/Posts/Create" ? "active item" : "item"
-              }
-            >
-              Create
             </Link>
             <Link
               role="link"
               to="/LatinBlogPortfolio/Timeline"
               title="View the timeline"
               aria-label="View the timeline"
-              aria-current={location.pathname === "/Timeline" ? "page" : undefined}
-              className={location.pathname === "/Timeline" ? "active item" : "item"}
+              aria-current={location.pathname.includes("/Timeline") ? "page" : undefined}
+              className={location.pathname.includes("/Timeline") ? "active item" : "item"}
             >
               Timeline
             </Link>
-            {/* Future feature <div className="ui dropdown item">
-      <i className="dropdown icon"></i>
-      Display Options
-      <div className="menu">
-        <div className="header">Text Size</div>
-        <a className="item">Small</a>
-        <a className="item">Medium</a>
-        <a className="item">Large</a>
-      </div>
-    </div> */}
+
             <div className="right menu">
               <div className="item" style={{ marginRight: "40px" }}>
                 <button
                   title="Reset all data"
                   aria-label="Reset all data and return to the original state"
-                  className=" ui basic button compact primary"
+                  className="ui basic button compact primary"
                   onClick={onResetData}
                 >
-                  {" "}
-                  <i className="undo alternate icon reset-icon"></i>Reset Data
+                  <i className="undo alternate icon reset-icon"></i> Reset Data
                 </button>
               </div>
             </div>
           </nav>
         </header>
+
         <main className="App" role="main">
           <Outlet />
         </main>
@@ -113,17 +130,17 @@ const Layout = () => {
               <section className="column">
                 <h1>About</h1>
                 <p className="text-justify">
-                  This is a demo website that allows you to create, search for,
-                  and delete posts. You can view author information as well. It
-                  is built using the latest React, React-Router, Redux, Axios,
-                  and Fomantic UI and operates using a mock api. It was built
-                  with accessibility, responsiveness, and aesthetics in mind.
-                  Enjoy! Find the code base <a href="https://github.com/Thrillseeker419/LatinBlogPortfolio">here</a>.
+                  This is a demo website that allows you to create, search for, and delete
+                  posts. You can view author information as well. It is built using React,
+                  React-Router, Redux, Axios, Fomantic UI and more! It operates using 
+                  a mock API that uses cookies. It was built with accessibility, 
+                  responsiveness, and aesthetics in mind. Enjoy! Find the code base&nbsp;
+                  <a href="https://github.com/Thrillseeker419/LatinBlogPortfolio">here</a>.
                 </p>
               </section>
 
               <section className="column">
-                <h1>Technologies</h1>
+                <h1>Technologies Used</h1>
                 <ul className="footer-link">
                   <li className="footer-link-li">
                     <a
