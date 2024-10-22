@@ -7,7 +7,7 @@ describe('TimelinePage Component', () => {
   test('displays the Timeline component by default', () => {
     render(<TimelinePage />);
 
-    const timelineHeader = screen.getByText('Milestones of Our Latin Journey', { selector: 'h2' });
+    const timelineHeader = screen.getByText('Historical Timeline of Our Community', { selector: 'h2' });
     expect(timelineHeader).toBeInTheDocument();
   });
 
@@ -22,18 +22,18 @@ describe('TimelinePage Component', () => {
     expect(achievementsHeader).toBeInTheDocument();
   });
 
-  test('switches back to Timeline component when Milestones button is clicked', () => {
+  test('switches back to Timeline component when Timeline button is clicked', () => {
     render(<TimelinePage />);
 
     // First, switch to Achievements
     const achievementsButton = screen.getByText('Achievements');
     fireEvent.click(achievementsButton);
 
-    // Now, switch back to Milestones
-    const milestonesButton = screen.getByText('Milestones');
-    fireEvent.click(milestonesButton);
+    // Now, switch back to Timeline
+    const ourTimelineButton = screen.getByText('Our Timeline');
+    fireEvent.click(ourTimelineButton);
 
-    const timelineHeader = screen.getByText('Milestones of Our Latin Journey', { selector: 'h2' });
+    const timelineHeader = screen.getByText('Historical Timeline of Our Community', { selector: 'h2' });
     expect(timelineHeader).toBeInTheDocument();
   });
 
@@ -54,22 +54,22 @@ describe('TimelinePage Component', () => {
   });
   
 
-  test('keyboard accessibility works for switching back to Milestones component', async () => {
+  test('keyboard accessibility works for switching back to Timeline component', async () => {
     const { getByText, getByRole } = render(<TimelinePage />);
   
     // Select the buttons
-    const milestonesButton = getByText('Milestones') as HTMLButtonElement;
+    const ourTimelineButton = getByText('Our Timeline') as HTMLButtonElement;
     const achievementsButton = getByText('Achievements') as HTMLButtonElement;
   
     // First, simulate keyboard press (Enter) on the Achievements button to switch components
     fireEvent.keyDown(achievementsButton, { key: 'Enter', code: 'Enter', charCode: 13 });
   
-    // Then, simulate keyboard press (Space) on the Milestones button to switch back
-    fireEvent.keyDown(milestonesButton, { key: ' ', code: 'Space', charCode: 32 });
+    // Then, simulate keyboard press (Space) on the Timeline button to switch back
+    fireEvent.keyDown(ourTimelineButton, { key: ' ', code: 'Space', charCode: 32 });
   
     // Wait for the timeline header to appear
     await waitFor(() => {
-      const timelineHeader = getByRole('heading', { name: 'Milestones of Our Latin Journey' });
+      const timelineHeader = getByRole('heading', { name: 'Historical Timeline of Our Community' });
       expect(timelineHeader).toBeInTheDocument();
     });
   });

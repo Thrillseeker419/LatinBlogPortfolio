@@ -5,7 +5,7 @@ import Timeline from './Timeline';
 describe('Timeline Component', () => {
   test('renders the timeline header', () => {
     render(<Timeline />);
-    const headerElement = screen.getByText(/Milestones of Our Latin Journey/i);
+    const headerElement = screen.getByText(/Historical Timeline of Our Community/i);
     expect(headerElement).toBeInTheDocument();
   });
 

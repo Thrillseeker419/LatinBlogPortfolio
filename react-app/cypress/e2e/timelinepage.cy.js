@@ -7,7 +7,7 @@ describe('TimelinePage Component', () => {
   
     it('displays the Timeline component by default', () => {
       // Check that the Timeline header is visible by default
-      cy.get('.timeline-header').should('contain.text', 'Milestones of Our Latin Journey');
+      cy.get('.timeline-header').should('contain.text', 'Historical Timeline of Our Community');
     });
   
     it('switches to Achievements component when Achievements button is clicked', () => {
@@ -21,21 +21,21 @@ describe('TimelinePage Component', () => {
       cy.get('.achievements-header').should('contain.text', 'Achievements');
     });
   
-    it('switches back to Timeline component when Milestones button is clicked', () => {
+    it('switches back to Timeline component when Timeline button is clicked', () => {
       // First, click the Achievements button to switch
       cy.get('.achievements-button').click();
   
       // Add a small wait to ensure the component switches
       cy.wait(500);
   
-      // Now, click the Milestones button to switch back
+      // Now, click the Timeline button to switch back
       cy.get('.timeline-button').click();
   
       // Add another small wait to ensure the component switches
       cy.wait(500);
   
       // Check that the Timeline header is visible again
-      cy.get('.timeline-header').should('contain.text', 'Milestones of Our Latin Journey');
+      cy.get('.timeline-header').should('contain.text', 'Historical Timeline of Our Community');
     });
   
     it('keyboard accessibility works for switching to Achievements component using Enter', () => {
@@ -57,14 +57,14 @@ describe('TimelinePage Component', () => {
         // Add a small wait to ensure the component switches
         cy.wait(500);
       
-        // Focus on the Milestones button and press the Enter key using realPress
+        // Focus on the Timeline button and press the Enter key using realPress
         cy.get('.timeline-button').focus().realPress('Enter');
       
         // Add another small wait to ensure the component switches
         cy.wait(500);
       
         // Check that the Timeline header is visible again
-        cy.get('.timeline-header').should('contain.text', 'Milestones of Our Latin Journey');
+        cy.get('.timeline-header').should('contain.text', 'Historical Timeline of Our Community');
       });
       
   });

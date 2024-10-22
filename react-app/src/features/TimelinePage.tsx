@@ -8,7 +8,7 @@ const TimelinePage: React.FC = () => {
   return (
     <div className="parallax-container">
       <div className="component-switcher">
-        <button className="timeline-button" onClick={() => setActiveComponent('timeline')}>Milestones</button>
+        <button className="timeline-button" onClick={() => setActiveComponent('timeline')}>Our Timeline</button>
         <button className="achievements-button" onClick={() => setActiveComponent('achievements')}>Achievements</button>
       </div>
 

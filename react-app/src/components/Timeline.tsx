@@ -34,7 +34,7 @@ const Timeline: React.FC = () => {
 
   return (
     <div className="timeline-container">
-      <h2 className="timeline-header">Milestones of Our Latin Journey</h2>
+      <h2 className="timeline-header">Historical Timeline of Our Community</h2>
       <ul className="timeline-list" role="list">
         {timelineData.map((item, index) => (
           <li
