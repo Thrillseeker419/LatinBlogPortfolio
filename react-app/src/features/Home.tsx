@@ -32,7 +32,8 @@ const Home = () => {
             muted 
             loop 
             playsInline 
-            aria-label="Book flipping video"
+            aria-label="Book flipping animation video"
+            role="img"
           ></video>
         </div>
         The Communal Latin Blog
