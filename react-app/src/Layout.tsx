@@ -108,8 +108,8 @@ const Layout = () => {
             <div className="right menu">
               <div className="item" style={{ marginRight: "40px" }}>
                 <button
-                  title="Reset all data"
-                  aria-label="Reset all data and return to the original state"
+                  title="Reset all data, undoing all changes, and returning the website's data to the original state"
+                  aria-label="Reset all data, undoing all changes, and returning the website's data to the original state"
                   className="ui basic button compact primary"
                   onClick={onResetData}
                 >
