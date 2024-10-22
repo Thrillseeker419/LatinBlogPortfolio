@@ -13,7 +13,7 @@ describe('HomePage Component', () => {
 
     // Check for the main heading
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('The Communal Latin Blog');
-    expect(screen.getByText(/The community gathers here to practice their Latin/i)).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to The Communal Latin Blog!/i)).toBeInTheDocument();
     expect(screen.getByText(/Post your own writings/i)).toBeInTheDocument();
     expect(screen.getByText(/How to use the site:/i)).toBeInTheDocument();
   });

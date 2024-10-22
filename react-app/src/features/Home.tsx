@@ -28,17 +28,29 @@ const Home = () => {
       <div className="single-post-container">
         <article className="single-post ui piled segment">
           <p className="single-post-body">
-            <strong>Welcome to The Communal Latin Blog!</strong> This is not just a 
-            platform to practice Latin writing—it's also a showcase of modern web technologies and design aesthetics. This is a demo website where 
+            <strong>Welcome to The Communal Latin Blog!</strong> The purpose of this portfolio website is to
+            showcase modern web technologies 
+            and design aesthetics. It is just a small taste test of what I can offer. Each page offers different design concepts,
+            but they all are part of this imaginary latin blog community's website
+            In this demo website, 
             you are already signed in as the character Ervin, one of our fictional authors.
             Built with React, Redux, Bootstrap, and Fomantic UI, this blog demonstrates my ability to craft responsive, accessible, 
             and visually engaging web experiences.
           </p>
           <p className="single-post-body">
-            <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, this is a space for everyone to contribute and grow together. Post your own writings, comment on others’ work, and exchange ideas in an open and supportive environment. Expect feedback from fellow enthusiasts, a variety of posts to explore, and discussions on culture, history, and language—all through the lens of Latin.
+            <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, 
+            this is a space for everyone to contribute and grow together. Post your own writings, 
+            comment on others’ work, and exchange ideas in an open and supportive 
+            environment. Expect feedback from fellow enthusiasts, a variety of posts to explore, 
+            and discussions on culture, history, and language—all through the lens of Latin.
           </p>
           <p className="single-post-body">
-            <strong>How to use the site:</strong> At the top, you’ll find navigation to browse posts, create new ones, and view authors. Explore different sections of the blog by using the links. If you want to take a break from the slideshow, you can pause it by using the <strong>Pause Slideshow</strong> button. Press <strong>Play Slideshow</strong> to resume!
+            <strong>How to use the site:</strong> At the top, you’ll find navigation to browse 
+            posts, create new ones, and view authors. Explore different sections of the 
+            blog by using the links. If you want to take a break 
+            from the slideshow, you can pause it by using 
+            the <strong>Pause Slideshow</strong> button. Press <strong>Play 
+              Slideshow</strong> to resume.
           </p>
         </article>
 
