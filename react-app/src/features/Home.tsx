@@ -22,56 +22,59 @@ const Home = () => {
 
   return (
     <section className="home-section">
-      <div className="home-header-wrapper"> {/* Wrap the video and title */}
-        <div className="home-video-wrapper">
-          <video 
-            className="circular-video" 
-            src={bookVideo} 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
-            aria-label="Book flipping animation video"
-            role="img"
-          ></video>
-        </div>
+      <div className="text-carousel-wrapper">
         <h1 id="home-title" className="ui center aligned icon header">
+          {/* Video replacing the circular book icon */}
+          <div className="home-video-wrapper">
+            <video 
+              className="circular-video" 
+              src={bookVideo} 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              aria-label="Book flipping animation video"
+              role="img"
+            ></video>
+          </div>
           The Communal Latin Blog
         </h1>
-      </div>
 
-      <div className="single-post-container">
-        <article className="single-post ui piled segment">
-          <p className="single-post-body">
-            <strong>Welcome to The Communal Latin Blog!</strong> The purpose of this portfolio website is to
-            showcase modern web technologies 
-            and design aesthetics. It is just a small taste test of what I can offer. Each page offers different design concepts,
-            but they all are part of this imaginary Latin blogger community's website.
-            Built with React, Redux, Bootstrap, and Fomantic UI, this blog demonstrates my ability to craft responsive, accessible, 
-            and visually engaging web experiences.
-            In this demo website, 
-            you are already signed in as the character Ervin, one of our fictional authors. You can 
-            view posts written in Latin and try to create your own. You can see the authors and see
-            an imaginary timeline of things that have happened in this community's past. Read on to
-            immerse yourself in the experience.
-          </p>
-          <p className="single-post-body">
-            <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, 
-            this is a space for everyone to contribute and grow together. Post your own writings, 
-            comment on others’ work, and exchange ideas in an open and supportive 
-            environment. Expect feedback from fellow enthusiasts, a variety of posts to explore, 
-            and discussions on culture, history, and language—all through the lens of Latin.
-          </p>
-          <p className="single-post-body">
-            <strong>How to use the site:</strong> At the top, you’ll find navigation to browse 
-            posts, create new ones, and view authors. Explore different sections of the 
-            blog by using the links. If you want to take a break 
-            from the slideshow, you can pause it by using 
-            the <strong>Pause Slideshow</strong> button. Press <strong>Play 
-              Slideshow</strong> to resume.
-          </p>
-        </article>
+        {/* Text Section */}
+        <div className="single-post-container">
+          <article className="single-post ui piled segment">
+            <p className="single-post-body">
+              <strong>Welcome to The Communal Latin Blog!</strong> The purpose of this portfolio website is to
+              showcase modern web technologies 
+              and design aesthetics. It is just a small taste test of what I can offer. Each page offers different design concepts,
+              but they all are part of this imaginary Latin blogger community's website.
+              Built with React, Redux, Bootstrap, and Fomantic UI, this blog demonstrates my ability to craft responsive, accessible, 
+              and visually engaging web experiences.
+              In this demo website, 
+              you are already signed in as the character Ervin, one of our fictional authors. You can 
+              view posts written in Latin and try to create your own. You can see the authors and see
+              an imaginary timeline of things that have happened in this community's past. Read on to
+              immerse yourself in the experience.
+            </p>
+            <p className="single-post-body">
+              <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, 
+              this is a space for everyone to contribute and grow together. Post your own writings, 
+              comment on others’ work, and exchange ideas in an open and supportive 
+              environment. Expect feedback from fellow enthusiasts, a variety of posts to explore, 
+              and discussions on culture, history, and language—all through the lens of Latin.
+            </p>
+            <p className="single-post-body">
+              <strong>How to use the site:</strong> At the top, you’ll find navigation to browse 
+              posts, create new ones, and view authors. Explore different sections of the 
+              blog by using the links. If you want to take a break 
+              from the slideshow, you can pause it by using 
+              the <strong>Pause Slideshow</strong> button. Press <strong>Play 
+                Slideshow</strong> to resume.
+            </p>
+          </article>
+        </div>
 
+        {/* Carousel Section */}
         <article className="carousel-article" role="region" aria-label="Latin Writing Slideshow" aria-roledescription="slideshow">
           <Carousel
             className="custom-carousel"
