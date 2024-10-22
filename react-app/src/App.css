@@ -491,6 +491,13 @@ body {
   margin: 0 auto; /* Center the wrapper */
 }
 
+@media (max-width: 600px) {
+  .text-carousel-wrapper {
+    max-width: 95%; /* Increase max width on mobile to make margins smaller */
+    padding: 0 10px; /* Add a bit of padding to ensure text doesn't touch the edges */
+  }
+}
+
 /* Adjust the padding for the single-post-container */
 /* Add padding or margin for the text section */
 .single-post-container {
