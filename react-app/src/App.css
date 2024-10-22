@@ -134,24 +134,12 @@
   position: relative;
 }
 
-.create-post-link {
+#create-post-link {
   font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif; /* Matching your overall aesthetic */
   font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 700;
   color: white;
-  background-color: #ff5722; /* Matches the orange accent color */
-  border-radius: 8px; /* Smooth rounded edges */
-  padding: 10px 20px; /* Adjust padding for a balanced look */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  transition: all 0.3s ease;
   white-space: nowrap;
-}
-
-.create-post-link:hover {
-  background-color: #e64a19; /* Darker orange on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add more depth on hover */
 }
 
 @media (max-width: 600px) {

@@ -161,7 +161,8 @@ const PostsList = () => {
           <div className="ui search-bar-container segment">
             <div className="ui  transparent icon input">
               <Link
-                className="create-post-link ui compact icon green button"
+              id="create-post-link"
+                className="ui compact icon green button"
                 title="Create new post"
                 aria-label="Create new post"
                 to={{
