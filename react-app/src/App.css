@@ -319,18 +319,7 @@
   }
 }
 
-/* Adjust smaller margins on mobile */
-@media (max-width: 600px) {
-  .author-list-container,
-  .text-carousel-wrapper,
-  .single-post-container,
-  .carousel-article,
-  .timeline-container,
-  .achievements-container {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
+
 
 /* General Body and HTML Styling */
 html,
