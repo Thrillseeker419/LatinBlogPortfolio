@@ -3,25 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/blog.png" />
-    <meta name="description" content="A blog website for Latin writing. Create and explore Latin blog posts."/>
+    <meta name="description" content="A blog website for Latin writing. Create and explore Latin blog posts." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="author" content="Thomas Loalbo">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Latin Community Blog</title>
+    <script type="text/javascript">
+      // Handle the redirect if it's in the query string
+      (function() {
+        var redirect = window.location.search.match(/redirect=([^&]*)/);
+        if (redirect) {
+          var redirectPath = decodeURIComponent(redirect[1]);
+          window.history.replaceState(null, null, redirectPath);  // Removes the query string from the URL
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script>
-      // Check if redirected from the 404 page and extract the path
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirect = urlParams.get('redirect');
-      if (redirect) {
-        // Use browser history API to update the path without refreshing the page
-        window.history.replaceState({}, '', redirect);
-      }
-    </script>
+    <!-- The build step will place the bundled scripts into the <body> tag -->
   </body>
 </html>
