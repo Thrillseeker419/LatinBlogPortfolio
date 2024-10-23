@@ -1,6 +1,7 @@
 # LatinBlogPortfolio
 
-A demo site of a Latin blog where users can create, delete, and search for posts. This site uses a mock API, so some functionality has been emulated. This website uses mock data that utilizes your cookies to function. If any irrecoverable errors occur, please clear your cookies and make sure cookies are enabled. Built with React, this portfolio emphasizes accessibility, responsiveness, minimalism, and aesthetics.
+A demo site of a Latin blog where users can create, delete, and search for posts. This site uses a mock API, so some functionality has been emulated. This website uses mock data that utilizes your cookies to function. If any irrecoverable errors occur, please clear your cookies and make sure cookies are enabled. Built with React, this portfolio emphasizes accessibility, responsiveness, minimalism, and aesthetics. Active deployment
+is happening on the "deploy" branch.
 
 ## Table of Contents
 
