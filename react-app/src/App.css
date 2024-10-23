@@ -611,8 +611,8 @@ body {
 @media (max-width: 768px) {
   .carousel-article {
     width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
