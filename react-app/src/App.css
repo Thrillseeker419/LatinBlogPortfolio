@@ -134,12 +134,24 @@
   position: relative;
 }
 
-#create-post-link {
+.create-post-link {
   font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif; /* Matching your overall aesthetic */
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 1px;
   color: white;
+  background-color: #ff5722; /* Matches the orange accent color */
+  border-radius: 8px; /* Smooth rounded edges */
+  padding: 10px 20px; /* Adjust padding for a balanced look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: all 0.3s ease;
   white-space: nowrap;
+}
+
+.create-post-link:hover {
+  background-color: #e64a19; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add more depth on hover */
 }
 
 @media (max-width: 600px) {
@@ -194,7 +206,7 @@
 
 /* Footer Styling */
 .website-footer {
-  margin-top: auto; /* Ensures footer sticks to the bottom */
+  margin-top: auto;
   box-shadow: 2000px 2000px #26272b;
   background-color: #26272b;
   padding: 45px 0 20px;
@@ -463,24 +475,21 @@ body {
   }
 }
 /* Home Page Text and Carousel Alignment */
-@media (min-width: 600px) {
-  .home-content-wrapper, .carousel-article {
-    max-width: 900px; /* You can adjust this value as needed */
-    margin: 0 auto; /* Center the elements */
-    padding: 0 20px; /* Add some padding to prevent text from touching the edges on small screens */
-  }
-
-  /* Add a common wrapper for both text and carousel */
-  .text-carousel-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center;
-    max-width: 80%; /* Restrict width */
-    margin: 0 auto; /* Center the wrapper */
-  }
+.home-content-wrapper, .carousel-article {
+  max-width: 900px; /* You can adjust this value as needed */
+  margin: 0 auto; /* Center the elements */
+  padding: 0 20px; /* Add some padding to prevent text from touching the edges on small screens */
 }
 
+/* Add a common wrapper for both text and carousel */
+.text-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center;
+  max-width: 80%; /* Restrict width */
+  margin: 0 auto; /* Center the wrapper */
+}
 
 /* Adjust the padding for the single-post-container */
 /* Add padding or margin for the text section */
@@ -611,8 +620,8 @@ body {
 @media (max-width: 768px) {
   .carousel-article {
     width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
