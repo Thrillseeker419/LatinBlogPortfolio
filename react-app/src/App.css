@@ -329,6 +329,8 @@
   .achievements-container {
     padding-left: 5%;
     padding-right: 5%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
