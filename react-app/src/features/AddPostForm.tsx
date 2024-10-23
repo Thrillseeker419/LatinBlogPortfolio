@@ -9,62 +9,51 @@ const AddPostForm = () => {
   const [title, setTitle] = useState("");
   const [validTitle, setValidTitle] = useState(true);
   const [content, setContent] = useState("");
-  const [validContent, setValdContent] = useState(true);
+  const [validContent, setValidContent] = useState(true);
   const [addRequestStatus, setAddRequestStatus] = useState("idle");
   const navigate = useNavigate();
 
   const dispatch = useDispatch<AppDispatch>();
   const posts = useSelector(selectAllPosts);
+  const validateField = (value: string) => value.trim() !== "";
 
-  const onTitleChanged = (e: any) => {
-    if (
-      e.target.value === "" ||
-      e.target.value === null ||
-      e.target.value === undefined
-    ) {
-      setValidTitle(false);
-    } else {
-      setValidTitle(true);
-    }
-    setTitle(e.target.value);
+  const onTitleChanged = (e: { target: { value: string; }; }) => {
+    const value = e.target.value;
+    setTitle(value);
+    setValidTitle(validateField(value));
   };
-  const onContentChanged = (e: any) => {
-    if (
-      e.target.value === "" ||
-      e.target.value === null ||
-      e.target.value === undefined
-    ) {
-      setValdContent(false);
-    } else {
-      setValdContent(true);
-    }
-    setContent(e.target.value);
+  
+  const onContentChanged = (e: { target: { value: string; }; }) => {
+    const value = e.target.value;
+    setContent(value);
+    setValidContent(validateField(value));
   };
 
-  const isValid = (val: any) => val !== "";
   const canSave =
-    [title, content].every(isValid) && addRequestStatus === "idle";
-  const onSavePostClicked = () => {
+    [title, content].every(validateField) && addRequestStatus === "idle";
+
+    const resetForm = () => {
+      setTitle("");
+      setContent("");
+    };
+
+  const onSavePostClicked = async () => {
     if (canSave) {
       try {
         setAddRequestStatus("pending");
-        let res = dispatch(
-          addNewPost({ title: title, body: content, userId: 2 })
-        ).unwrap();
-        res
-          .then((x) => {
-            navigate("/LatinBlogPortfolio/Posts");
-          })
-          .catch((e) => console.log("post add error:", e));
-        setTitle("");
-        setContent("");
+        await dispatch(addNewPost({ title, body: content, userId: 2 })).unwrap();
+        navigate("/LatinBlogPortfolio/Posts");
+        resetForm();
       } catch (err) {
         console.log("post failed");
+        alert("Failed to save the post. Please try again.");
       } finally {
         setAddRequestStatus("idle");
       }
     } else {
       //todo add validation message
+      setValidTitle(validateField(title));
+      setValidContent(validateField(content));
     }
   };
   useEffect(() => {
@@ -74,7 +63,7 @@ const AddPostForm = () => {
   return (
     <section className="single-post-container">
       <div className="single-post ui piled segment">
-        <h1>Add a New Post</h1>
+        <h1>Create a New Post</h1>
 
         <form className="ui form add-post-body">
           <div className={validTitle ? "field" : "field error"}>
@@ -100,21 +89,28 @@ const AddPostForm = () => {
           </div>
 
           <button
-            className={
-              !validTitle || !validContent
-                ? "ui primary button disabled"
-                : "ui primary button"
-            }
+            className="ui primary button"
             type="button"
-            title="Save post"
-            aria-label="Save post"
+            title="Post the post"
+            aria-label="Post the post"
             onClick={onSavePostClicked}
+            disabled={ addRequestStatus === "pending" || !validTitle || !validContent}
           >
-            Save Post
+            {addRequestStatus === "pending" ? (
+    <>
+                <i className="spinner loading icon"></i>
+                <span>Saving...</span>
+              </>
+            ) : (
+              <>
+                <i className="save icon"></i>
+                <span>Post</span>
+              </>
+            )}
           </button>
         </form>
         {(!validTitle || !validContent) && (
-          <div className="ui error message">
+          <div className="ui error message" aria-live="polite">
             <ul className="list">
               {!validTitle && <li>Please enter a title for the post.</li>}
               {!validContent && (

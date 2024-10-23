@@ -95,8 +95,6 @@ const postsSlice = createSlice({
       })
       .addCase(addNewPost.fulfilled, (state: any, action: any) => {
         state.status = "succeeded";
-        console.log("state.posts nbb", current(state.posts));
-        console.log("action.payload", action.payload);
         let maxId = Math.max.apply(
           Math,
           current(state.posts).map(function (o: any) {
@@ -107,7 +105,6 @@ const postsSlice = createSlice({
         currentPost.id = maxId + 1;
         currentPost.status = "created"
         state.posts.push(currentPost);
-        console.log("state.posts", current(state.posts));
       })
       .addCase(addNewPost.rejected, (state, action) => {
         state.status = "failed";
