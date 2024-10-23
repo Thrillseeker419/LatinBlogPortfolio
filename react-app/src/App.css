@@ -479,28 +479,6 @@ body {
   margin: 0 auto; /* Center the wrapper */
 }
 
-/* Adjust text-carousel-wrapper for mobile */
-@media (max-width: 600px) {
-  .text-carousel-wrapper {
-    max-width: 95%; /* Increase max width on mobile to reduce margins */
-    margin: 0 5%;   /* Reduce the left and right margin on smaller screens */
-    padding: 0 10px; /* Add a bit of padding to ensure text doesn't touch the edges */
-  }
-  
-  .single-post-container {
-    max-width: 90%; /* Adjust the width for the post container */
-    margin: 1.5rem auto; /* Reduce top and bottom space on mobile */
-    padding-left: 10px;  /* Adjust padding to prevent overflow */
-    padding-right: 10px; /* Adjust padding for mobile */
-  }
-  
-  .carousel-article {
-    max-width: 95%; /* Increase max width for better fit on mobile */
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
 /* Adjust the padding for the single-post-container */
 /* Add padding or margin for the text section */
 .single-post-container {
