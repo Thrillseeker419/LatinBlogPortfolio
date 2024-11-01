@@ -29,7 +29,7 @@ export const AuthorDataRaw: Author[] = [
     id: 1,
     name: "Leanne Graham",
     username: "Bret",
-    email: "SincereLeanne@april.biz",
+    email: "SincereLeanne@hildegard.org",
     address: {
       street: "Kulas Light",
       suite: "Apt. 556",
@@ -54,7 +54,7 @@ export const AuthorDataRaw: Author[] = [
     id: 2,
     name: "Ervin Howell (you)",
     username: "Antonette",
-    email: "ervin.howell@melissa.tv",
+    email: "ervin.howell@anastasia.net",
     address: {
       street: "Victor Plains",
       suite: "Suite 879",
@@ -105,7 +105,7 @@ export const AuthorDataRaw: Author[] = [
     name: "Patricia Lebsack",
     avatar_url: "avatars/person_colored.png?raw=true",
     username: "Karianne",
-    email: "Patricia.Lebsack@kory.org",
+    email: "Patricia.Lebsack@kale.org",
     address: {
       street: "Hoeger Mall",
       suite: "Apt. 692",
@@ -118,7 +118,7 @@ export const AuthorDataRaw: Author[] = [
       },
     },
     phone: "493-170-9623 x156",
-    website: "kale.biz",
+    website: "kale.org",
     company: {
       name: "Robel-Corkery LLC",
       catchPhrase: "Multi-tiered zero tolerance productivity",
@@ -130,7 +130,7 @@ export const AuthorDataRaw: Author[] = [
     name: "Chelsey Dietrich",
     avatar_url: "avatars/person_hair_down_headband.png?raw=true",
     username: "Kamren",
-    email: "Chelsey.Dietrich@annie.ca",
+    email: "Chelsey.Dietrich@demarco_info.com",
     address: {
       street: "Skiles Walks",
       suite: "Suite 351",
@@ -143,7 +143,7 @@ export const AuthorDataRaw: Author[] = [
       },
     },
     phone: "(254)954-1289",
-    website: "demarco.info",
+    website: "demarco_info.com",
     company: {
       name: "Keebler LLC",
       catchPhrase: "User-centric fault-tolerant solution",
@@ -155,7 +155,7 @@ export const AuthorDataRaw: Author[] = [
     name: "Mrs. Dennis Schulist",
     avatar_url: "avatars/person_pixie_cut_light_brown.png?raw=true",
     username: "Leopoldo_Corkery",
-    email: "Dennis.Schulist@jasper.info",
+    email: "Dennis.Schulist@ola.org",
     address: {
       street: "Norberto Crossing",
       suite: "Apt. 950",
@@ -180,7 +180,7 @@ export const AuthorDataRaw: Author[] = [
     name: "Kurtis Weissnat",
     avatar_url: "avatars/person_spikey_pompadour.png?raw=true",
     username: "Elwyn.Skiles",
-    email: "Kurtis.Weissnat@billy.biz",
+    email: "Kurtis.Weissnat@JohnElvisGroup.com",
     address: {
       street: "Rex Trail",
       suite: "Suite 280",
@@ -193,7 +193,7 @@ export const AuthorDataRaw: Author[] = [
       },
     },
     phone: "210.067.6132",
-    website: "elvis.io",
+    website: "JohnElvisGroup.com",
     company: {
       name: "Johns Group",
       catchPhrase: "Configurable multimedia task-force",
@@ -205,7 +205,7 @@ export const AuthorDataRaw: Author[] = [
     name: "Nicholas Runolfsdottir V",
     avatar_url: "avatars/person_short_gray.png?raw=true",
     username: "Maxime_Nienow",
-    email: "Nicholas.Runolfsdottir@rosamond.me",
+    email: "Nicholas.Runolfsdottir@JacyntheAbernathyGroup.com",
     address: {
       street: "Ellsworth Summit",
       suite: "Suite 729",
@@ -218,7 +218,7 @@ export const AuthorDataRaw: Author[] = [
       },
     },
     phone: "586.493.6943 x140",
-    website: "jacynthe.com",
+    website: "JacyntheAbernathyGroup.com",
     company: {
       name: "Abernathy Group",
       catchPhrase: "Implemented secondary concept",
@@ -230,7 +230,7 @@ export const AuthorDataRaw: Author[] = [
     name: "Glenna Reichert",
     avatar_url: "avatars/person_ponytail.png?raw=true",
     username: "Delphine",
-    email: "Glenna.Reichert@dana.io",
+    email: "Glenna.Reichert@conrad.com",
     address: {
       street: "Dayna Park",
       suite: "Suite 449",
@@ -255,7 +255,7 @@ export const AuthorDataRaw: Author[] = [
     name: "Clementina DuBuque",
     avatar_url: "avatars/person_pixie_cut_red.png?raw=true",
     username: "Moriah.Stanton",
-    email: "Clementina.DuBuque@karina.biz",
+    email: "Clementina.DuBuque@ambrose.net",
     address: {
       street: "Kattie Turnpike",
       suite: "Suite 198",
