@@ -492,8 +492,8 @@ body {
   flex-direction: column;
   align-items: center; /* Center horizontally */
   justify-content: center;
-  max-width: 80%; /* Restrict width */
   margin: 0 auto; /* Center the wrapper */
+  width: 100%;
 }
 
 /* Adjust the padding for the single-post-container */
@@ -507,6 +507,7 @@ body {
   margin: 2rem auto; /* Adds top and bottom space */
   padding-top: 1.5rem; /* You can adjust this for more padding */
   padding-bottom: 1.5rem; /* Similarly for bottom space */
+  width: 100%;
 }
 
 /* Align the carousel within the same container */
@@ -517,8 +518,20 @@ body {
 
 @media (max-width: 768px) {
   .text-carousel-wrapper, .single-post-container, .carousel-article {
-    max-width: 90%; /* Adjust max-width for smaller screens */
-    padding: 0 15px; /* Ensure some padding on smaller screens */
+    max-width: 100%; /* Adjust max-width for smaller screens */
+    padding: 0 10px; /* Ensure some padding on smaller screens */
+  }
+
+  .single-post-container {
+    gap: 1rem; /* Reduce gap between elements */
+  }
+
+  .single-post-body {
+    font-size: 1rem; /* Adjust font size for readability */
+  }
+
+  .single-post {
+    width: 100%; /* Ensure the post takes full width */
   }
 }
 
