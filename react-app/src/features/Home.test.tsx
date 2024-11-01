@@ -30,7 +30,7 @@ describe('HomePage Component', () => {
     expect(screen.getByText(/Write to your heart's content/i)).toBeInTheDocument();
 
     // Simulate carousel navigation to the next slide
-    const nextButton = screen.getByText(/Next/i);
+    const nextButton = screen.getByRole('button', { name: /Next/i });
     fireEvent.click(nextButton);
 
     // Check second slide content

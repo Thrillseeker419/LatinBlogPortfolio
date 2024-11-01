@@ -27,7 +27,7 @@ describe('App Routing', () => {
       </Provider>
     );
 
-    expect(screen.getByText(/ervin.howell@melissa.tv/i)).toBeInTheDocument();
+    expect(screen.getByText(/ervin.howell@anastasia.net/i)).toBeInTheDocument();
   });
 
   test('renders Not Found page for invalid routes', () => {
