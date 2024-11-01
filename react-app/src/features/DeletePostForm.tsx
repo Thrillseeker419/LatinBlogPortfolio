@@ -99,7 +99,7 @@ const DeletePostForm = () => {
               </h2>
               <div className="single-post-body">
                 <p>
-                  {CapitalizeFirstLetter(singlePost?.body).slice(0, 50)}...
+                  {singlePost?.body}
                   <br />
                 </p>
               </div>
