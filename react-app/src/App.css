@@ -141,23 +141,30 @@
 }
 
 .create-post-link {
-  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif; /* Matching your overall aesthetic */
-  font-size: 18px;
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 2.5rem; /* Match the header's font size */
   font-weight: 500;
-  letter-spacing: 1px;
-  color: white;
-  background-color: #ff5722; /* Matches the orange accent color */
-  border-radius: 8px; /* Smooth rounded edges */
-  padding: 10px 20px; /* Adjust padding for a balanced look */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  letter-spacing: 2px; /* Match letter spacing */
+  color: #333; /* Match the header's text color */
+  background-color: #ff5722; /* Keep the button's background color */
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  text-transform: uppercase; /* Uppercase text like the header */
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
+  text-align: center;
   white-space: nowrap;
 }
 
 .create-post-link:hover {
-  background-color: #e64a19; /* Darker orange on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add more depth on hover */
+  background-color: #e64a19;
+  color: #ff5722; /* Optional: Change text color on hover */
+  letter-spacing: 3px; /* Match the header's hover effect */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 600px) {

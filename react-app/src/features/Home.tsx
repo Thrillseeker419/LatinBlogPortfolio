@@ -10,7 +10,7 @@ const Home = () => {
   const [index, setIndex] = useState<number>(0); // Track the current slide index
 
   useEffect(() => {
-    document.title = 'The Communal Latin Blog';
+    document.title = 'The Communal Latin Practice Blog';
   }, []);
 
   // Handle carousel index change
@@ -37,21 +37,21 @@ const Home = () => {
               role="img"
             ></video>
           </div>
-          The Communal Latin Blog
+          The Communal Latin Practice Blog
         </h1>
 
         {/* Text Section */}
         <div className="single-post-container">
           <article className="single-post ui piled segment">
             <p className="single-post-body">
-              <strong>Welcome to The Communal Latin Blog!</strong> The purpose of this portfolio website is to
+              <strong>Welcome to The Communal Latin Practice Blog!</strong> The purpose of this portfolio website is to
               showcase modern web technologies 
               and design aesthetics. It is just a small taste test of what I can offer. Each page offers different design concepts,
-              but they all are part of this imaginary Latin blogger community's website.
+              but they all are part of this imaginary community's website of people practicing their Latin.
               Built with React, Redux, Bootstrap, and Fomantic UI, this blog demonstrates my ability to craft responsive, accessible, 
               and visually engaging web experiences.
               In this demo website, 
-              you are already signed in as the character Ervin, one of our fictional authors. You can 
+              you are already signed in as the character Ervin Howell, one of our fictional authors. You can 
               view posts written in Latin and try to create your own. You can see the authors and see
               an imaginary timeline of things that have happened in this community's past. Read on to
               immerse yourself in the experience.
@@ -59,17 +59,22 @@ const Home = () => {
             <p className="single-post-body">
               <strong>What can you do here?</strong> Whether you're a beginner or fluent in Latin, 
               this is a space for everyone to contribute and grow together. Post your own writings, 
-              comment on others’ work, and exchange ideas in an open and supportive 
-              environment. Expect feedback from fellow enthusiasts, a variety of posts to explore, 
-              and discussions on culture, history, and language—all through the lens of Latin.
+              read others’ works, and exchange ideas in an open and supportive 
+              environment. Expect to connect with fellow enthusiasts through a variety of posts, 
+              and discussions on culture, history, and language.
             </p>
             <p className="single-post-body">
-              <strong>How to use the site:</strong> At the top, you’ll find navigation to browse 
-              posts, create new ones, and view authors. Explore different sections of the 
-              blog by using the links. If you want to take a break 
+              <strong>How to use the site:</strong> At the top, you’ll find links to allow you to browse 
+              posts, create your own, view authors, and view the timeline of past events and achievements this community has made. 
+              Expect the majority of posts to be entirely in Latin, 
+              but you can post in any language you want if you are still practicing!
+              Below you can view a slideshow of some of the art our members have contributed. 
+              You can click on the arrows on the left or right of each slide to go to the next or previous slide in the loop. 
+                You can click one of the dots underneath the slide to go to a specific slide. If you want to take a break 
               from the slideshow, you can pause it by using 
-              the <strong>Pause Slideshow</strong> button. Press <strong>Play 
-                Slideshow</strong> to resume.
+              the <strong>Pause Slideshow</strong> button underneath the slide. You can press <strong>Play 
+                Slideshow</strong> to resume. 
+              
             </p>
           </article>
         </div>

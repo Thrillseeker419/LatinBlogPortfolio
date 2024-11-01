@@ -8,9 +8,9 @@ const TimelinePage: React.FC = () => {
   // Set the document title based on the active component
   useEffect(() => {
     if (activeComponent === 'timeline') {
-      document.title = 'Our Timeline - The Communal Latin Blog';
+      document.title = 'Our Timeline - The Communal Latin Practice Blog';
     } else {
-      document.title = 'Achievements - The Communal Latin Blog';
+      document.title = 'Achievements - The Communal Latin Practice Blog';
     }
   }, [activeComponent]); // Runs when activeComponent changes
 

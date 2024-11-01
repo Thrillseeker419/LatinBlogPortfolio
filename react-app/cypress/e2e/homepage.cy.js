@@ -4,7 +4,7 @@ describe('Homepage Tests', () => {
     });
   
     it('should display the correct homepage title', () => {
-      cy.contains('The Communal Latin Blog').should('be.visible');
+      cy.contains('The Communal Latin Practice Blog').should('be.visible');
     });
   
     it('should navigate to the posts page', () => {

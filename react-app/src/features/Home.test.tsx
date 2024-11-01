@@ -12,8 +12,8 @@ describe('HomePage Component', () => {
     render(<Home />);
 
     // Check for the main heading
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('The Communal Latin Blog');
-    expect(screen.getByText(/Welcome to The Communal Latin Blog!/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('The Communal Latin Practice Blog');
+    expect(screen.getByText(/Welcome to The Communal Latin Practice Blog!/i)).toBeInTheDocument();
     expect(screen.getByText(/Post your own writings/i)).toBeInTheDocument();
     expect(screen.getByText(/How to use the site:/i)).toBeInTheDocument();
   });
