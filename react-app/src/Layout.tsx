@@ -125,9 +125,10 @@ const Layout = () => {
                 <h1>About</h1>
                 <p className="text-justify">
                   This is a demo website that allows you to create, search for, and delete
-                  posts. You can view author information as well. It is built using React,
+                  posts. You can view author information, a timeline of past communal events, 
+                  and past community achievements as well. It is built using React,
                   React-Router, Redux, Axios, Fomantic UI and more! It operates using 
-                  a mock API that uses cookies. It was built with accessibility, 
+                  a mock API that relies on cookies. It was built with accessibility, 
                   responsiveness, and aesthetics in mind. Enjoy! Find the code base&nbsp;
                   <a href="https://github.com/Thrillseeker419/LatinBlogPortfolio">here</a>.
                 </p>
@@ -271,7 +272,7 @@ const Layout = () => {
             <div className="ui stackable two column grid">
               <div className="column">
                 <p className="copyright-text">
-                  Copyright &copy; 2022 All Rights Reserved.
+                  Copyright &copy; 2024 All Rights Reserved.
                 </p>
               </div>
 
