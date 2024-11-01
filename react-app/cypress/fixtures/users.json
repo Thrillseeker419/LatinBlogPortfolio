@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",
-    "email": "Sincere@april.biz",
+    "email": "SincereLeanne@hildegard.org",
     "address": {
       "street": "Kulas Light",
       "suite": "Apt. 556",
@@ -24,9 +24,9 @@
   },
   {
     "id": 2,
-    "name": "Ervin Howell",
+    "name": "Ervin Howell (you)",
     "username": "Antonette",
-    "email": "Shanna@melissa.tv",
+    "email": "ervin.howell@anastasia.net",
     "address": {
       "street": "Victor Plains",
       "suite": "Suite 879",
@@ -40,7 +40,7 @@
     "phone": "010-692-6593 x09125",
     "website": "anastasia.net",
     "company": {
-      "name": "Deckow-Crist",
+      "name": "Deckow-Crist Inc",
       "catchPhrase": "Proactive didactic contingency",
       "bs": "synergize scalable supply-chains"
     }
@@ -49,7 +49,7 @@
     "id": 3,
     "name": "Clementine Bauch",
     "username": "Samantha",
-    "email": "Nathan@yesenia.net",
+    "email": "ClementineNathan@yesenia.net",
     "address": {
       "street": "Douglas Extension",
       "suite": "Suite 847",
@@ -63,7 +63,7 @@
     "phone": "1-463-123-4447",
     "website": "ramiro.info",
     "company": {
-      "name": "Romaguera-Jacobson",
+      "name": "Romaguera-Jacobson LLC",
       "catchPhrase": "Face to face bifurcated interface",
       "bs": "e-enable strategic applications"
     }
@@ -72,7 +72,7 @@
     "id": 4,
     "name": "Patricia Lebsack",
     "username": "Karianne",
-    "email": "Julianne.OConner@kory.org",
+    "email": "Patricia.Lebsack@kale.org",
     "address": {
       "street": "Hoeger Mall",
       "suite": "Apt. 692",
@@ -84,9 +84,9 @@
       }
     },
     "phone": "493-170-9623 x156",
-    "website": "kale.biz",
+    "website": "kale.org",
     "company": {
-      "name": "Robel-Corkery",
+      "name": "Robel-Corkery LLC",
       "catchPhrase": "Multi-tiered zero tolerance productivity",
       "bs": "transition cutting-edge web services"
     }
@@ -95,7 +95,7 @@
     "id": 5,
     "name": "Chelsey Dietrich",
     "username": "Kamren",
-    "email": "Lucio_Hettinger@annie.ca",
+    "email": "Chelsey.Dietrich@demarco_info.com",
     "address": {
       "street": "Skiles Walks",
       "suite": "Suite 351",
@@ -107,7 +107,7 @@
       }
     },
     "phone": "(254)954-1289",
-    "website": "demarco.info",
+    "website": "demarco_info.com",
     "company": {
       "name": "Keebler LLC",
       "catchPhrase": "User-centric fault-tolerant solution",
@@ -118,7 +118,7 @@
     "id": 6,
     "name": "Mrs. Dennis Schulist",
     "username": "Leopoldo_Corkery",
-    "email": "Karley_Dach@jasper.info",
+    "email": "Dennis.Schulist@ola.org",
     "address": {
       "street": "Norberto Crossing",
       "suite": "Apt. 950",
@@ -132,7 +132,7 @@
     "phone": "1-477-935-8478 x6430",
     "website": "ola.org",
     "company": {
-      "name": "Considine-Lockman",
+      "name": "Considine-Lockman LLC",
       "catchPhrase": "Synchronised bottom-line interface",
       "bs": "e-enable innovative applications"
     }
@@ -141,7 +141,7 @@
     "id": 7,
     "name": "Kurtis Weissnat",
     "username": "Elwyn.Skiles",
-    "email": "Telly.Hoeger@billy.biz",
+    "email": "Kurtis.Weissnat@JohnElvisGroup.com",
     "address": {
       "street": "Rex Trail",
       "suite": "Suite 280",
@@ -153,7 +153,7 @@
       }
     },
     "phone": "210.067.6132",
-    "website": "elvis.io",
+    "website": "JohnElvisGroup.com",
     "company": {
       "name": "Johns Group",
       "catchPhrase": "Configurable multimedia task-force",
@@ -162,9 +162,9 @@
   },
   {
     "id": 8,
-    "name": "Nicholas Runolfsdottir V",
+    "name": "Nicholas Runolf",
     "username": "Maxime_Nienow",
-    "email": "Sherwood@rosamond.me",
+    "email": "NickRunolf@JacAbernathyGroup.com",
     "address": {
       "street": "Ellsworth Summit",
       "suite": "Suite 729",
@@ -176,7 +176,7 @@
       }
     },
     "phone": "586.493.6943 x140",
-    "website": "jacynthe.com",
+    "website": "JacAbernathyGroup.com",
     "company": {
       "name": "Abernathy Group",
       "catchPhrase": "Implemented secondary concept",
@@ -187,7 +187,7 @@
     "id": 9,
     "name": "Glenna Reichert",
     "username": "Delphine",
-    "email": "Chaim_McDermott@dana.io",
+    "email": "Glenna.Reichert@conrad.com",
     "address": {
       "street": "Dayna Park",
       "suite": "Suite 449",
@@ -201,7 +201,7 @@
     "phone": "(775)976-6794 x41206",
     "website": "conrad.com",
     "company": {
-      "name": "Yost and Sons",
+      "name": "Yost and Sons LLC",
       "catchPhrase": "Switchable contextually-based project",
       "bs": "aggregate real-time technologies"
     }
@@ -210,7 +210,7 @@
     "id": 10,
     "name": "Clementina DuBuque",
     "username": "Moriah.Stanton",
-    "email": "Rey.Padberg@karina.biz",
+    "email": "Clementina.DuBuque@ambrose.net",
     "address": {
       "street": "Kattie Turnpike",
       "suite": "Suite 198",

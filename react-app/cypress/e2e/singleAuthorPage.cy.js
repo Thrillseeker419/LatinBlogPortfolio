@@ -1,7 +1,7 @@
 describe('Single Author Page Tests', () => {
     const baseUrl = 'http://localhost:3000/LatinBlogPortfolio/Authors';
     const authorName = 'Leanne Graham';
-    const authorEmail = 'SincereLeanne@april.biz';
+    const authorEmail = 'SincereLeanne@hildegard.org';
     const companyName = 'Romaguera-Crona';
     const companyBs = 'Harness real-time e-markets';
   
@@ -28,7 +28,7 @@ describe('Single Author Page Tests', () => {
       // Verify the author's name and email
       cy.contains(authorName, { timeout: 10000 }).should('be.visible');
 
-      cy.contains('a', 'april.biz').should('exist'); // Match based on domain
+      cy.contains('a', 'hildegard.org').should('exist'); // Match based on domain
 
   
       // Verify company information
