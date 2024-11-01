@@ -53,7 +53,9 @@ const Home = () => {
               In this demo website, 
               you are already signed in as the character Ervin Howell, one of our fictional authors. You can 
               view posts written in Latin and try to create your own. You can see the authors and see
-              an imaginary timeline of things that have happened in this community's past. Read on to
+              an imaginary timeline of things that have happened in this community's past. Since this website relies on cookies, you can 
+              click the <strong>Reset Data</strong> button at the top right to restore everything on this website to its original state thus removing all of the posts you created.
+              Read on to
               immerse yourself in the experience.
             </p>
             <p className="single-post-body">
