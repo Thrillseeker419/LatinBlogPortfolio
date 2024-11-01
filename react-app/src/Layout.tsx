@@ -259,7 +259,7 @@ const Layout = () => {
                       aria-label="Link to Thomas Loalbo's LinkedIn profile"
                       href="https://www.linkedin.com/in/thomas-loalbo-230054b9/"
                     >
-                      LinkedIn
+                      Thomas Loalbo's LinkedIn
                     </a>
                   </li>
                 </ul>
