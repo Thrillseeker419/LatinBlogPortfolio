@@ -27,10 +27,10 @@ function App() {
         <Route path="Posts">
           <Route index element={<PostList />} />
           <Route path="Create" element={<AddPostForm />} />
-          <Route path="Delete">
-            <Route path=":postId" element={<DeletePostForm />} />
+          <Route path=":postId">
+            <Route index element={<SinglePostPage />} />
+            <Route path="Delete" element={<DeletePostForm />} />
           </Route>
-          <Route path=":postId" element={<SinglePostPage />} />
         </Route>
         <Route path="Authors">
           <Route index element={<AuthorList />} />

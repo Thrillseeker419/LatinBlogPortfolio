@@ -24,9 +24,10 @@ const SinglePostPage = () => {
       return;
     }
 
-    console.log("Fetching posts with postId:", postId);
-    // Fetch posts if they are not already loaded
-    dispatch(fetchPosts());
+    if (!post) {
+      console.log('Post not found in store, fetching posts.');
+      dispatch(fetchPosts());
+    }
   }, [postId, dispatch]);
 
   const post = useSelector((state: RootState) => selectPostById(state, Number(postId)));
@@ -98,7 +99,7 @@ const SinglePostPage = () => {
                   title="Go to delete post"
                   aria-label="Delete post"
                   to={{
-                    pathname: "/LatinBlogPortfolio/Posts/Delete/" + postId,
+                    pathname: `/LatinBlogPortfolio/Posts/${postId}/Delete`,
                     search: "?userId=2",
                   }}
                   className="ui red button"
