@@ -202,10 +202,10 @@ export const AuthorDataRaw: Author[] = [
   },
   {
     id: 8,
-    name: "Nicholas Runolfsdottir V",
+    name: "Nicholas Runolf",
     avatar_url: "avatars/person_short_gray.png?raw=true",
     username: "Maxime_Nienow",
-    email: "Nicholas.Runolfsdottir@JacyntheAbernathyGroup.com",
+    email: "NickRunolf@JacAbernathyGroup.com",
     address: {
       street: "Ellsworth Summit",
       suite: "Suite 729",
@@ -218,7 +218,7 @@ export const AuthorDataRaw: Author[] = [
       },
     },
     phone: "586.493.6943 x140",
-    website: "JacyntheAbernathyGroup.com",
+    website: "JacAbernathyGroup.com",
     company: {
       name: "Abernathy Group",
       catchPhrase: "Implemented secondary concept",
