@@ -8,7 +8,7 @@ const Layout = () => {
   const onResetData = (e: any) => {
     localStorage.removeItem("applicationState");
     navigate("/LatinBlogPortfolio"); // This handles navigation smoothly
-    alert("All data has been reset to its original state");
+    alert("All data has been reset to its original state. All created posts have been deleted and all original posts have been restored.");
   };
 
   // Help screen readers stay oriented on redirects

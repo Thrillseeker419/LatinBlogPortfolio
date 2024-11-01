@@ -15,7 +15,7 @@ describe('Homepage Tests', () => {
     it('should reset data when Reset Data button is clicked', () => {
       cy.get('button[aria-label="Reset all data, undoing all changes, and returning the website\'s data to the original state"]').click();
       cy.on('window:alert', (alertText) => {
-        expect(alertText).to.equal('All data has been reset to its original state');
+        expect(alertText).to.equal('All data has been reset to its original state. All created posts have been deleted and all original posts have been restored.');
       });
     });
   

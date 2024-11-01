@@ -37,6 +37,6 @@ describe('Layout Component', () => {
     fireEvent.click(resetButton);
 
     expect(mockRemoveItem).toHaveBeenCalledWith('applicationState');
-    expect(mockAlert).toHaveBeenCalledWith('All data has been reset to its original state');
+    expect(mockAlert).toHaveBeenCalledWith('All data has been reset to its original state. All created posts have been deleted and all original posts have been restored.');
   });
 });
