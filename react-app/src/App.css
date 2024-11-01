@@ -629,6 +629,12 @@ body {
   color: black;
 }
 
+/* Hide captions of inactive slides */
+.custom-carousel .carousel-item:not(.active) .carousel-caption {
+  display: none;
+}
+
+
 .carousel-article {
   width: 80%;
   padding-left: 60px;
