@@ -262,7 +262,7 @@ const Layout = () => {
             <div className="ui stackable two column grid">
               <div className="column">
                 <p className="copyright-text">
-                  Copyright &copy; 2024 All Rights Reserved. For inquiries, contact me through LinkedIn or email me at: tommy.loalbo@gmail.com
+                  Copyright &copy; 2024 All Rights Reserved. For inquiries, contact me through LinkedIn (preferably) or email me at: tommy.loalbo@gmail.com
                 </p>
               </div>
 
