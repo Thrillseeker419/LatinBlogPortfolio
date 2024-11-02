@@ -96,12 +96,15 @@ To download and run the project on your local machine, follow these steps:
 - Fill in the title and content fields.
 - Submit to add the post to the blog.
 
-![Creating a Post](./screenshots/create-post.gif)
-
 ### Delete a Post
 
 - Click the "Delete" button on the desired post.
 - Confirm the deletion to remove the post.
+
+### Search For a Post
+- Use the search bar at the top to find posts by keywords.
+
+![Creating Deleting and Searching For a Post](./screenshots/create-post.gif)
 
 ### View Authors
 
