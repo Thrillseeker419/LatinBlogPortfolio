@@ -1,7 +1,6 @@
 # LatinBlogPortfolio
 
-A demo site of an imaginary Latin blog community where users can create, delete, and search for posts. Users can also view authors and view a timeline of past events as well as past achievements. This site uses a mock API, so some functionality has been emulated. This website uses mock data that utilizes your cookies to function. If any irrecoverable errors occur, please clear your cookies and make sure cookies are enabled. Built with React, this portfolio emphasizes accessibility, responsiveness, and various aesthetics. It is meant to showcase different design choices. Active deployment
-is happening on the "deploy" branch.
+A demo site of an imaginary Latin blog community where users can create, delete, and search for posts. Users can also view authors and view a timeline of past events as well as past achievements. This site uses a mock API, so some functionality has been emulated. This website uses mock data that utilizes your cookies to function. If any irrecoverable errors occur, please clear your cookies and make sure cookies are enabled. Built with React, this portfolio emphasizes accessibility, responsiveness, and various aesthetics. It is meant to showcase different design choices. Active deployment is happening on the "deploy" branch.
 
 ## Table of Contents
 
@@ -113,6 +112,12 @@ To run the unit tests, use the following command:
 npm test
 ```
 
+This command will run all unit tests in watch mode by default. To run the tests a single time and get a test report, use:
+
+```bash
+npm test -- --watchAll=false
+```
+
 Tests include:
 
 - **Component rendering** – Ensures that components like `Achievements` and `Timeline` are correctly rendered.
@@ -123,22 +128,29 @@ Tests include:
 
 End-to-end testing is handled using [Cypress](https://www.cypress.io/), allowing simulation of real user interactions like navigating through the app, clicking buttons, and keyboard accessibility.
 
-To run Cypress tests, first install Cypress:
+To run Cypress tests:
 
-```bash
-npm install cypress --save-dev
-```
+1. **Ensure Cypress is installed** (already included in `devDependencies`):
 
-Then, open Cypress with the following command:
+    ```bash
+    npm install cypress --save-dev
+    ```
 
-```bash
-npx cypress open
-```
+2. **Run Cypress in interactive mode:**
 
-This will launch the Cypress test runner where you can run the suite of tests for features such as:
+    ```bash
+    npx cypress open
+    ```
 
-- **Component switching** – Ensures that clicking or using the keyboard to switch between components (like `Timeline` and `Achievements`) works correctly.
-- **Keyboard Accessibility** – Verifies that keyboard interaction (like using `Enter`) switches between components and navigates through the UI.
+    This will launch the Cypress test runner. You can select the test you want to run interactively.
+
+3. **Run Cypress in headless mode:**
+
+    ```bash
+    npx cypress run
+    ```
+
+    This runs the tests in the terminal and provides a report after completion.
 
 Example Cypress Test:
 
@@ -171,3 +183,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 GitHub: [Thrillseeker419](https://github.com/Thrillseeker419)
+
