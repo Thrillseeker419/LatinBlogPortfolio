@@ -79,7 +79,6 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.fulfilled, (state: any, action: any) => {
         state.status = "succeeded";
         const loadedPosts = action.payload.map((post: any) => {
-          // todo, possible data cleanup
           post.status = "created";
           return post;
         });
@@ -90,14 +89,26 @@ const postsSlice = createSlice({
           existingPostsMap.set(post.id, post);
         });
       
-        // Merge loaded posts into the existing posts map
-        loadedPosts.forEach((post: any) => {
-          existingPostsMap.set(post.id, post);
+        // Merge loaded posts into the existing posts map without overwriting local changes
+        loadedPosts.forEach((loadedPost: any) => {
+          const existingPost = existingPostsMap.get(loadedPost.id);
+      
+          if (existingPost) {
+            if (existingPost.status !== "deleted") {
+              // Update existing post only if it's not deleted
+              existingPostsMap.set(loadedPost.id, loadedPost);
+            }
+            // If the existing post is deleted, do not overwrite it
+          } else {
+            // If the post doesn't exist locally, add it
+            existingPostsMap.set(loadedPost.id, loadedPost);
+          }
         });
       
         // Update state.posts with the merged posts
         state.posts = Array.from(existingPostsMap.values());
       })
+      
       
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";
