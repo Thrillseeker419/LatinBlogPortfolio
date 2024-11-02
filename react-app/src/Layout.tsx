@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Layout = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onResetData = (e: any) => {
     localStorage.removeItem("applicationState");
+    dispatch({ type: "RESET_APP" }); // Dispatch the reset action
     navigate("/LatinBlogPortfolio"); // This handles navigation smoothly
     alert("All data has been reset to its original state. All created posts have been deleted and all original posts have been restored.");
   };
