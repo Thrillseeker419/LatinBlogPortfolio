@@ -246,16 +246,6 @@ const Layout = () => {
                   <li className="footer-link-li">
                     <a
                       className="footer-link-anchor"
-                      title="Email Thomas"
-                      aria-label="Email Thomas"
-                      href="mailto:tommy.loalbo@gmail.com"
-                    >
-                      Contact Me
-                    </a>
-                  </li>
-                  <li className="footer-link-li">
-                    <a
-                      className="footer-link-anchor"
                       title="Link to Thomas's LinkedIn"
                       aria-label="Link to Thomas Loalbo's LinkedIn profile"
                       href="https://www.linkedin.com/in/thomas-loalbo-230054b9/"
@@ -272,22 +262,12 @@ const Layout = () => {
             <div className="ui stackable two column grid">
               <div className="column">
                 <p className="copyright-text">
-                  Copyright &copy; 2024 All Rights Reserved.
+                  Copyright &copy; 2024 All Rights Reserved. For inquiries, contact me through LinkedIn or email me at: tommy.loalbo@gmail.com
                 </p>
               </div>
 
               <div className="column">
                 <ul className="social-links">
-                  <li>
-                    <a
-                      title="Email Thomas"
-                      aria-label="Email Thomas"
-                      className="google"
-                      href="mailto:tommy.loalbo@gmail.com"
-                    >
-                      <i className="google icon"></i>
-                    </a>
-                  </li>
                   <li>
                     <a
                       className="github"
