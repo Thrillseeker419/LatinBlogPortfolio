@@ -27,14 +27,15 @@ const PostsList = () => {
   let pageSize = searchParams.get("pageSize");
   let searchTerms = searchParams.get("searchTerms");
 
+  const tokenizeText = (text: string) => {
+    return text.match(/\b\w+\b|[^\s\w]/g) || [];
+  };
+
+
   let searchTermsArray = searchTerms
-    ? searchTerms
-        .split(" ")
-        .filter(function (entry) {
-          return entry.trim() !== "";
-        })
-        .map((element) => element.trim())
-    : [];
+  ? tokenizeText(searchTerms.toLowerCase())
+      .filter((entry) => entry.trim() !== "")
+  : [];
 
   const [searchTermsInput, setSearchTermsInput] = useState(
     searchTerms ? searchTerms : ""
@@ -56,25 +57,27 @@ const PostsList = () => {
   postsAndAuthors = postsAndAuthors.sort((a: { title: string; }, b: { title: any; }) => a.title.localeCompare(b.title));
 
   if (searchTermsArray.length > 0 && postsAndAuthors.length > 0) {
-    postsAndAuthors = postsAndAuthors.filter(
-      (post: { title: string; body: string; authorInfo: { name: string; company: { name: string; }; }; }) =>
-        post.title
-          .toLowerCase()
-          .split(" ")
-          .some((r) => searchTermsArray.indexOf(r) >= 0) ||
-        post.body
-          .toLowerCase()
-          .split(" ")
-          .some((r) => searchTermsArray.indexOf(r) >= 0) ||
-        post.authorInfo?.name
-          .toLowerCase()
-          .split(" ")
-          .some((r) => searchTermsArray.indexOf(r) >= 0) ||
-        post.authorInfo?.company.name
-          .toLowerCase()
-          .split(" ")
-          .some((r) => searchTermsArray.indexOf(r) >= 0)
-    );
+    postsAndAuthors = postsAndAuthors.filter((post: { title: string; body: string; authorInfo: { name: string; company: { name: string; }; }; }) => {
+      const titleTokens = tokenizeText(post.title.toLowerCase());
+      const bodyTokens = tokenizeText(post.body.toLowerCase());
+      const authorNameTokens = post.authorInfo
+        ? tokenizeText(post.authorInfo.name.toLowerCase())
+        : [];
+      const companyNameTokens = post.authorInfo
+        ? tokenizeText(post.authorInfo.company.name.toLowerCase())
+        : [];
+
+      const allTokens = [
+        ...titleTokens,
+        ...bodyTokens,
+        ...authorNameTokens,
+        ...companyNameTokens,
+      ];
+
+      return searchTermsArray.some((searchTerm) =>
+        allTokens.includes(searchTerm)
+      );
+    });
   }
 
   let pagedInfo = paginate(postsAndAuthors, pageSize2, pageNumberNumber);

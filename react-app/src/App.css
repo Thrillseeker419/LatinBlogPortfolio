@@ -760,6 +760,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px; /* Add some space between the buttons */
+  margin-top: 20px; /* Add margin to shift buttons down */
 }
 
 /* Media query for smaller screens */
@@ -768,6 +769,7 @@ body {
     flex-wrap: nowrap; /* Prevent the buttons from wrapping onto the next line */
     justify-content: space-between; /* Distribute the buttons across the width */
     padding: 0 20px; /* Add some padding on smaller screens */
+    margin-top: 10px; /* Add margin to shift buttons down */
   }
 
   .component-switcher button {

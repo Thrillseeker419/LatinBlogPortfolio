@@ -17,6 +17,7 @@ const Layout = () => {
     if (mainHeading) {
       mainHeading.focus();
     }
+    document.body.scrollTo(0, 0);
   }, [location]);
 
   // Function to determine the current page for visual indicator

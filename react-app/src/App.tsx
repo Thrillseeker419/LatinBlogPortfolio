@@ -15,11 +15,6 @@ import TimelinePage from "./features/TimelinePage";
 function App() {
   const location = useLocation(); // Get current route location
 
-  // Scroll to top when the route changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]); // Effect runs when `location` changes
-
   return (
     <Routes>
       <Route path="/LatinBlogPortfolio" element={<Layout />}>
