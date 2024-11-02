@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/LatinBlogPortfolio/static/css/main.871d6d76.chunk.css",
-    "main.js": "/LatinBlogPortfolio/static/js/main.ad930076.chunk.js",
-    "main.js.map": "/LatinBlogPortfolio/static/js/main.ad930076.chunk.js.map",
+    "main.js": "/LatinBlogPortfolio/static/js/main.c519c3c2.chunk.js",
+    "main.js.map": "/LatinBlogPortfolio/static/js/main.c519c3c2.chunk.js.map",
     "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.02996cec.js",
     "runtime-main.js.map": "/LatinBlogPortfolio/static/js/runtime-main.02996cec.js.map",
     "static/css/2.ae80649a.chunk.css": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css",
@@ -14,6 +14,8 @@
     "static/css/2.ae80649a.chunk.css.map": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css.map",
     "static/css/main.871d6d76.chunk.css.map": "/LatinBlogPortfolio/static/css/main.871d6d76.chunk.css.map",
     "static/js/2.155974b6.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.155974b6.chunk.js.LICENSE.txt",
+    "static/media/FlipBookPic.1da863a6.png": "/LatinBlogPortfolio/static/media/FlipBookPic.1da863a6.png",
+    "static/media/book.93dbabed.webm": "/LatinBlogPortfolio/static/media/book.93dbabed.webm",
     "static/media/book.fe372919.mp4": "/LatinBlogPortfolio/static/media/book.fe372919.mp4",
     "static/media/semantic.css": "/LatinBlogPortfolio/static/media/outline-icons.c5240512.woff2",
     "static/media/latinWriting.57d301cf.png": "/LatinBlogPortfolio/static/media/latinWriting.57d301cf.png",
@@ -26,6 +28,6 @@
     "static/css/2.ae80649a.chunk.css",
     "static/js/2.155974b6.chunk.js",
     "static/css/main.871d6d76.chunk.css",
-    "static/js/main.ad930076.chunk.js"
+    "static/js/main.c519c3c2.chunk.js"
   ]
 }
