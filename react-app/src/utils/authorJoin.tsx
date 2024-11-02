@@ -1,17 +1,27 @@
-export function AuthorJoin(posts: any, AuthorData: any) {
-  const postsArray = posts as Array<any>;
-  type Dictionary = { [index: string]: string };
-  const authorDictionary = AuthorData as Dictionary;
-  let postsAndAuthors: Array<any> = [];
-  if (!posts || posts.length === 0) {
-    return postsAndAuthors;
-  }
-  postsArray.reduce((acc, value, index) => {
-    let newItem = { ...value };
-    newItem["authorInfo"] = authorDictionary[value.userId];
-    postsAndAuthors.push(newItem);
-    return newItem;
-  }, postsAndAuthors);
+import { Author } from '../features/PostData';
 
-  return postsAndAuthors;
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+  status: string;
+}
+
+interface PostWithAuthor extends Post {
+  authorInfo: Author | undefined;
+}
+
+export function AuthorJoin(posts: Post[], AuthorData: Record<number, Author>): PostWithAuthor[] {
+  if (!posts || posts.length === 0) {
+    return [];
+  }
+  
+  return posts.map((post) => {
+    const authorInfo = AuthorData[post.userId]; 
+    return {
+      ...post,
+      authorInfo, // Attaches the matching author to the post
+    };
+  });
 }

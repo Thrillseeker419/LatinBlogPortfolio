@@ -1,5 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { selectAllPosts } from "../redux/postsSlice";
@@ -10,20 +10,38 @@ const AuthorList = () => {
 
   const posts = useSelector(selectAllPosts);
 
+  
+
   function groupBy(xs: any, key: any) {
+    if (!Array.isArray(xs) || xs.length === 0) {
+      // If xs is not an array or is empty, return an empty object
+      return {};
+    }
+  
     return xs.reduce(function (rv: any, x: any) {
       (rv[x[key]] = rv[x[key]] || []).push(x);
       return rv;
     }, {});
   }
-  let aggregate = groupBy(posts, "userId");
+  let aggregate = useMemo(()=>groupBy(posts, "userId"), [posts]);
 
   useEffect(() => {
-    document.title = "View All Authors";
+    document.title = `View ${AuthorDataRaw.length} Authors`;
   }, []);
+
+  if (!posts || !AuthorDataRaw) {
+    return <div>Loading authors...</div>;
+  }
 
   return (
     <section>
+      <div className="author-list-page"> {/* Change class from 'page-header' to 'author-list-page' */}
+        <h1 className="page-title">Meet the Authors</h1>
+        <p className="page-description">
+          Explore the authors who contribute to this platform and discover their posts.
+        </p>
+      </div>
+  
       <div className="ui link cards author-list-container">
         {AuthorDataRaw &&
           AuthorDataRaw.map((author: any) => (
@@ -31,7 +49,7 @@ const AuthorList = () => {
               title={"View " + author.name + " details"}
               aria-label={"View " + author.name + " details"}
               className="card"
-              key={nanoid()}
+              key={author.id}
               to={`${author.id}`}
             >
               <div className="image">
@@ -46,9 +64,9 @@ const AuthorList = () => {
                 />
               </div>
               <div className="content">
-                <div className="header">{author.name}</div>
+                <h2 className="header">{author.name}</h2>
                 <div className="meta">
-                  <a>{author.email}</a>
+                  <span>{author.email}</span>
                 </div>
                 <div className="description">
                   {author.company.name} - {author.company.bs}
@@ -58,9 +76,7 @@ const AuthorList = () => {
                 <span className="right floated">{author.website}</span>
                 <span>
                   <i className="comment icon"></i>
-                  {(aggregate[author.id] && aggregate[author.id].length) ||
-                    0}{" "}
-                  Posts
+                  {aggregate[author.id]?.length || 0} Posts
                 </span>
               </div>
             </Link>
@@ -68,6 +84,7 @@ const AuthorList = () => {
       </div>
     </section>
   );
+  
 };
 
 export default AuthorList;

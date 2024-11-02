@@ -83,9 +83,22 @@ const postsSlice = createSlice({
           post.status = "created";
           return post;
         });
-  
-        state.posts = [...loadedPosts];
+      
+        // Create a map of existing posts by ID for quick lookup
+        const existingPostsMap = new Map();
+        state.posts.forEach((post: any) => {
+          existingPostsMap.set(post.id, post);
+        });
+      
+        // Merge loaded posts into the existing posts map
+        loadedPosts.forEach((post: any) => {
+          existingPostsMap.set(post.id, post);
+        });
+      
+        // Update state.posts with the merged posts
+        state.posts = Array.from(existingPostsMap.values());
       })
+      
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
@@ -95,8 +108,6 @@ const postsSlice = createSlice({
       })
       .addCase(addNewPost.fulfilled, (state: any, action: any) => {
         state.status = "succeeded";
-        console.log("state.posts nbb", current(state.posts));
-        console.log("action.payload", action.payload);
         let maxId = Math.max.apply(
           Math,
           current(state.posts).map(function (o: any) {
@@ -107,7 +118,6 @@ const postsSlice = createSlice({
         currentPost.id = maxId + 1;
         currentPost.status = "created"
         state.posts.push(currentPost);
-        console.log("state.posts", current(state.posts));
       })
       .addCase(addNewPost.rejected, (state, action) => {
         state.status = "failed";
@@ -120,7 +130,7 @@ const postsSlice = createSlice({
 export const selectAllPosts = (state: any) => state.posts.posts;
 export const selectPostsStatus = (state: any) => state.posts.status;
 export const selectPostsError = (state: any) => state.posts.error;
-export const selectPostById = (state: any, postId: number) =>
-  state.posts.posts.find((post: any) => post.id === postId);
+export const selectPostById = (state: any, postId: number | string) =>
+  state.posts.posts.find((post: any) => post.id.toString() === postId.toString());
 export const { postAdded, postDeleted } = postsSlice.actions;
 export default postsSlice.reducer;
