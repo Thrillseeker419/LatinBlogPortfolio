@@ -837,10 +837,10 @@ body {
 .component-switcher .achievements-button.active {
   text-decoration: underline;
   text-underline-offset: 2.5px;
-  box-shadow: 0px 4px 13px 14px rgba(0, 0, 0, .99); /* Add a subtle box-shadow */
+  box-shadow: 0px 1px 12px 12px rgba(0, 0, 0, .99); /* Add a subtle box-shadow */
 }
 
-/* Hover effect for buttons */
+/* Hover effect for butons */
 .timeline-button:hover,
 .achievements-button:hover {
   background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%); /* Reverse gradient on hover */
