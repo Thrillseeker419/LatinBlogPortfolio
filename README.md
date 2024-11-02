@@ -90,18 +90,15 @@ To download and run the project on your local machine, follow these steps:
 
 ## Usage
 
-### Create a Post
+### Create, Delete, and Search for a Post
 
-- Click on the "New Post" button.
-- Fill in the title and content fields.
-- Submit to add the post to the blog.
+The following GIF demonstrates how to:
 
-![Creating a Post](./screenshots/create-post.gif)
+1. **Create a Post** – Click on the "Create" button, fill in the title and content, and submit to add the post.
+2. **Delete a Post** – Click the "Delete" button on a post and confirm the deletion to remove it.
+3. **Search for a Post** – Use the search bar at the top to find posts by keywords.
 
-### Delete a Post
-
-- Click the "Delete" button on the desired post.
-- Confirm the deletion to remove the post.
+![Creating Deleting and Searching For a Post](./screenshots/create-post.gif)
 
 ### View Authors
 
@@ -114,6 +111,7 @@ To download and run the project on your local machine, follow these steps:
 
 - Go to the "Timeline" tab to explore a chronological list of past events and achievements related to the community.
 - This section provides insight into the community's growth and highlights.
+- Click the achievements button to see the achievements made by the community. 
 
 ![Viewing Timeline](./screenshots/view-timeline.gif)
 
