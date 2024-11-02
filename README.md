@@ -11,6 +11,10 @@ A demo site of an imaginary Latin blog community where users can create, delete,
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+  - [Create a Post](#create-a-post)
+  - [Delete a Post](#delete-a-post)
+  - [View Authors](#view-authors)
+  - [View Timeline](#view-timeline)
 - [Testing](#testing)
   - [Unit Testing](#unit-testing)
   - [Cypress Testing](#cypress-testing)
@@ -29,6 +33,8 @@ Check out the live demo of the LatinBlogPortfolio hosted on [GitHub Pages](https
 - **Create Posts:** Users can compose and publish new blog posts.
 - **Delete Posts:** Remove unwanted or outdated posts.
 - **Search Functionality:** Easily find posts using the search bar.
+- **View Authors:** See a list of contributing authors with additional details.
+- **View Timeline:** Browse a timeline of past events and achievements.
 - **Responsive Design:** Optimized for desktops, tablets, and mobile devices.
 - **Accessible Interface:** Designed following accessibility best practices.
 - **Mock API Integration:** Simulates backend interactions for a seamless user experience.
@@ -84,21 +90,32 @@ To download and run the project on your local machine, follow these steps:
 
 ## Usage
 
-Once the application is running, you can:
+### Create a Post
 
-- **Create a Post:**
-  - Click on the "New Post" button.
-  - Fill in the title and content fields.
-  - Submit to add the post to the blog.
+- Click on the "New Post" button.
+- Fill in the title and content fields.
+- Submit to add the post to the blog.
 
-- **Delete a Post:**
-  - Click the "Delete" button on the desired post.
-  - Confirm the deletion to remove the post.
+![Creating a Post](./screenshots/create-post.png)
 
-- **Search for Posts:**
-  - Use the search bar at the top to find posts by keywords.
+### Delete a Post
 
-![Creating a Post](./screenshots/create-post.gif)
+- Click the "Delete" button on the desired post.
+- Confirm the deletion to remove the post.
+
+### View Authors
+
+- Navigate to the "Authors" section to see a list of contributors.
+- Click on an author card to view more information about their posts and profile.
+
+![Viewing Authors](./screenshots/view-authors.png)
+
+### View Timeline
+
+- Go to the "Timeline" tab to explore a chronological list of past events and achievements related to the community.
+- This section provides insight into the community's growth and highlights.
+
+![Viewing Timeline](./screenshots/view-timeline.png)
 
 ## Testing
 
