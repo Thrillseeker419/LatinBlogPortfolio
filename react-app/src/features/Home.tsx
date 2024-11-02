@@ -1,16 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Carousel } from "react-bootstrap"; 
 import latin1 from '../assets/images/latinWriting.png'; 
 import latin3 from '../assets/images/latinWriting3.png'; 
 import latin4 from '../assets/images/latinWriting4.png'; 
-import bookVideo from '../assets/videos/book.mp4'; // Import the MP4 video
+import bookVideoMp4 from '../assets/videos/book.mp4'; // Import the MP4 video
+import bookVideoWebm from '../assets/videos/book.webm'; // Import the WebM video
+import bookPic from '../assets/images/FlipBookPic.png';
 
 const Home = () => {
   const [paused, setPaused] = useState(false); // Add state to track whether the slideshow is paused
   const [index, setIndex] = useState<number>(0); // Track the current slide index
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showPoster, setShowPoster] = useState(false);
 
   useEffect(() => {
     document.title = 'The Communal Latin Practice Blog';
+
+    const video = videoRef.current;
+    if (video) {
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay was prevented
+          setShowPoster(true);
+        });
+      }
+    }
   }, []);
 
   // Handle carousel index change
@@ -26,16 +42,30 @@ const Home = () => {
         <h1 id="home-title" className="ui center aligned icon header">
           {/* Video replacing the circular book icon */}
           <div className="home-video-wrapper">
-            <video 
-              className="circular-video" 
-              src={bookVideo} 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
+          {!showPoster ? (
+            <video
+              ref={videoRef}
+              className="circular-video"
+              autoPlay
+              muted
+              loop
+              playsInline
               aria-label="Book flipping animation video"
               role="img"
-            ></video>
+              poster={bookPic}
+            >
+              <source src={bookVideoWebm} type="video/webm" />
+              <source src={bookVideoMp4} type="video/mp4" />
+              {/* Fallback content */}
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img
+              src={bookPic}
+              alt="Book flipping animation"
+              className="circular-video"
+            />
+          )}
           </div>
           The Communal Latin Practice Blog
         </h1>

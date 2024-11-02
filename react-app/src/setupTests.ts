@@ -9,3 +9,9 @@ Object.defineProperty(window, 'scrollTo', {
     value: jest.fn(),
     writable: true,
   });
+
+  Object.defineProperty(HTMLMediaElement.prototype, 'play', {
+    configurable: true,
+    // Add a mock implementation
+    value: jest.fn().mockImplementation(() => Promise.resolve()),
+  });
