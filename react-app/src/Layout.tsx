@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Layout = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onResetData = (e: any) => {
+    if (window.confirm("Are you sure you want to reset all data? This action cannot be undone.")) {
     localStorage.removeItem("applicationState");
+    dispatch({ type: "RESET_APP" }); // Dispatch the reset action
     navigate("/LatinBlogPortfolio"); // This handles navigation smoothly
     alert("All data has been reset to its original state. All created posts have been deleted and all original posts have been restored.");
+    }
   };
 
   // Help screen readers stay oriented on redirects
@@ -17,6 +22,7 @@ const Layout = () => {
     if (mainHeading) {
       mainHeading.focus();
     }
+    document.body.scrollTo(0, 0);
   }, [location]);
 
   // Function to determine the current page for visual indicator
