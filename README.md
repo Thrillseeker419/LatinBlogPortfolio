@@ -96,7 +96,7 @@ To download and run the project on your local machine, follow these steps:
 - Fill in the title and content fields.
 - Submit to add the post to the blog.
 
-![Creating a Post](./screenshots/create-post.png)
+![Creating a Post](./screenshots/create-post.gif)
 
 ### Delete a Post
 
@@ -108,14 +108,14 @@ To download and run the project on your local machine, follow these steps:
 - Navigate to the "Authors" section to see a list of contributors.
 - Click on an author card to view more information about their posts and profile.
 
-![Viewing Authors](./screenshots/view-authors.png)
+![Viewing Authors](./screenshots/view-authors.gif)
 
 ### View Timeline
 
 - Go to the "Timeline" tab to explore a chronological list of past events and achievements related to the community.
 - This section provides insight into the community's growth and highlights.
 
-![Viewing Timeline](./screenshots/view-timeline.png)
+![Viewing Timeline](./screenshots/view-timeline.gif)
 
 ## Testing
 
