@@ -54,7 +54,7 @@ const PostsList = () => {
   let pageNumberNumber = pageNumber ? Number(pageNumber) : 1;
   let pageSize2 = pageSize ? Number(pageSize) : 10;
 
-  postsAndAuthors = postsAndAuthors.sort((a: { title: string; }, b: { title: any; }) => a.title.localeCompare(b.title));
+  postsAndAuthors = postsAndAuthors.sort((a: { id: number; }, b: { id: number; }) => b.id - a.id);
 
   if (searchTermsArray.length > 0 && postsAndAuthors.length > 0) {
     postsAndAuthors = postsAndAuthors.filter((post: { title: string; body: string; authorInfo: { name: string; company: { name: string; }; }; }) => {
@@ -272,7 +272,7 @@ const PostsList = () => {
                   key={nanoid()}
                   to={`/LatinBlogPortfolio/Posts?pageNumber=${entry}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
                   aria-label={`Go to page ${entry}`}
-                  className="ui button"
+                  className={`ui button pagination-button ${entry === pageNumberNumber ? 'active' : ''}`}
                 >
                   {entry}
                 </Link>

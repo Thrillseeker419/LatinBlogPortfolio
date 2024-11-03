@@ -59,9 +59,11 @@ const SingleAuthorPage = () => {
                     <div className="item">
                       <i className="marker icon"></i>
                       <div className="content">
-                        {author.address.street}, {author.address.suite},{" "}
-                        {author.address.city}, {author.address.stateAbbr && `${author.address.stateAbbr} `}{" "}
-                        {author.address.zipcode}
+                        <address>
+                          {author.address.street}, {author.address.suite},<br />
+                          {author.address.city}, {author.address.stateAbbr && `${author.address.stateAbbr} `}
+                          {author.address.zipcode}
+                        </address>
                       </div>
                     </div>
                     <div className="item">

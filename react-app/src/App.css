@@ -163,7 +163,6 @@
   background-color: #e64a19;
   color: #ff5722; /* Optional: Change text color on hover */
   letter-spacing: 3px; /* Match the header's hover effect */
-  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -212,9 +211,16 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Reset Button Styling */
-.reset-data {
-  margin: 20px;
+.pagination-button.active {
+  border: 2px solid #333; /* Or any color you prefer */
+  background-color: #ff5722; /* Highlight color */
+  color: white; /* Ensure text is readable */
+  /* You can add more styles as needed */
+}
+
+.pagination-button {
+  /* Optional: Add base styles for pagination buttons */
+  margin: 0 5px;
 }
 
 /* Footer Styling */
@@ -410,7 +416,7 @@ body {
   font-weight: 500;
   letter-spacing: 2px;
   line-height: 42px;
-  color: rgb(51, 51, 51); /* Adjust this color to match the 'Achievements' font color */
+  color: rgb(51, 51, 51); 
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -418,9 +424,16 @@ body {
 
 /* Optional: If you want to add specific hover effects */
 .top-nav-button:hover {
-  color: #ff5722; /* You can adjust this color as per your design */
-  text-decoration: underline; /* Optional to add an underline on hover */
+  color: #ff5722; 
+  text-decoration: underline; 
 }
+
+/*Reset Button Styling */
+#reset-data:focus{
+  outline: 2px solid black;
+  outline-offset: 4px;
+}
+
 
 /* Layout Flexbox and Parent Container */
 .ultimate-parent {
@@ -603,6 +616,16 @@ body {
 .custom-carousel .carousel-control-next {
   right: -45px;
 }
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-indicators button:focus,
+.carousel-controls button:focus {
+  outline: 2px solid #060606 !important;
+  outline-offset: 4px !important;
+}
+
+
 
 @media (max-width: 768px) {
   .custom-carousel .carousel-control-prev {
@@ -853,7 +876,8 @@ body {
 /* Focus effect for accessibility */
 .timeline-button:focus,
 .achievements-button:focus {
-  outline: none;
+  outline: 3px solid #00796b;
+  outline-offset: 4px;
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.2); /* Glow outline on focus */
 }
 
@@ -1060,9 +1084,9 @@ body {
   background-color: #e64a19;
   transform: translateY(-2px); /* Subtle lift effect */
 }
-
+  
 .modal-close-button:focus {
-  outline: none;
+  outline: 3px solid black;
   box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.3); /* Focus ring for accessibility */
 }
 
