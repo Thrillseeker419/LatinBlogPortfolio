@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/LatinBlogPortfolio/static/css/main.76b9826e.chunk.css",
-    "main.js": "/LatinBlogPortfolio/static/js/main.d5d45b35.chunk.js",
-    "main.js.map": "/LatinBlogPortfolio/static/js/main.d5d45b35.chunk.js.map",
+    "main.css": "/LatinBlogPortfolio/static/css/main.7b4d2d98.chunk.css",
+    "main.js": "/LatinBlogPortfolio/static/js/main.d28a6cc7.chunk.js",
+    "main.js.map": "/LatinBlogPortfolio/static/js/main.d28a6cc7.chunk.js.map",
     "runtime-main.js": "/LatinBlogPortfolio/static/js/runtime-main.02996cec.js",
     "runtime-main.js.map": "/LatinBlogPortfolio/static/js/runtime-main.02996cec.js.map",
     "static/css/2.ae80649a.chunk.css": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css",
-    "static/js/2.7cf4c33b.chunk.js": "/LatinBlogPortfolio/static/js/2.7cf4c33b.chunk.js",
-    "static/js/2.7cf4c33b.chunk.js.map": "/LatinBlogPortfolio/static/js/2.7cf4c33b.chunk.js.map",
+    "static/js/2.52b7be33.chunk.js": "/LatinBlogPortfolio/static/js/2.52b7be33.chunk.js",
+    "static/js/2.52b7be33.chunk.js.map": "/LatinBlogPortfolio/static/js/2.52b7be33.chunk.js.map",
     "static/js/3.6c6878b7.chunk.js": "/LatinBlogPortfolio/static/js/3.6c6878b7.chunk.js",
     "static/js/3.6c6878b7.chunk.js.map": "/LatinBlogPortfolio/static/js/3.6c6878b7.chunk.js.map",
     "index.html": "/LatinBlogPortfolio/index.html",
     "static/css/2.ae80649a.chunk.css.map": "/LatinBlogPortfolio/static/css/2.ae80649a.chunk.css.map",
-    "static/css/main.76b9826e.chunk.css.map": "/LatinBlogPortfolio/static/css/main.76b9826e.chunk.css.map",
-    "static/js/2.7cf4c33b.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.7cf4c33b.chunk.js.LICENSE.txt",
+    "static/css/main.7b4d2d98.chunk.css.map": "/LatinBlogPortfolio/static/css/main.7b4d2d98.chunk.css.map",
+    "static/js/2.52b7be33.chunk.js.LICENSE.txt": "/LatinBlogPortfolio/static/js/2.52b7be33.chunk.js.LICENSE.txt",
     "static/media/FlipBookPic.1da863a6.png": "/LatinBlogPortfolio/static/media/FlipBookPic.1da863a6.png",
     "static/media/book.93dbabed.webm": "/LatinBlogPortfolio/static/media/book.93dbabed.webm",
     "static/media/book.fe372919.mp4": "/LatinBlogPortfolio/static/media/book.fe372919.mp4",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.02996cec.js",
     "static/css/2.ae80649a.chunk.css",
-    "static/js/2.7cf4c33b.chunk.js",
-    "static/css/main.76b9826e.chunk.css",
-    "static/js/main.d5d45b35.chunk.js"
+    "static/js/2.52b7be33.chunk.js",
+    "static/css/main.7b4d2d98.chunk.css",
+    "static/js/main.d28a6cc7.chunk.js"
   ]
 }
