@@ -26,6 +26,8 @@ const PostsList = () => {
   let pageNumber = searchParams.get("pageNumber");
   let pageSize = searchParams.get("pageSize");
   let searchTerms = searchParams.get("searchTerms");
+  let authorId = searchParams.get("authorId");
+  let authorName = "";
 
   const tokenizeText = (text: string) => {
     return text.match(/\b\w+\b|[^\s\w]/g) || [];
@@ -50,6 +52,19 @@ const PostsList = () => {
   const postsError = useSelector(selectPostsError);
 
   let postsAndAuthors = (posts && AuthorJoin(posts, AuthorData)) || [];
+
+  if (authorId) {
+    // Filter posts by authorId
+    postsAndAuthors = postsAndAuthors.filter(
+      (post: { userId: { toString: () => string; }; }) => post.userId.toString() === authorId
+    );
+  
+    // Get the author's name
+    const author = AuthorData[Number(authorId)];
+    if (author) {
+      authorName = author.name;
+    }
+  }
 
   let pageNumberNumber = pageNumber ? Number(pageNumber) : 1;
   let pageSize2 = pageSize ? Number(pageSize) : 10;
@@ -127,10 +142,13 @@ const PostsList = () => {
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
       navigate(
-        `/LatinBlogPortfolio/Posts?pageNumber=1&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`
+        `/LatinBlogPortfolio/Posts?pageNumber=1&pageSize=${pageSize2}&searchTerms=${searchTermsInput}${
+          authorId ? `&authorId=${authorId}` : ""
+        }`
       );
     }
   };
+  
 
   useEffect(() => {
     document.title = "Explore Posts";
@@ -150,7 +168,9 @@ const PostsList = () => {
       <div className="page-header">
         <h1 className="page-title">Explore the Posts</h1>
         <p className="page-description">
-          Browse through the posts and discover content from different authors.
+          {authorName
+            ? `Browsing posts written by ${authorName}.`
+            : "Browse through the posts and discover content from different authors."}
         </p>
       </div>
 
@@ -185,14 +205,16 @@ const PostsList = () => {
                 className="search-bar-input"
                 type="text"
                 aria-label="Search text"
-                placeholder="Search posts..."
+                placeholder={`Search ${authorName ? `${authorName}'s` : ''} posts...`}
                 style={{ marginRight: "20px" }}
               />
               <Link
                 className="post-search-button"
                 title="Search"
                 aria-label="Search"
-                to={`/LatinBlogPortfolio/Posts?pageNumber=1&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
+                to={`/LatinBlogPortfolio/Posts?pageNumber=1&pageSize=${pageSize2}&searchTerms=${searchTermsInput}${
+                  authorId ? `&authorId=${authorId}` : ""
+                }`}
               >
                 <i className="search link icon"></i>
               </Link>
@@ -257,36 +279,47 @@ const PostsList = () => {
           {/* Pagination Controls */}
           <div className="center-align-flex">
             <div className="ui small basic icon buttons">
+            <Link
+              to={`/LatinBlogPortfolio/Posts?pageNumber=${Math.max(
+                1,
+                pageNumberNumber - 1
+              )}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}${
+                authorId ? `&authorId=${authorId}` : ""
+              }`}
+              aria-label="Go to previous results page"
+              className="ui button"
+            >
+              <i className="angle left icon"></i>
+            </Link>
+
+            {pagedInfo.visiblePages.map((entry: number) => (
               <Link
-                to={`/LatinBlogPortfolio/Posts?pageNumber=${Math.max(
-                  1,
-                  pageNumberNumber - 1
-                )}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
-                aria-label="Go to previous results page"
-                className="ui button"
+                key={nanoid()}
+                to={`/LatinBlogPortfolio/Posts?pageNumber=${entry}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}${
+                  authorId ? `&authorId=${authorId}` : ""
+                }`}
+                aria-label={`Go to page ${entry}`}
+                className={`ui button pagination-button ${
+                  entry === pageNumberNumber ? 'active' : ''
+                }`}
               >
-                <i className="angle left icon"></i>
+                {entry}
               </Link>
-              {pagedInfo.visiblePages.map((entry: number) => (
-                <Link
-                  key={nanoid()}
-                  to={`/LatinBlogPortfolio/Posts?pageNumber=${entry}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
-                  aria-label={`Go to page ${entry}`}
-                  className={`ui button pagination-button ${entry === pageNumberNumber ? 'active' : ''}`}
-                >
-                  {entry}
-                </Link>
-              ))}
-              <Link
-                to={`/LatinBlogPortfolio/Posts?pageNumber=${Math.min(
-                  pagedInfo.totalPages,
-                  pageNumberNumber + 1
-                )}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}`}
-                aria-label="Go to next results page"
-                className="ui button"
-              >
-                <i className="angle right icon"></i>
-              </Link>
+            ))}
+
+            <Link
+              to={`/LatinBlogPortfolio/Posts?pageNumber=${Math.min(
+                pagedInfo.totalPages,
+                pageNumberNumber + 1
+              )}&pageSize=${pageSize2}&searchTerms=${searchTermsInput}${
+                authorId ? `&authorId=${authorId}` : ""
+              }`}
+              aria-label="Go to next results page"
+              className="ui button"
+            >
+              <i className="angle right icon"></i>
+            </Link>
+
             </div>
           </div>
         </div>

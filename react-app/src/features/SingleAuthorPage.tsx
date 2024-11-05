@@ -7,6 +7,7 @@ import { AuthorJoin } from "../utils/authorJoin";
 import { CapitalizeFirstLetter, MakeTitle } from "../utils/stringFormatters";
 import { AuthorDataRaw, AvatarFallbackUrl } from "./PostData";
 import NotFound from "./NotFound";
+import { Link } from 'react-router-dom';
 
 const SingleAuthorPage = () => {
   const { authorId } = useParams();
@@ -88,6 +89,14 @@ const SingleAuthorPage = () => {
                 </div>
               </div>
             </div>
+            <Link
+              to={`/LatinBlogPortfolio/Posts?authorId=${author.id}`}
+              className="ui button"
+              title={`View posts by ${author.name}`}
+              aria-label={`View posts by ${author.name}`}
+            >
+              View {author.name}'s Posts
+            </Link>
           </article>
         </div>
       ) : (

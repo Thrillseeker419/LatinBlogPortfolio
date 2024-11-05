@@ -62,7 +62,18 @@
 }
 
 .single-post-avatar {
+  width: 100px;
+  height: 100px; 
+  object-fit: cover; 
   margin: 5px;
+}
+
+/* Make the image responsive */
+@media (max-width: 600px) {
+  .single-post-avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .single-post-body {
@@ -422,6 +433,20 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .top-nav-button {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .top-nav-button {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
 /* Optional: If you want to add specific hover effects */
 .top-nav-button:hover {
   color: #ff5722; 
@@ -451,9 +476,11 @@ body {
 
 /* App Component Styling */
 .App {
-  margin-bottom: 0;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
+
 }
 
 /*Home Page Styling */

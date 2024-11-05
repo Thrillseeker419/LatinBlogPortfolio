@@ -74,6 +74,11 @@ const SinglePostPage = () => {
         <div className="single-post-container">
           <article className="single-post ui piled segment">
             <h1 className="ui header">
+            <Link
+              to={`/LatinBlogPortfolio/Authors/${singlePost?.authorInfo?.id}`}
+              title={`View ${singlePost?.authorInfo?.name}'s profile`}
+              aria-label={`View ${singlePost?.authorInfo?.name}'s profile`}
+            >
               <img
                 src={
                   singlePost?.authorInfo
@@ -83,7 +88,7 @@ const SinglePostPage = () => {
                 }
                 alt={`${singlePost?.authorInfo?.name || "Unknown Author"}'s Avatar`}
                 className="single-post-avatar ui circular image"
-              />{" "}
+              /></Link>
               {MakeTitle(singlePost?.title || "")}
               <div className="sub header">
                 by{" "}

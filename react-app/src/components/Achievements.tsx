@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import ReactModal from 'react-modal';
+
+// Assuming your root element has the id 'root'
+if (process.env.NODE_ENV !== 'test') {
+    Modal.setAppElement('#root');
+  }
+  
 
 interface Achievement {
   icon: string;
@@ -39,6 +46,7 @@ const Achievements: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
 
+  
   const openModal = (achievement: Achievement) => {
     setSelectedAchievement(achievement);
     setIsModalOpen(true);
@@ -78,17 +86,27 @@ const Achievements: React.FC = () => {
           className="achievement-modal"
           overlayClassName="achievement-modal-overlay"
           closeTimeoutMS={200} // Smooth closing animation
-          ariaHideApp={false} // To avoid issues if there is no main app element
+          ariaHideApp={process.env.NODE_ENV !== 'test'}
         >
-          <div className="modal-content">
-            <h2>{selectedAchievement.title}</h2>
-            <div className="achievement-icon">{selectedAchievement.icon}</div>
-            <p className="modal-description">{selectedAchievement.description}</p>
-            <p className="modal-details">{selectedAchievement.details}</p>
+          <div
+            className="modal-content"
+            // Remove tabIndex from here
+            >
+            <h2 tabIndex={0}>{selectedAchievement.title}</h2>
+            <div className="achievement-icon" tabIndex={0} aria-hidden="true">
+                {selectedAchievement.icon}
+            </div>
+            <p className="modal-description" tabIndex={0}>
+                {selectedAchievement.description}
+            </p>
+            <p className="modal-details" tabIndex={0}>
+                {selectedAchievement.details}
+            </p>
             <button onClick={closeModal} className="modal-close-button">
-              Close
+                Close
             </button>
-          </div>
+        </div>
+
         </Modal>
       )}
     </div>
