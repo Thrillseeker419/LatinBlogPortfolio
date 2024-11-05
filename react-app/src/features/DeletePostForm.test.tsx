@@ -57,7 +57,7 @@ describe("DeletePostForm", () => {
       expect(screen.getByText(/Are you sure you want to delete this post/i)).toBeInTheDocument();
       expect(screen.getByText("Test Post")).toBeInTheDocument();
       expect(screen.getByText(/by Ervin Howell/i)).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /Delete Post/i })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /Confirm Delete/i })).toBeInTheDocument();
     });
   });
 
@@ -73,7 +73,7 @@ describe("DeletePostForm", () => {
       </Provider>
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /Delete Post/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Confirm Delete/i }));
 
     await waitFor(() => {
       expect(mockStore.dispatch).toHaveBeenCalledWith(postDeleted("19")); // Changed to "19"

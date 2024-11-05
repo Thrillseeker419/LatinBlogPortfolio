@@ -2,6 +2,7 @@ import { BallTriangle, useLoading } from "@agney/react-loading";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  Link,
   useNavigate,
   useParams,
   useSearchParams,
@@ -105,23 +106,34 @@ const DeletePostForm = () => {
               </div>
               <div className="delete-button-container">
                 {singlePost?.userId === 2 && (
-                  <button
-                    title="Confirm delete post"
-                    aria-label="Confirm delete post"
-                    onClick={onDeletePostClicked}
-                    className=" ui red button"
-                    disabled={deleteRequestStatus === "pending"}
-                  >
-                    {deleteRequestStatus === "pending" ? (
-                      <>
-                        <i className="spinner loading icon"></i> Deleting...
-                      </>
-                    ) : (
-                      <>
-                        <i className="trash icon"></i> Delete Post
-                      </>
-                    )}
-                  </button>
+                  <>
+                    <button
+                      title="Confirm delete post"
+                      aria-label="Confirm delete post"
+                      onClick={onDeletePostClicked}
+                      className="ui red button"
+                      disabled={deleteRequestStatus === "pending"}
+                    >
+                      {deleteRequestStatus === "pending" ? (
+                        <>
+                          <i className="spinner loading icon"></i> Deleting...
+                        </>
+                      ) : (
+                        <>
+                          <i className="trash icon"></i> Confirm Delete
+                        </>
+                      )}
+                    </button>
+                    <Link
+                      to={`/LatinBlogPortfolio/Posts/${postId}`}
+                      className="ui basic black button"
+                      title="Cancel and go back"
+                      aria-label="Cancel and go back"
+                      style={{ marginLeft: '10px' }}
+                    >
+                      No, Go Back
+                    </Link>
+                  </>
                 )}
               </div>
             </div>

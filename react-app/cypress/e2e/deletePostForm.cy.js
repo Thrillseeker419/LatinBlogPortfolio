@@ -69,5 +69,10 @@ describe('Delete Post Form Tests', () => {
       cy.visit('http://localhost:3000/LatinBlogPortfolio/Posts/19/Delete?userId=1', { failOnStatusCode: false });
       cy.contains(/404 Page Not Found/i).should('be.visible');
     });
+
+    it('should navigate back to the post when "No, Go Back" is clicked', () => {
+        cy.get('a[aria-label="Cancel and go back"]').click();
+        cy.url().should('include', `/LatinBlogPortfolio/Posts/19`);
+      });
   });
   
